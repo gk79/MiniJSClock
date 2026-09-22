@@ -23,26 +23,30 @@ No project-operated backend, account system, server-side persistence, or runtime
 Use a client-only single-page web application delivered as static assets.
 
 Primary responsibilities:
-- **Presentation layer** — renders the modern dashboard, digital/analog clocks, controls, city selection, and alarm UI.
-- **Application/domain logic** — computes current times, evaluates alarm state from actual current time, applies one-time/daily alarm semantics, and coordinates configuration changes.
-- **Local persistence adapter** — stores and restores user configuration in the browser. The concrete browser storage mechanism is not yet selected.
+- **Presentation layer** — Vue components render the modern dashboard, digital/analog clocks, controls, city selection, and alarm UI.
+- **Application/domain logic** — framework-independent TypeScript computes current times, evaluates alarm state from actual current time, applies one-time/daily alarm semantics, and coordinates configuration changes.
+- **Local persistence adapter** — a typed adapter persists the small versioned configuration document in browser `localStorage`.
 - **Static catalog module** — provides the bundled curated city-to-IANA-time-zone catalog. Catalog generation/update is a development-time concern, not a runtime network dependency.
 - **Static deployment** — serves the built application files. The concrete hosting target is not yet selected.
 
-Dependency direction should remain toward browser/platform abstractions and static data only; there is no server-side application tier.
+Dependency direction remains toward browser/platform abstractions and static data only; there is no server-side application tier. Vue owns presentation and reactive orchestration, while time/alarm/catalog/persistence semantics remain independently testable TypeScript modules where practical.
 
-A frontend framework is not required by this architecture. Prefer the simplest implementation that can meet the approved visual-quality, maintainability, and verification requirements. React, Vue, Svelte, or another framework may be selected later only if the trade-off is materially better than a framework-free implementation.
+Frontend stack selection is proposed in ADR-001 and awaits human approval before it is treated as final.
 
 ## Technology choices
 
 | Concern | Choice | Version/pin | Why | Verification/source |
 |---|---|---|---|---|
-| Runtime | Modern browser JavaScript/TypeScript-capable frontend | TBD | Product is client-only and targets current stable desktop Chrome, Edge, and Firefox. | Product requirements and supported-browser baseline |
+| UI framework | Proposed: Vue | Stable 3.5.x; exact pin at bootstrap | Component/reactivity benefits materially reduce custom DOM/state code without requiring a larger application framework. | ADR-001 |
+| Language | TypeScript | Current stable version supported by official Vue tooling; exact pin at bootstrap | Strong contracts for configuration, alarms, catalog data, and framework-independent domain logic. | ADR-001 |
+| Build tool | Proposed: Vite | Stable 8.x; exact pin at bootstrap | Official Vue scaffolding path and simple static production output. | ADR-001 |
 | Web/API | No backend/API; static client application | N/A | Current requirements need no server-side state or runtime external service. | Approved product scope |
-| Persistence | Browser-local persistence | TBD | Configuration must survive reload/restart only in the same browser profile. | FR-004, FR-010 |
-| Time-zone handling | Browser internationalization APIs with IANA identifiers | Browser-provided | Keeps runtime local and follows approved IANA-based catalog model. | FR-011, NFR-002 |
-| City data | Bundled static generated catalog | GeoNames/IANA source snapshot TBD per generated artifact | Removes runtime service dependency while keeping provenance and reproducibility. | FR-011, FR-012 |
-| Test stack | TBD | TBD | Select after implementation stack decision. | Pending architecture decision |
+| Persistence | Proposed: `localStorage` behind typed versioned adapter | Browser-provided | Configuration is tiny and only needs same-origin persistence across browser sessions. | ADR-001; FR-004; FR-010 |
+| Time-zone handling | Browser `Intl` APIs with IANA identifiers | Browser-provided | Keeps runtime local and follows approved IANA-based catalog model. | FR-011; NFR-002 |
+| City data | Bundled static generated catalog | GeoNames/IANA source snapshot TBD per generated artifact | Removes runtime service dependency while keeping provenance and reproducibility. | FR-011; FR-012 |
+| Styling | Proposed: plain CSS, custom properties/design tokens, Vue scoped styles | N/A | Keeps visual system explicit without adding a utility/component framework. | ADR-001; NFR-001 |
+| Unit/component tests | Proposed: Vitest + Vue Test Utils where useful | Exact pins at bootstrap | Vite-native tests and official Vue component mounting utilities. | ADR-001 |
+| Browser/E2E tests | Proposed: Playwright | Exact pin at bootstrap | Supports automated browser-level scenarios across Chromium/Chrome/Edge, Firefox, and WebKit families. | ADR-001 |
 | Deployment | Static asset hosting | TBD | No backend is required. | Approved architecture baseline |
 
 ## Architectural invariants
@@ -53,24 +57,25 @@ A frontend framework is not required by this architecture. Prefer the simplest i
 - Time calculations and alarm interpretation use explicit IANA time-zone identifiers.
 - Alarm scheduling must not assume browser timers execute exactly on schedule; overdue alarms are determined from actual current time when code runs.
 - City catalog provenance and regeneration inputs remain versioned with the project.
-- Framework selection must not introduce a server dependency or otherwise broaden product scope without an explicit architecture decision.
+- Vue components must not become the only place where time-zone, alarm, or persistence semantics can be verified.
+- The first release does not add Router, Pinia, Tailwind, or a component framework unless a concrete need is demonstrated and the architecture decision is revisited.
 - UI implementation should keep clock/alarm/time-zone logic separable from rendering so correctness can be tested deterministically.
 
 ## Runtime and data flow
 
 1. Static hosting delivers the application bundle and bundled city catalog.
-2. On startup, the application restores local configuration from browser persistence.
+2. On startup, the application restores and validates the versioned configuration document from `localStorage`.
 3. The browser clock provides the current instant.
 4. For each displayed city, application logic formats that instant using the city's configured IANA time zone.
 5. Alarm evaluation compares actual current time against persisted alarm definitions.
-6. UI renders the resulting state in the selected global digital/analog and 12h/24h presentation.
-7. User changes are written back to local browser persistence.
+6. Vue renders the resulting state in the selected global digital/analog and 12h/24h presentation.
+7. User changes are serialized through the persistence adapter back to `localStorage`.
 
 No runtime request to a project backend is required for the normal product workflow.
 
 ## Failure modes
 
-- **Browser storage unavailable/cleared:** application falls back to default configuration; persistence cannot be guaranteed when the user/browser removes site data.
+- **Browser storage unavailable/cleared/corrupted:** application falls back to validated defaults and reports/recoverably handles persistence failure rather than crashing.
 - **Background timer throttling:** alarms may be delayed; when execution resumes, the application evaluates actual current time and triggers overdue alarms according to the approved semantics.
 - **Browser audio restrictions:** audible alarm delivery may require prior user interaction or other browser-specific permission state; this remains an implementation/verification concern.
 - **Invalid bundled catalog data:** treat as build/test failure; runtime should not silently invent time zones.
@@ -78,8 +83,6 @@ No runtime request to a project backend is required for the normal product workf
 
 ## Open architecture questions
 
-- [ ] Should the implementation use framework-free DOM/CSS/JavaScript/TypeScript or a lightweight frontend framework?
-- [ ] Which browser-local persistence mechanism should be used?
-- [ ] Which build/tooling approach should be used?
-- [ ] Which static hosting target should be used?
-- [ ] Which test stack best verifies time-zone, alarm, persistence, and visual/UI behavior?
+- [ ] Human approval of ADR-001 frontend stack proposal.
+- [ ] Which concrete static hosting target should be used?
+- [ ] What exact dependency pins and Node/npm baseline should bootstrap use?
