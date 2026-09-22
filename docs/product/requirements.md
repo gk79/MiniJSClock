@@ -16,6 +16,7 @@ Use stable IDs so tasks/tests can reference them.
 | FR-008 | An alarm shall support one-time and daily recurrence modes. | Must | The user can select either one-time or daily recurrence and the alarm follows the selected behavior. |
 | FR-009 | When a configured alarm becomes due while the application remains open, the application shall emit an audible alarm. | Must | With the application open and audio permitted by the browser, a due alarm produces an audible signal. |
 | FR-010 | Alarm configuration shall be stored locally with the rest of the application configuration. | Must | Configured alarms remain present after an application reload in the same browser profile. |
+| FR-011 | The selectable city catalog shall be bundled with the application as versioned repository data, with each entry mapped to an IANA time-zone identifier. | Must | The city picker works without a runtime city/time-zone API call, and every selectable city has a valid configured IANA time-zone identifier. |
 
 ## Non-functional requirements
 
@@ -33,6 +34,8 @@ Use stable IDs so tasks/tests can reference them.
 
 The application intentionally stores only local product configuration such as selected city clocks, global display preferences, and alarm definitions. No personal account data or other personally identifiable information is required by the current scope.
 
+The selectable city catalog is non-personal static application data versioned in the repository and bundled with the application. Runtime city/time-zone lookup against an external service is not required.
+
 There is no server-side retention or backup requirement. Clearing the browser's site data may remove the saved configuration; cross-device recovery is out of scope.
 
 ## Acceptance scenarios
@@ -44,3 +47,4 @@ There is no server-side retention or backup requirement. Clearing the browser's 
 5. **One-time city alarm:** The user configures a one-time alarm on a selected city clock. When that city's local time reaches the configured value while the application remains open and browser audio is permitted, an audible alarm occurs and the one-time alarm does not repeat on the following day.
 6. **Daily city alarm:** The user configures a daily alarm on a selected city clock. The alarm is evaluated against that city's local time and remains configured for future days.
 7. **Supported desktop browsers:** Core dashboard, city management, display settings, persistence, and alarm configuration are smoke-tested successfully in current stable Chrome, Edge, and Firefox on desktop/laptop.
+8. **Offline city catalog behavior:** With runtime city/time-zone network lookup unavailable, the user can still browse/select the bundled city catalog and obtain the configured time zone for each supported city.
