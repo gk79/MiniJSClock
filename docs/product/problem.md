@@ -2,27 +2,48 @@
 
 ## Problem / opportunity
 
-Describe the real problem, who experiences it, and why it matters.
+MiniJSClock is a personal browser-based clock dashboard for one user. It should make it easy to see the current local time and compare it with the current civil time in selected cities around the world without relying on a cloud account or backend service.
+
+The product should also provide a polished visual experience rather than behaving like a purely utilitarian time-zone converter. The user should be able to keep a preferred set of city clocks, switch the presentation style globally, and attach alarms to individual clocks.
 
 ## Users / stakeholders
 
-- Primary users:
-- Secondary users:
-- Operators/administrators:
-- Business/system owners:
+- Primary users: the repository owner / single end user.
+- Secondary users: none planned.
+- Operators/administrators: none planned; the application is intended to run directly in the user's browser.
+- Business/system owners: the same single user.
 
 ## Desired outcomes
 
-Define outcomes, not features. Include measurable success signals where possible.
+- The user can open the application and immediately read the current local time.
+- The user can maintain a personally useful set of world-city clocks and compare times at a glance.
+- The interface is visually polished and remains clear in both digital and analog clock modes.
+- The user's selected cities, display preferences, and alarm configuration persist between browser sessions on the same browser profile.
+- The user can rely on an audible alarm for a selected clock while the application remains open.
 
 ## Constraints
 
-Budget, schedule, regulatory, integration, data, platform, organizational, or operational constraints.
+- The application is for a single user and does not require accounts, authentication, or multi-user features.
+- Configuration is stored only in the local browser; cloud synchronization is not required.
+- No backend service is currently required by the product scope.
+- The application is used in a web browser.
+- The city picker should cover several hundred major or widely recognized cities worldwide.
+- Display mode (digital or analog) and 12-hour / 24-hour format are global settings shared by all clocks.
+- Alarms are interpreted in the local civil time of the selected clock's city.
+- Alarms may be one-time or daily.
+- Alarm delivery is required only while the application remains open in the browser.
 
 ## Out of scope
 
-State what this project intentionally will not solve.
+- Multi-user accounts or sharing.
+- Cloud synchronization across devices or browser profiles.
+- Server-side persistence.
+- Guaranteed alarm delivery after the application or browser has been closed.
+- General calendar, stopwatch, countdown timer, or scheduling functionality unless added by a later requirement.
 
 ## Open questions
 
-- [ ] ...
+- [ ] Which browsers and device classes are explicitly supported?
+- [ ] Which maintained city/time-zone dataset should define the selectable city catalog?
+- [ ] What visual direction and concrete review criteria will define "polished" for the first release?
+- [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?
