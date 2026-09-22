@@ -23,7 +23,7 @@ Use stable IDs so tasks/tests can reference them.
 
 | ID | Quality attribute | Requirement / SLO | How verified |
 |---|---|---|---|
-| NFR-001 | Visual quality | The primary clock dashboard shall be intentionally designed, visually coherent, legible, and polished in both digital and analog modes rather than relying on default browser styling. | Human design review against approved visual references and representative viewport checks. |
+| NFR-001 | Visual quality | The primary clock experience shall use a polished modern-dashboard direction with clock cards/panels, clear information hierarchy, restrained visual styling, and coherent digital and analog variants suitable for comparing multiple clocks at a glance. | Human design review against the approved direction and concrete visual acceptance criteria, plus representative viewport checks. |
 | NFR-002 | Time correctness | Displayed city times and alarm interpretation shall follow the applicable civil time for the selected city, including daylight-saving or other offset changes represented by the selected IANA time-zone identifier. | Automated tests around representative time zones and offset-transition cases plus manual spot checks. |
 | NFR-003 | Privacy | Application configuration shall remain local to the browser and shall not require transmission to a project-operated backend. | Architecture review and network-behavior verification. |
 | NFR-004 | Reliability | Normal page reloads and browser restarts shall not lose configuration stored by the application, subject to the user clearing browser/site data. | Automated persistence tests and manual reopen/reload scenario. |

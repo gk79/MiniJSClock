@@ -30,6 +30,7 @@ The product should also provide a polished visual experience rather than behavin
 - The first release shall support current stable Chrome, Edge, and Firefox versions.
 - Safari support is optional unless it can be achieved without material additional complexity.
 - Mobile/tablet are not guaranteed support targets for the first release, but the UI should not become unusable at narrower widths.
+- The first-release visual direction is a modern dashboard: clock cards/panels, clear information hierarchy, and a polished application-like presentation optimized for reading multiple clocks at a glance.
 - The city picker should cover approximately 400 major or widely recognized cities worldwide.
 - The selectable city catalog shall be static application data versioned in the repository rather than fetched from an external city/time-zone service at runtime.
 - GeoNames shall be the source dataset for candidate cities, with a documented curation rule producing the bundled catalog.
@@ -53,5 +54,5 @@ The product should also provide a polished visual experience rather than behavin
 
 ## Open questions
 
-- [ ] What visual direction and concrete review criteria will define "polished" for the first release?
+- [ ] Which concrete visual review criteria will define "polished" for the approved modern-dashboard direction?
 - [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?
