@@ -26,7 +26,10 @@ The product should also provide a polished visual experience rather than behavin
 - The application is for a single user and does not require accounts, authentication, or multi-user features.
 - Configuration is stored only in the local browser; cloud synchronization is not required.
 - No backend service is currently required by the product scope.
-- The application is used in a web browser.
+- The primary support target is desktop/laptop browsers.
+- The first release shall support current stable Chrome, Edge, and Firefox versions.
+- Safari support is optional unless it can be achieved without material additional complexity.
+- Mobile/tablet are not guaranteed support targets for the first release, but the UI should not become unusable at narrower widths.
 - The city picker should cover several hundred major or widely recognized cities worldwide.
 - Display mode (digital or analog) and 12-hour / 24-hour format are global settings shared by all clocks.
 - Alarms are interpreted in the local civil time of the selected clock's city.
@@ -39,11 +42,11 @@ The product should also provide a polished visual experience rather than behavin
 - Cloud synchronization across devices or browser profiles.
 - Server-side persistence.
 - Guaranteed alarm delivery after the application or browser has been closed.
+- Guaranteed first-release parity on mobile/tablet or Safari.
 - General calendar, stopwatch, countdown timer, or scheduling functionality unless added by a later requirement.
 
 ## Open questions
 
-- [ ] Which browsers and device classes are explicitly supported?
 - [ ] Which maintained city/time-zone dataset should define the selectable city catalog?
 - [ ] What visual direction and concrete review criteria will define "polished" for the first release?
 - [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?
