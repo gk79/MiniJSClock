@@ -33,3 +33,5 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Architecture/tooling baseline | Current-source compatibility and supply-chain review | Node/npm/dependency/action pinning baseline established; architecture has no remaining bootstrap blocker |
 | 2026-09-22 | Architecture bootstrap gate | Initial threat/quality/capability review | Threat model and quality strategy tailored; initial capability decision left pending |
 | 2026-09-22 | Architecture bootstrap gate | Critical capability review against actual repository harness and current workflow | Existing repo skills/reviewers/security command coverage verified; Layer 0 physical mappings/security CLI installation remain unverified externally; `Vue.volar` identified as the only additional project-specific capability proposal |
+
+| 2026-09-22 | Layer 0 execution routing | Human confirmation that the workstation execution-profile mapping is filled and manually validated | Required cloud execution profiles are available; no Layer 0 prerequisite remains before bootstrap task creation |
