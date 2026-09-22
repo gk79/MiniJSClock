@@ -30,9 +30,11 @@ The product should also provide a polished visual experience rather than behavin
 - The first release shall support current stable Chrome, Edge, and Firefox versions.
 - Safari support is optional unless it can be achieved without material additional complexity.
 - Mobile/tablet are not guaranteed support targets for the first release, but the UI should not become unusable at narrower widths.
-- The city picker should cover several hundred major or widely recognized cities worldwide.
+- The city picker should cover approximately 400 major or widely recognized cities worldwide.
 - The selectable city catalog shall be static application data versioned in the repository rather than fetched from an external city/time-zone service at runtime.
-- Each city catalog entry shall map to an IANA time-zone identifier suitable for civil-time calculation in the browser.
+- GeoNames shall be the source dataset for candidate cities, with a documented curation rule producing the bundled catalog.
+- IANA time-zone identifiers shall be used for the city-to-time-zone mapping and civil-time calculation.
+- The source snapshot/version and curation inputs used to produce the bundled catalog shall be recorded so the catalog can be regenerated and reviewed.
 - Display mode (digital or analog) and 12-hour / 24-hour format are global settings shared by all clocks.
 - Alarms are interpreted in the local civil time of the selected clock's city.
 - Alarms may be one-time or daily.
@@ -44,12 +46,12 @@ The product should also provide a polished visual experience rather than behavin
 - Cloud synchronization across devices or browser profiles.
 - Server-side persistence.
 - Runtime dependence on an external city/time-zone lookup API.
+- Exhaustive coverage of every city or settlement in the source dataset.
 - Guaranteed alarm delivery after the application or browser has been closed.
 - Guaranteed first-release parity on mobile/tablet or Safari.
 - General calendar, stopwatch, countdown timer, or scheduling functionality unless added by a later requirement.
 
 ## Open questions
 
-- [ ] Which authoritative dataset(s) and curation rule should seed and maintain the versioned city catalog?
 - [ ] What visual direction and concrete review criteria will define "polished" for the first release?
 - [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?

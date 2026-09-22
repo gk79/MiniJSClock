@@ -7,14 +7,14 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Product/display name: MiniJSClock
 - Current milestone: close the remaining product questions and approve the complete initial requirements baseline
 - Selected stack profile / concrete stack: not selected
-- Selected data profile / concrete data platform: local browser persistence plus a static repository-versioned city-to-IANA-time-zone catalog; concrete persistence mechanism and catalog source not yet selected
+- Selected data profile / concrete data platform: local browser persistence plus a static repository-versioned city catalog; GeoNames approved as the candidate-city source, IANA identifiers approved for time-zone mapping, target catalog size approximately 400 cities; concrete persistence mechanism not yet selected
 - Selected deployment profile / concrete target: browser application; concrete hosting/deployment target not selected
 - Repository baseline: bootstrapping
 - Active task(s): none
-- Latest completed task: static repository-versioned city catalog approach approved and incorporated into product requirements
-- Main known risks/blockers: browser audio/autoplay constraints; timer throttling in background tabs; authoritative source/curation rule for the city catalog not yet selected; visual-quality criteria not yet concrete
-- Decisions currently pending: city catalog source/curation rule; visual direction/review criteria; acceptable alarm timing behavior under browser throttling
-- Next recommended action: choose the authoritative source and curation rule for the initial static city catalog, then continue closing the remaining discovery questions
+- Latest completed task: city catalog source and curation baseline approved
+- Main known risks/blockers: browser audio/autoplay constraints; timer throttling in background tabs; visual-quality criteria not yet concrete
+- Decisions currently pending: visual direction/review criteria; acceptable alarm timing behavior under browser throttling
+- Next recommended action: define the visual direction and first-release review criteria, then close the remaining alarm-timing discovery question
 
 ## Recent verification
 
@@ -23,3 +23,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | ChatGPT repository startup | Read `docs/AI_WORKFLOW.md`, `docs/current-state.md`, and product templates from `main`; no active task exists | Repository operating contract loaded; discovery artifacts were still Starter templates before this update |
 | 2026-09-22 | Product discovery | Human approval of desktop/browser support target | Current stable Chrome, Edge, and Firefox are required first-release targets; Safari and mobile/tablet are non-blocking |
 | 2026-09-22 | Product discovery | Human approval of static city catalog approach | City data will be versioned in the repository and mapped to IANA time-zone identifiers; no runtime external city/time-zone API is required |
+| 2026-09-22 | Product discovery | Human approval of city catalog source and scale | GeoNames approved for candidate cities, IANA identifiers for time zones, and the bundled catalog should contain approximately 400 curated cities |
