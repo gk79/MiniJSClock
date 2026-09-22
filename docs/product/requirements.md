@@ -27,6 +27,7 @@ Use stable IDs so tasks/tests can reference them.
 | NFR-004 | Reliability | Normal page reloads and browser restarts shall not lose configuration stored by the application, subject to the user clearing browser/site data. | Automated persistence tests and manual reopen/reload scenario. |
 | NFR-005 | Usability | Adding/removing city clocks, changing global display settings, and configuring alarms shall be possible through visible browser UI without editing configuration files or source code. | End-to-end acceptance scenarios. |
 | NFR-006 | Maintainability | City/time-zone mapping and clock/alarm logic shall be structured so that maintained time-zone data can be updated without redesigning the product behavior. | Architecture/code review and targeted tests. |
+| NFR-007 | Browser compatibility | The first release shall target current stable Chrome, Edge, and Firefox on desktop/laptop. Safari is optional unless compatibility requires no material extra complexity. Mobile/tablet are not guaranteed support targets, but narrower layouts should remain basically usable. | Manual smoke checks in the supported desktop browsers plus representative narrow-viewport checks. |
 
 ## Data and privacy
 
@@ -42,3 +43,4 @@ There is no server-side retention or backup requirement. Clearing the browser's 
 4. **Remove a city:** The user removes an added city clock; it disappears and remains absent after reload.
 5. **One-time city alarm:** The user configures a one-time alarm on a selected city clock. When that city's local time reaches the configured value while the application remains open and browser audio is permitted, an audible alarm occurs and the one-time alarm does not repeat on the following day.
 6. **Daily city alarm:** The user configures a daily alarm on a selected city clock. The alarm is evaluated against that city's local time and remains configured for future days.
+7. **Supported desktop browsers:** Core dashboard, city management, display settings, persistence, and alarm configuration are smoke-tested successfully in current stable Chrome, Edge, and Firefox on desktop/laptop.
