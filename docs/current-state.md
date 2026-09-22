@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: architecture
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: finalize bootstrap/runtime pins and deployment workflow details before implementation planning
-- Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.x + TypeScript + Vite 8.x; no router/store/UI framework initially; plain CSS; Vitest + Vue Test Utils + Playwright
+- Current milestone: architecture baseline complete; prepare executable bootstrap work
+- Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 7.0.2 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
-- Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages deployed via GitHub Actions
+- Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: bootstrapping
 - Active task(s): none
-- Latest completed task: GitHub Pages selected as the static hosting target
-- Main known risks/blockers: browser audio/autoplay constraints remain an implementation/verification concern; exact bootstrap runtime/dependency pins and Pages workflow details remain undecided
-- Decisions currently pending: exact Node/npm and dependency pins; exact GitHub Actions Pages workflow/action pins and release gate
-- Next recommended action: define the bootstrap runtime/toolchain baseline, then prepare implementation planning and routed tasks
+- Latest completed task: Node/npm, dependency pinning, and GitHub Actions reproducibility baseline defined
+- Main known risks/blockers: browser audio/autoplay constraints remain an implementation/verification concern; no architecture blocker currently prevents bootstrap
+- Decisions currently pending: bootstrap implementation details that do not alter the approved architecture
+- Next recommended action: read model-routing/workflow guidance and create the first ready bootstrap task with execution profile, verification evidence, review requirement, and security impact
 
 ## Recent verification
 
@@ -27,6 +27,7 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Product discovery | Human approval of visual direction | First-release UI direction is a polished modern dashboard with card/panel-based clock presentation and clear information hierarchy |
 | 2026-09-22 | Product discovery | Human approval of visual acceptance criteria | Visual acceptance covers hierarchy, coherence, digital/analog parity, 1-to-dozen-clock layouts, absence of placeholder/default-browser presentation, desktop polish, narrow-width basic usability, and final human visual approval |
 | 2026-09-22 | Product discovery | Human approval of background alarm semantics | Active-tab alarms target the configured time; background-throttled alarms fire at the next execution opportunity based on actual current time, with no guaranteed maximum delay |
-| 2026-09-22 | Architecture | Human approval of client-only static SPA baseline | No backend; static hosting; local browser persistence; bundled city catalog; framework remains optional pending justified trade-off |
-| 2026-09-22 | Architecture decision | Human approval of ADR-001 | Vue 3 + TypeScript + Vite frontend stack accepted; typed `localStorage`, Vitest/Vue Test Utils, and Playwright included in the approved stack |
-| 2026-09-22 | Architecture decision | Human approval of GitHub Pages hosting | GitHub Pages selected as first-release static hosting target, deployed through GitHub Actions |
+| 2026-09-22 | Architecture | Human approval of client-only static SPA baseline | No backend; static hosting; local browser persistence; bundled city catalog |
+| 2026-09-22 | Architecture decision | Human approval of ADR-001 | Vue + TypeScript + Vite frontend stack accepted; typed `localStorage`, Vitest/Vue Test Utils, and Playwright included in the approved stack |
+| 2026-09-22 | Architecture decision | Human approval of ADR-002 | GitHub Pages selected as first-release static hosting target, deployed through GitHub Actions |
+| 2026-09-22 | Architecture/tooling baseline | Current-source compatibility and supply-chain review | Node 24.21.0 LTS/npm 11.19.0 selected; direct dependencies exactly pinned with lockfile; GitHub Actions use reviewed full commit SHAs; Pages release remains a manual human action |

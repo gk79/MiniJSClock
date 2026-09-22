@@ -35,19 +35,73 @@ Frontend stack selection is accepted in ADR-001. Static hosting is accepted in A
 
 ## Technology choices
 
+Bootstrap versions below are the approved compatibility baseline as of 2026-09-22. They are exact starting pins, not a promise to stay on those versions indefinitely. Revalidate them before bootstrap if implementation is materially delayed or a relevant security/advisory issue appears.
+
 | Concern | Choice | Version/pin | Why | Verification/source |
 |---|---|---|---|---|
-| UI framework | Vue | Stable 3.5.x; exact pin at bootstrap | Component/reactivity benefits materially reduce custom DOM/state code without requiring a larger application framework. | ADR-001 |
-| Language | TypeScript | Current stable version supported by official Vue tooling; exact pin at bootstrap | Strong contracts for configuration, alarms, catalog data, and framework-independent domain logic. | ADR-001 |
-| Build tool | Vite | Stable 8.x; exact pin at bootstrap | Official Vue scaffolding path and simple static production output. | ADR-001 |
+| Node.js | LTS | 24.21.0 | Stable LTS baseline compatible with the selected Vite/Vitest/Playwright stack. | Node.js release status; current-source review 2026-09-22 |
+| npm | npm bundled with the Node baseline | 11.19.0 | Matches Node 24.21.0 and keeps one package manager across local/CI usage. | Node.js 24.21.0 distribution |
+| UI framework | Vue | 3.5.43 | Accepted Vue 3.5 line; stable current release at bootstrap baseline. | ADR-001; registry snapshot 2026-09-22 |
+| Language | TypeScript | 7.0.2 | Current stable TypeScript at bootstrap baseline. | ADR-001; registry snapshot 2026-09-22 |
+| Build tool | Vite | 8.3.0 | Accepted Vite 8 line with static production output. | ADR-001; registry snapshot 2026-09-22 |
+| Vue Vite plugin | `@vitejs/plugin-vue` | 6.0.9 | Official Vue integration for Vite. | Official package; registry snapshot 2026-09-22 |
+| Vue type checker | `vue-tsc` | 3.3.11 | Vite transpiles TypeScript but does not perform full Vue SFC type checking. | Vue TypeScript guidance; registry snapshot 2026-09-22 |
 | Web/API | No backend/API; static client application | N/A | Current requirements need no server-side state or runtime external service. | Approved product scope |
 | Persistence | `localStorage` behind typed versioned adapter | Browser-provided | Configuration is tiny and only needs same-origin persistence across browser sessions. | ADR-001; FR-004; FR-010 |
 | Time-zone handling | Browser `Intl` APIs with IANA identifiers | Browser-provided | Keeps runtime local and follows approved IANA-based catalog model. | FR-011; NFR-002 |
 | City data | Bundled static generated catalog | GeoNames/IANA source snapshot TBD per generated artifact | Removes runtime service dependency while keeping provenance and reproducibility. | FR-011; FR-012 |
 | Styling | Plain CSS, custom properties/design tokens, Vue scoped styles | N/A | Keeps visual system explicit without adding a utility/component framework. | ADR-001; NFR-001 |
-| Unit/component tests | Vitest + Vue Test Utils where useful | Exact pins at bootstrap | Vite-native tests and official Vue component mounting utilities. | ADR-001 |
-| Browser/E2E tests | Playwright | Exact pin at bootstrap | Supports automated browser-level scenarios across the required browser families. | ADR-001 |
-| Deployment | GitHub Pages via GitHub Actions | Workflow pins TBD at bootstrap | Keeps hosting and deployment close to the repository with no backend requirement. | ADR-002 |
+| Unit/component tests | Vitest + Vue Test Utils where useful | 5.0.1 + 2.5.1 | Vite-native tests plus Vue component mounting only where needed. | ADR-001; registry snapshots 2026-09-22 |
+| Browser/E2E tests | Playwright | 1.63.0 | Cross-browser browser-level scenarios on the selected Node LTS line. | ADR-001; Playwright system requirements; registry snapshot 2026-09-22 |
+| Deployment | GitHub Pages via GitHub Actions | Actions pinned by full commit SHA | Keeps hosting and deployment close to the repository with no backend requirement. | ADR-002; GitHub Actions secure-use guidance |
+
+The official `create-vue` scaffolder may be used at bootstrap at version 3.24.0. It is a one-time bootstrap tool, not a runtime dependency.
+
+## Bootstrap and reproducibility baseline
+
+- Use Node **24.21.0** locally and in CI. Record it in `.nvmrc`; configure CI with the same exact version.
+- Record `"packageManager": "npm@11.19.0"` and a Node 24 engine constraint in `package.json`.
+- Commit `package-lock.json`.
+- Direct application/dev dependencies are installed at exact versions (no `^` or `~` in the initial bootstrap).
+- CI and release builds use `npm ci`, never an unconstrained install.
+- The bootstrap should provide explicit scripts for at least: type-check, unit tests, build, E2E tests, and the repository's canonical verification entry points.
+- Vite production base must account for the GitHub Pages repository sub-path `/MiniJSClock/`.
+- If bootstrap occurs after a material delay, version-sensitive pins are revalidated before changing repository files.
+
+Initial direct toolchain pins:
+- `vue@3.5.43`
+- `typescript@7.0.2`
+- `vite@8.3.0`
+- `@vitejs/plugin-vue@6.0.9`
+- `vue-tsc@3.3.11`
+- `vitest@5.0.1`
+- `@vue/test-utils@2.5.1`
+- `@playwright/test@1.63.0`
+
+Additional scaffold-generated direct dependencies are allowed only when required for the selected features and must be reviewed, explicitly pinned, and captured by the lockfile.
+
+## GitHub Actions baseline
+
+GitHub-hosted actions must be pinned to full commit SHAs. Keep the corresponding release tag in a comment for maintainability.
+
+Approved bootstrap pins as of 2026-09-22:
+
+- `actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1` — v7.0.1
+- `actions/setup-node@820762786026740c76f36085b0efc47a31fe5020` — v7.0.0
+- `actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d` — v6.0.0
+- `actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9` — v5.0.0
+- `actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346` — v5.0.1
+
+The Pages release workflow must:
+1. be manually initiated as the human release action rather than deploy every merge automatically;
+2. operate on `main` only;
+3. run the required verification/build gates before deployment;
+4. upload only the built static artifact;
+5. use the `github-pages` environment;
+6. grant only the required deployment permissions (`contents: read`, `pages: write`, `id-token: write`);
+7. prevent an unverified build artifact from being deployed.
+
+Routine CI may run automatically for pull requests and pushes; CI success is evidence, not itself a production release verdict.
 
 ## Architectural invariants
 
@@ -60,6 +114,8 @@ Frontend stack selection is accepted in ADR-001. Static hosting is accepted in A
 - Vue components must not become the only place where time-zone, alarm, or persistence semantics can be verified.
 - The first release does not add Router, Pinia, Tailwind, or a component framework unless a concrete need is demonstrated and the architecture decision is revisited.
 - GitHub Pages deployment must publish only built static assets and must not introduce a runtime server dependency.
+- Dependency installation for verification/release uses the committed lockfile.
+- External GitHub Actions used by project workflows are pinned to reviewed full commit SHAs.
 - UI implementation should keep clock/alarm/time-zone logic separable from rendering so correctness can be tested deterministically.
 
 ## Runtime and data flow
@@ -80,11 +136,12 @@ No runtime request to a project backend is required for the normal product workf
 - **Background timer throttling:** alarms may be delayed; when execution resumes, the application evaluates actual current time and triggers overdue alarms according to the approved semantics.
 - **Browser audio restrictions:** audible alarm delivery may require prior user interaction or other browser-specific permission state; this remains an implementation/verification concern.
 - **Invalid bundled catalog data:** treat as build/test failure; runtime should not silently invent time zones.
+- **Dependency/toolchain drift:** `npm ci`, exact direct pins, lockfile review, and a fixed Node baseline prevent silent bootstrap/CI drift; upgrades are explicit repository changes.
+- **GitHub Action tag movement or supply-chain drift:** workflow references use reviewed full SHAs rather than movable tags.
 - **GitHub Pages deployment failure:** retain the previously deployed release; treat failed build/deploy verification as blocking a new release.
 - **Incorrect Vite base path:** deployed assets may fail under the repository Pages sub-path; verify this in the deployment task.
 - **Unsupported optional browser/device:** graceful degradation is preferred, but only the approved desktop browser target is release-blocking.
 
 ## Open architecture questions
 
-- [ ] What exact Node/npm baseline and dependency pins should bootstrap use?
-- [ ] What exact GitHub Actions workflow/action pins and release gate should be used for Pages deployment?
+No architecture question currently blocks bootstrap. Version-sensitive pins must be revalidated if bootstrap is materially delayed.
