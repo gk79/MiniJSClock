@@ -41,6 +41,9 @@ The product should also provide a polished visual experience rather than behavin
 - Alarms are interpreted in the local civil time of the selected clock's city.
 - Alarms may be one-time or daily.
 - Alarm delivery is required only while the application remains open in the browser.
+- When the application is open in an active tab, alarms should fire at the configured time subject to ordinary scheduling precision.
+- When the application is open but background-tab throttling delays timer execution, the alarm shall fire at the next opportunity when the browser allows application code to run; the application shall evaluate the actual current time rather than assume scheduled timers ran on time.
+- No maximum alarm delay is guaranteed while a tab is backgrounded or throttled by the browser.
 
 ## Out of scope
 
@@ -50,9 +53,10 @@ The product should also provide a polished visual experience rather than behavin
 - Runtime dependence on an external city/time-zone lookup API.
 - Exhaustive coverage of every city or settlement in the source dataset.
 - Guaranteed alarm delivery after the application or browser has been closed.
+- Guaranteed maximum alarm latency while an open tab is backgrounded or throttled by the browser.
 - Guaranteed first-release parity on mobile/tablet or Safari.
 - General calendar, stopwatch, countdown timer, or scheduling functionality unless added by a later requirement.
 
 ## Open questions
 
-- [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?
+None currently block completion of the initial product requirements baseline.
