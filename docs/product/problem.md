@@ -31,6 +31,8 @@ The product should also provide a polished visual experience rather than behavin
 - Safari support is optional unless it can be achieved without material additional complexity.
 - Mobile/tablet are not guaranteed support targets for the first release, but the UI should not become unusable at narrower widths.
 - The city picker should cover several hundred major or widely recognized cities worldwide.
+- The selectable city catalog shall be static application data versioned in the repository rather than fetched from an external city/time-zone service at runtime.
+- Each city catalog entry shall map to an IANA time-zone identifier suitable for civil-time calculation in the browser.
 - Display mode (digital or analog) and 12-hour / 24-hour format are global settings shared by all clocks.
 - Alarms are interpreted in the local civil time of the selected clock's city.
 - Alarms may be one-time or daily.
@@ -41,12 +43,13 @@ The product should also provide a polished visual experience rather than behavin
 - Multi-user accounts or sharing.
 - Cloud synchronization across devices or browser profiles.
 - Server-side persistence.
+- Runtime dependence on an external city/time-zone lookup API.
 - Guaranteed alarm delivery after the application or browser has been closed.
 - Guaranteed first-release parity on mobile/tablet or Safari.
 - General calendar, stopwatch, countdown timer, or scheduling functionality unless added by a later requirement.
 
 ## Open questions
 
-- [ ] Which maintained city/time-zone dataset should define the selectable city catalog?
+- [ ] Which authoritative dataset(s) and curation rule should seed and maintain the versioned city catalog?
 - [ ] What visual direction and concrete review criteria will define "polished" for the first release?
 - [ ] What level of alarm timing tolerance is realistic and acceptable when the application is open but the tab is backgrounded or throttled by the browser?
