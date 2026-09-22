@@ -11,10 +11,10 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Selected deployment profile / concrete target: browser application; concrete hosting/deployment target not selected
 - Repository baseline: bootstrapping
 - Active task(s): none
-- Latest completed task: city catalog source and curation baseline approved
-- Main known risks/blockers: browser audio/autoplay constraints; timer throttling in background tabs; visual-quality criteria not yet concrete
-- Decisions currently pending: visual direction/review criteria; acceptable alarm timing behavior under browser throttling
-- Next recommended action: define the visual direction and first-release review criteria, then close the remaining alarm-timing discovery question
+- Latest completed task: modern-dashboard visual direction approved
+- Main known risks/blockers: browser audio/autoplay constraints; timer throttling in background tabs; concrete visual acceptance criteria not yet defined
+- Decisions currently pending: concrete visual review criteria; acceptable alarm timing behavior under browser throttling
+- Next recommended action: define a small set of concrete visual acceptance criteria for the modern-dashboard direction, then close the remaining alarm-timing discovery question
 
 ## Recent verification
 
@@ -24,3 +24,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Product discovery | Human approval of desktop/browser support target | Current stable Chrome, Edge, and Firefox are required first-release targets; Safari and mobile/tablet are non-blocking |
 | 2026-09-22 | Product discovery | Human approval of static city catalog approach | City data will be versioned in the repository and mapped to IANA time-zone identifiers; no runtime external city/time-zone API is required |
 | 2026-09-22 | Product discovery | Human approval of city catalog source and scale | GeoNames approved for candidate cities, IANA identifiers for time zones, and the bundled catalog should contain approximately 400 curated cities |
+| 2026-09-22 | Product discovery | Human approval of visual direction | First-release UI direction is a polished modern dashboard with card/panel-based clock presentation and clear information hierarchy |
