@@ -2,19 +2,19 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: discovery
+- Lifecycle phase: architecture
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: initial product requirements baseline complete; evaluate transition to architecture
-- Selected stack profile / concrete stack: not selected
+- Current milestone: select the smallest concrete implementation stack and remaining architecture details
+- Selected stack profile / concrete stack: client-only static single-page web application; framework/tooling not yet selected
 - Selected data profile / concrete data platform: local browser persistence plus a static repository-versioned city catalog; GeoNames approved as the candidate-city source, IANA identifiers approved for time-zone mapping, target catalog size approximately 400 cities; concrete persistence mechanism not yet selected
-- Selected deployment profile / concrete target: browser application; concrete hosting/deployment target not selected
+- Selected deployment profile / concrete target: static asset hosting; concrete hosting target not yet selected
 - Repository baseline: bootstrapping
 - Active task(s): none
-- Latest completed task: alarm behavior under background-tab throttling approved; initial product requirements baseline is complete
-- Main known risks/blockers: browser audio/autoplay constraints remain an implementation/verification concern; no product-level blocker remains
-- Decisions currently pending: architecture/stack, browser persistence mechanism, hosting/deployment target, and implementation approach
-- Next recommended action: validate architecture-phase entry criteria and choose the smallest architecture that satisfies the approved requirements
+- Latest completed task: client-only static SPA architecture baseline approved
+- Main known risks/blockers: browser audio/autoplay constraints remain an implementation/verification concern; framework/tooling, persistence mechanism, test stack, and hosting target remain undecided
+- Decisions currently pending: framework-free vs justified frontend framework; browser persistence mechanism; build/test tooling; static hosting target
+- Next recommended action: compare the smallest viable frontend implementation approaches and select the concrete stack only if a framework provides a material benefit
 
 ## Recent verification
 
@@ -27,3 +27,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Product discovery | Human approval of visual direction | First-release UI direction is a polished modern dashboard with card/panel-based clock presentation and clear information hierarchy |
 | 2026-09-22 | Product discovery | Human approval of visual acceptance criteria | Visual acceptance covers hierarchy, coherence, digital/analog parity, 1-to-dozen-clock layouts, absence of placeholder/default-browser presentation, desktop polish, narrow-width basic usability, and final human visual approval |
 | 2026-09-22 | Product discovery | Human approval of background alarm semantics | Active-tab alarms target the configured time; background-throttled alarms fire at the next execution opportunity based on actual current time, with no guaranteed maximum delay |
+| 2026-09-22 | Architecture | Human approval of client-only static SPA baseline | No backend; static hosting; local browser persistence; bundled city catalog; framework remains optional pending justified trade-off |
