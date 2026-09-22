@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: architecture
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: architecture baseline complete; prepare executable bootstrap work
+- Current milestone: critically validate and approve the bootstrap capability/threat/quality gate, then create executable bootstrap work
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 7.0.2 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: bootstrapping
 - Active task(s): none
-- Latest completed task: Node/npm, dependency pinning, and GitHub Actions reproducibility baseline defined
-- Main known risks/blockers: browser audio/autoplay constraints remain an implementation/verification concern; no architecture blocker currently prevents bootstrap
-- Decisions currently pending: bootstrap implementation details that do not alter the approved architecture
-- Next recommended action: read model-routing/workflow guidance and create the first ready bootstrap task with execution profile, verification evidence, review requirement, and security impact
+- Latest completed task: critical capability review distinguished project tooling from agent/developer capabilities and identified Vue SFC editor support as one project-specific capability proposal
+- Main known risks/blockers: browser audio/autoplay remains a verification concern; actual workstation Codex/profile mapping and Gitleaks/OSV availability are not verifiable from repository state; capability review awaits human approval
+- Decisions currently pending: human approval of revised `docs/agentic/project-capabilities.md` including `Vue.volar`; Layer 0 validation evidence before the first routed bootstrap task
+- Next recommended action: validate the current workstation Layer 0 (doctor/harness, Codex/profile mapping, Gitleaks, OSV-Scanner), then approve or revise the capability review
 
 ## Recent verification
 
@@ -28,6 +28,10 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Product discovery | Human approval of visual acceptance criteria | Visual acceptance covers hierarchy, coherence, digital/analog parity, 1-to-dozen-clock layouts, absence of placeholder/default-browser presentation, desktop polish, narrow-width basic usability, and final human visual approval |
 | 2026-09-22 | Product discovery | Human approval of background alarm semantics | Active-tab alarms target the configured time; background-throttled alarms fire at the next execution opportunity based on actual current time, with no guaranteed maximum delay |
 | 2026-09-22 | Architecture | Human approval of client-only static SPA baseline | No backend; static hosting; local browser persistence; bundled city catalog |
-| 2026-09-22 | Architecture decision | Human approval of ADR-001 | Vue + TypeScript + Vite frontend stack accepted; typed `localStorage`, Vitest/Vue Test Utils, and Playwright included in the approved stack |
-| 2026-09-22 | Architecture decision | Human approval of ADR-002 | GitHub Pages selected as first-release static hosting target, deployed through GitHub Actions |
-| 2026-09-22 | Architecture/tooling baseline | Current-source compatibility and supply-chain review | Node 24.21.0 LTS/npm 11.19.0 selected; direct dependencies exactly pinned with lockfile; GitHub Actions use reviewed full commit SHAs; Pages release remains a manual human action |
+| 2026-09-22 | Architecture decision | Human approval of ADR-001 | Vue + TypeScript + Vite frontend stack accepted |
+| 2026-09-22 | Architecture decision | Human approval of ADR-002 | GitHub Pages selected as first-release static hosting target |
+| 2026-09-22 | Architecture/tooling baseline | Current-source compatibility and supply-chain review | Node/npm/dependency/action pinning baseline established; architecture has no remaining bootstrap blocker |
+| 2026-09-22 | Architecture bootstrap gate | Initial threat/quality/capability review | Threat model and quality strategy tailored; initial capability decision left pending |
+| 2026-09-22 | Architecture bootstrap gate | Critical capability review against actual repository harness and current workflow | Existing repo skills/reviewers/security command coverage verified; Layer 0 physical mappings/security CLI installation remain unverified externally; `Vue.volar` identified as the only additional project-specific capability proposal |
+
+| 2026-09-22 | Layer 0 execution routing | Human confirmation that the workstation execution-profile mapping is filled and manually validated | Required cloud execution profiles are available; no Layer 0 prerequisite remains before bootstrap task creation |
