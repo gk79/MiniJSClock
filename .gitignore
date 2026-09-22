@@ -1,0 +1,20 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editors / OS
+.vscode/*.local.json
+.DS_Store
+
+# Generic generated artifacts
+coverage/
+dist/
+build/
+.tmp/
+.cache/
+
+# Agent scratch output (keep durable project state elsewhere)
+.agent-scratch/

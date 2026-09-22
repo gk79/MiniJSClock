@@ -1,0 +1,19 @@
+# Merge selectively into ~/.codex/config.toml. Do not overwrite an existing config blindly.
+# Keep physical model names and machine-specific profile mappings outside this portable template.
+
+# Safe interactive baseline for local repository work.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[agents]
+# Conservative personal default; a project may override this in .codex/config.toml.
+max_concurrent_threads_per_session = 4
+
+# Broadly useful MCP servers may be configured globally so Codex CLI and the IDE extension
+# share them. Prefer `codex mcp add/login` for OAuth servers rather than hand-editing tokens.
+# Example used by this baseline:
+#   codex mcp add context7 --url https://mcp.context7.com/mcp/oauth
+#   codex mcp login context7
+#
+# Do not also install the same capability through a Codex plugin when the IDE extension
+# needs it: plugins are not available in the IDE extension, while global MCP config is shared.

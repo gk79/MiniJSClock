@@ -1,0 +1,18 @@
+# Project-scoped Codex configuration.
+# Keep project-specific runtime settings here. Reusable user-level skills belong under
+# ~/.agents/skills; broadly reusable MCP servers and workstation defaults generally belong
+# in ~/.codex/config.toml. Codex plugins are surface-specific and should not be assumed by
+# workflows that must also run in the IDE extension.
+
+[agents]
+# Conservative default. Raise only when tasks are truly independent and machine resources permit.
+max_concurrent_threads_per_session = 4
+
+# Example project-only docs MCP. Enable only when this project uses OpenAI APIs.
+# [mcp_servers.openaiDeveloperDocs]
+# url = "https://developers.openai.com/mcp"
+# enabled = true
+# enabled_tools = ["search", "read"]
+# default_tools_approval_mode = "approve"
+
+# Browser/database/cloud MCP servers should be selected by the chosen project profile and least-capability policy.

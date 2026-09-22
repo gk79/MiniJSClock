@@ -1,0 +1,17 @@
+{
+  "description": "Optional project hooks. Review/trust before enabling by renaming to hooks.json.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/hooks/stop-handoff-guard.py\"",
+            "timeout": 5,
+            "statusMessage": "Checking task handoff discipline"
+          }
+        ]
+      }
+    ]
+  }
+}

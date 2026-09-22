@@ -1,0 +1,11 @@
+# OPTIONAL: local-model helper for experimentation outside the core Codex IDE workflow.
+# The baseline does not assume that `local-fast` is implemented through Codex + Ollama.
+# Enable a local path only after it is ergonomic and validated on representative tasks.
+
+export LOCAL_MODEL="<model-from-local-runtime>"
+
+# Example placeholder. Replace with the command for the chosen local-model-capable harness.
+local-agent() {
+  echo "Configure this function only if local-fast is enabled on this workstation." >&2
+  return 2
+}

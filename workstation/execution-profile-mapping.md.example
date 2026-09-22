@@ -1,0 +1,37 @@
+# Workstation execution-profile mapping — template
+
+This is a Layer 0 workstation artifact. Fill it while configuring a specific computer. It translates the stable profiles used by project task contracts into the physical runtime/model and reasoning settings available on this machine.
+
+Do **not** treat the example values/placeholders as project policy and do not hard-code this machine's physical model names into ordinary task contracts.
+
+## Workstation identity
+
+- Machine label: `<computer-a-or-b>`
+- OS/environment: `<e.g. Windows + WSL/Ubuntu>`
+- Last validated: `<YYYY-MM-DD>`
+
+## Mapping
+
+| Logical execution profile | Physical runtime/model on this machine | Resolved reasoning setting | Launch method / notes |
+|---|---|---|---|
+| `local-fast` | `<optional: unavailable, or local-model-capable harness + exact model>` | `<closest supported to low>` | Optional secondary path; do not assume Codex IDE can switch to a local provider from its normal model picker |
+| `cloud-efficient` | `<current efficient Codex cloud model/config>` | `<closest supported to low>` | `<Codex model selection / workstation config>` |
+| `cloud-standard` | `<current default strong Codex cloud model/config>` | `<closest supported to medium>` | `<Codex model selection / workstation config>` |
+| `cloud-deep` | `<current strongest appropriate Codex cloud model/config>` | `<closest supported to high/maximum as policy allows>` | `<Codex model selection / workstation config>` |
+
+`chatgpt-analysis` and `human-only` are workflow profiles rather than Codex model mappings.
+
+`local-fast` is optional. If this workstation does not provide an ergonomic, validated local-model harness, mark it `unavailable` and route suitable work to `cloud-efficient` instead. Do not add local-model complexity merely because local inference is technically possible.
+
+## Validation checklist
+
+- [ ] Each mapped model/runtime is actually available on this computer.
+- [ ] Cloud mappings can read the repository, execute canonical commands, and use required project tools.
+- [ ] Reasoning targets are mapped to settings actually supported by the selected models/runtime.
+- [ ] The profile mapping has been benchmarked or sanity-checked on representative tasks.
+- [ ] If `local-fast` is enabled, its harness can use the repository contract and deterministic verification without creating a conflicting SDLC workflow.
+- [ ] No secrets are stored in this document.
+
+## Change policy
+
+Update this mapping when model availability, hardware, Codex capabilities, or cost/performance trade-offs materially change. Existing project tasks should normally remain unchanged because they refer to logical profiles, not physical model versions.

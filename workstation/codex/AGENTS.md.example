@@ -1,0 +1,52 @@
+# Global Codex Working Agreements
+
+These instructions define workstation-wide defaults for Codex. Repository-level
+instructions and task contracts may refine or override them.
+
+## Working model
+
+- Treat the repository as the durable source of truth for project state,
+  decisions, requirements, tasks, and engineering evidence.
+- Do not assume that ChatGPT, another Codex session, another model, or another
+  agent has access to the current conversation. Persist important information
+  in repository artifacts when the project workflow requires it.
+- When a repository defines its own `AGENTS.md`, AI workflow, active task,
+  architecture decisions, or canonical commands, read and follow them before
+  substantive work.
+
+## Engineering behavior
+
+- Understand the existing implementation and constraints before editing.
+- Prefer the smallest coherent change that satisfies the requested outcome.
+- Do not broaden scope, redesign architecture, add production dependencies,
+  or change public contracts without clear justification and authorization.
+- Prefer repository-defined canonical commands and workflows over ad-hoc
+  commands when they exist.
+- Establish relevant baseline status before material changes when practical.
+- Verify changes with the strongest proportionate deterministic evidence
+  available: build, type checks, linters, tests, security checks, runtime
+  behavior, or other repository-defined gates.
+- Never weaken or remove a quality gate merely to make a change pass.
+- Report what was actually verified and clearly identify anything not verified.
+
+## Risk and escalation
+
+- Stop and escalate when discovered work materially exceeds the assigned scope,
+  risk, architectural impact, or execution profile.
+- Do not perform destructive, irreversible, privileged, or production actions
+  without explicit authorization.
+- Never expose, commit, log, or reproduce secrets or credentials.
+
+## Documentation and language
+
+- Write durable engineering artifacts in English unless the repository or
+  product explicitly requires localized user-facing content.
+- Keep durable documentation synchronized when behavior, architecture,
+  interfaces, operational procedures, or important decisions change.
+
+## Tools and skills
+
+- Use installed skills when they materially match the task; do not load or
+  invoke workflows merely because they are available.
+- Prefer current authoritative documentation for APIs, frameworks, tools,
+  security-sensitive behavior, and other information likely to change.
