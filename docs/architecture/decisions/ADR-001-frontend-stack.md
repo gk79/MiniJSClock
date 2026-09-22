@@ -1,6 +1,6 @@
 # ADR-001: Frontend implementation stack
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-09-22
 - Owners: Product owner / repository owner
 
@@ -18,7 +18,7 @@ Current official ecosystem state reviewed on 2026-09-22:
 
 ## Decision
 
-Adopt the following first-release frontend stack, subject to human approval of this ADR:
+Adopt the following first-release frontend stack:
 
 - **Vue 3.5.x**, using Single-File Components and the Composition API.
 - **TypeScript**, using the current stable version supported by the official Vue toolchain at bootstrap time; exact versions are pinned in the lockfile.
