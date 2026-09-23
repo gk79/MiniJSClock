@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: bootstrap
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: complete formal independent review of TASK-0001
+- Current milestone: integrate the independently approved TASK-0001 bootstrap branch
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
-- Repository baseline: Vue/Vite/TypeScript scaffold and full local verification harness implemented; clean bootstrap, Chromium browser smoke, and CI composition pass
-- Active task(s): TASK-0001 — in review after all implementation verification gates passed
-- Latest completed task: TASK-0001 toolchain compatibility reassessment completed from synchronized Codex handoff evidence
-- Main known risks/blockers: No remaining TASK-0001 implementation blocker; formal independent review is pending, and browser audio/autoplay remains a later implementation/verification concern
+- Repository baseline: Vue/Vite/TypeScript scaffold and full local verification harness implemented and independently approved; clean bootstrap, Chromium browser smoke, and CI composition pass
+- Active task(s): none
+- Latest completed task: TASK-0001 — formal `independent-cloud-standard` review passed
+- Main known risks/blockers: No remaining TASK-0001 blocker; browser audio/autoplay remains a later implementation/verification concern
 - Decisions currently pending: none for TASK-0001; GitHub Pages workflow remains intentionally deferred to a separate security-sensitive task
-- Next recommended action: run the required fresh top-level `independent-cloud-standard` review for TASK-0001; do not mark it done before a passing verdict and final verification
+- Next recommended action: merge the reviewed TASK-0001 branch through the approved human integration workflow; do not treat integration as a production release decision
 
 ## Recent verification
 
@@ -41,3 +41,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-23 | TASK-0001 fresh bootstrap implementation | Clean exact-pin restore plus `make verify`, runtime base-path request, and static artifact inspection | Vue/Vite shell and non-browser command contract pass with TypeScript 6.0.3; production output is static and `/MiniJSClock/` responds successfully |
 | 2026-09-23 | TASK-0001 Playwright verification | `make test-e2e`, debug browser launch, and `npx playwright install-deps chromium` | BLOCKED: downloaded Chromium cannot load `libnspr4.so`; official dependency installer requires an interactive sudo password unavailable to this session |
 | 2026-09-23 | TASK-0001 resumed verification after human dependency provisioning | `make bootstrap`, `make test-e2e`, and `make ci` | PASS: clean lockfile restore, Chromium production-base-path smoke, and full CI composition completed successfully; TASK-0001 is ready for formal independent review |
+| 2026-09-23 | TASK-0001 formal independent review | Actual `origin/main...origin/codex/task-0001-implementation` diff at `3a01ee19479bb8d087f99cbdad933d284b582669`; clean bootstrap; canonical verify/security/E2E/CI gates; dependency and static artifact inspection | PASS: no blocking findings; task moved to `tasks/done/` for human integration decision |
