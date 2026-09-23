@@ -2,19 +2,19 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: architecture
+- Lifecycle phase: bootstrap
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: execute and independently review the first repository bootstrap task
-- Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 7.0.2 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
+- Current milestone: resolve the approved TypeScript toolchain incompatibility blocking the first repository bootstrap task
+- Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
-- Repository baseline: bootstrapping
-- Active task(s): TASK-0001 — bootstrap Vue/Vite repository and local verification harness
-- Latest completed task: capability/threat/quality gate approved and Layer 0 workstation validation completed
-- Main known risks/blockers: browser audio/autoplay remains a later implementation/verification concern; no blocker prevents TASK-0001
+- Repository baseline: bootstrap compatibility blocker resolved; TASK-0001 ready to resume
+- Active task(s): TASK-0001 — ready to resume in a fresh primary session using the revised compatibility baseline
+- Latest completed task: TASK-0001 toolchain compatibility reassessment completed from synchronized Codex handoff evidence
+- Main known risks/blockers: prior TypeScript 7 bootstrap blocker is resolved by the TypeScript 6.0.3 compatibility baseline; browser audio/autoplay remains a later implementation/verification concern
 - Decisions currently pending: none for TASK-0001; GitHub Pages workflow remains intentionally deferred to a separate security-sensitive task
-- Next recommended action: run TASK-0001 in one primary Codex session using its assigned execution profile, then hand it to a fresh independent reviewer
+- Next recommended action: integrate the compatibility decision, then resume TASK-0001 from latest `main` in a fresh primary `cloud-standard` session; selectively reuse scaffold files from `codex/task-0001-blocked-handoff` without merging its stale task/current-state
 
 ## Recent verification
 
@@ -35,3 +35,6 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-22 | Architecture bootstrap gate | Critical capability review against actual repository harness and current workflow | Existing repo skills/reviewers/security command coverage verified; Layer 0 physical mappings/security CLI installation remain unverified externally; `Vue.volar` identified as the only additional project-specific capability proposal |
 
 | 2026-09-22 | Layer 0 execution routing | Human confirmation that the workstation execution-profile mapping is filled and manually validated | Required cloud execution profiles are available; no Layer 0 prerequisite remains before bootstrap task creation |
+| 2026-09-23 | TASK-0001 bootstrap preflight | Exact-pin lockfile restore followed by `npm run lint` and `npm run type-check` | BLOCKED: TypeScript 7.0.2 is rejected by TypeScript-ESLint and cannot be loaded by vue-tsc 3.3.11; architecture/toolchain reassessment required |
+
+| 2026-09-23 | TASK-0001 compatibility reassessment | Synchronized handoff branch `codex/task-0001-blocked-handoff` plus current official TypeScript-ESLint/Vue tool metadata | TypeScript 6.0.3 approved with vue-tsc 3.3.11 and the already-materialized Vue/ESLint lint stack; TASK-0001 ready for fresh-session resume |

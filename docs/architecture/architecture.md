@@ -35,14 +35,14 @@ Frontend stack selection is accepted in ADR-001. Static hosting is accepted in A
 
 ## Technology choices
 
-Bootstrap versions below are the approved compatibility baseline as of 2026-09-22. They are exact starting pins, not a promise to stay on those versions indefinitely. Revalidate them before bootstrap if implementation is materially delayed or a relevant security/advisory issue appears.
+Bootstrap versions below are the approved compatibility baseline as of 2026-09-23. They are exact starting pins, not a promise to stay on those versions indefinitely. Revalidate them before bootstrap if implementation is materially delayed or a relevant security/advisory issue appears.
 
 | Concern | Choice | Version/pin | Why | Verification/source |
 |---|---|---|---|---|
 | Node.js | LTS | 24.21.0 | Stable LTS baseline compatible with the selected Vite/Vitest/Playwright stack. | Node.js release status; current-source review 2026-09-22 |
 | npm | npm bundled with the Node baseline | 11.19.0 | Matches Node 24.21.0 and keeps one package manager across local/CI usage. | Node.js 24.21.0 distribution |
 | UI framework | Vue | 3.5.43 | Accepted Vue 3.5 line; stable current release at bootstrap baseline. | ADR-001; registry snapshot 2026-09-22 |
-| Language | TypeScript | 7.0.2 | Current stable TypeScript at bootstrap baseline. | ADR-001; registry snapshot 2026-09-22 |
+| Language | TypeScript | 6.0.3 | Latest stable TypeScript 6 patch selected because the approved Vue type-check and TypeScript-ESLint stack does not yet support TypeScript 7 end to end. | ADR-001; TASK-0001 compatibility reassessment 2026-09-23 |
 | Build tool | Vite | 8.3.0 | Accepted Vite 8 line with static production output. | ADR-001; registry snapshot 2026-09-22 |
 | Vue Vite plugin | `@vitejs/plugin-vue` | 6.0.9 | Official Vue integration for Vite. | Official package; registry snapshot 2026-09-22 |
 | Vue type checker | `vue-tsc` | 3.3.11 | Vite transpiles TypeScript but does not perform full Vue SFC type checking. | Vue TypeScript guidance; registry snapshot 2026-09-22 |
@@ -51,6 +51,9 @@ Bootstrap versions below are the approved compatibility baseline as of 2026-09-2
 | Time-zone handling | Browser `Intl` APIs with IANA identifiers | Browser-provided | Keeps runtime local and follows approved IANA-based catalog model. | FR-011; NFR-002 |
 | City data | Bundled static generated catalog | GeoNames/IANA source snapshot TBD per generated artifact | Removes runtime service dependency while keeping provenance and reproducibility. | FR-011; FR-012 |
 | Styling | Plain CSS, custom properties/design tokens, Vue scoped styles | N/A | Keeps visual system explicit without adding a utility/component framework. | ADR-001; NFR-001 |
+| Lint core | ESLint | 10.10.0 | Exact version materialized by the approved create-vue reference scaffold; compatible with the selected Vue TypeScript lint config. | TASK-0001 handoff; compatibility reassessment 2026-09-23 |
+| Vue TypeScript lint config | `@vue/eslint-config-typescript` | 14.9.0 | Official Vue 3 + TypeScript flat-config integration; peers allow ESLint 10 and its TypeScript-ESLint dependency line supports TypeScript 6.0.x. | TASK-0001 handoff; official package metadata |
+| Vue lint plugin | `eslint-plugin-vue` | 10.11.0 | Official Vue SFC ESLint rules; satisfies the selected Vue TypeScript lint config peer range. | TASK-0001 handoff; official package metadata |
 | Unit/component tests | Vitest + Vue Test Utils where useful | 5.0.1 + 2.5.1 | Vite-native tests plus Vue component mounting only where needed. | ADR-001; registry snapshots 2026-09-22 |
 | Browser/E2E tests | Playwright | 1.63.0 | Cross-browser browser-level scenarios on the selected Node LTS line. | ADR-001; Playwright system requirements; registry snapshot 2026-09-22 |
 | Deployment | GitHub Pages via GitHub Actions | Actions pinned by full commit SHA | Keeps hosting and deployment close to the repository with no backend requirement. | ADR-002; GitHub Actions secure-use guidance |
@@ -70,13 +73,18 @@ The official `create-vue` scaffolder may be used at bootstrap at version 3.24.0.
 
 Initial direct toolchain pins:
 - `vue@3.5.43`
-- `typescript@7.0.2`
+- `typescript@6.0.3`
 - `vite@8.3.0`
 - `@vitejs/plugin-vue@6.0.9`
 - `vue-tsc@3.3.11`
 - `vitest@5.0.1`
 - `@vue/test-utils@2.5.1`
 - `@playwright/test@1.63.0`
+- `eslint@10.10.0`
+- `@vue/eslint-config-typescript@14.9.0`
+- `eslint-plugin-vue@10.11.0`
+
+`@vue/eslint-config-typescript@14.9.0` depends on the TypeScript-ESLint 8.x line. The lockfile may resolve the exact transitive 8.x patch, but it must remain within a release whose declared TypeScript support includes 6.0.3. Do not add a direct `typescript-eslint` dependency solely to force a transitive patch, and do not use peer overrides or ignored peer conflicts to force TypeScript 7.
 
 Additional scaffold-generated direct dependencies are allowed only when required for the selected features and must be reviewed, explicitly pinned, and captured by the lockfile.
 
@@ -136,7 +144,7 @@ No runtime request to a project backend is required for the normal product workf
 - **Background timer throttling:** alarms may be delayed; when execution resumes, the application evaluates actual current time and triggers overdue alarms according to the approved semantics.
 - **Browser audio restrictions:** audible alarm delivery may require prior user interaction or other browser-specific permission state; this remains an implementation/verification concern.
 - **Invalid bundled catalog data:** treat as build/test failure; runtime should not silently invent time zones.
-- **Dependency/toolchain drift:** `npm ci`, exact direct pins, lockfile review, and a fixed Node baseline prevent silent bootstrap/CI drift; upgrades are explicit repository changes.
+- **Dependency/toolchain drift:** `npm ci`, exact direct pins, lockfile review, and a fixed Node baseline prevent silent bootstrap/CI drift; upgrades are explicit repository changes. Do not adopt TypeScript 7 until both the Vue type-check path and TypeScript-ESLint path have compatible passing evidence.
 - **GitHub Action tag movement or supply-chain drift:** workflow references use reviewed full SHAs rather than movable tags.
 - **GitHub Pages deployment failure:** retain the previously deployed release; treat failed build/deploy verification as blocking a new release.
 - **Incorrect Vite base path:** deployed assets may fail under the repository Pages sub-path; verify this in the deployment task.
