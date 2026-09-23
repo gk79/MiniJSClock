@@ -2,19 +2,19 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: bootstrap
+- Lifecycle phase: implementation planning
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: integrate the independently approved TASK-0001 bootstrap branch
+- Current milestone: bootstrap integrated; establish the post-bootstrap implementation sequence and prepare the next executable task
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
-- Repository baseline: Vue/Vite/TypeScript scaffold and full local verification harness implemented and independently approved; clean bootstrap, Chromium browser smoke, and CI composition pass
+- Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
 - Active task(s): none
-- Latest completed task: TASK-0001 — formal `independent-cloud-standard` review passed
-- Main known risks/blockers: No remaining TASK-0001 blocker; browser audio/autoplay remains a later implementation/verification concern
-- Decisions currently pending: none for TASK-0001; GitHub Pages workflow remains intentionally deferred to a separate security-sensitive task
-- Next recommended action: merge the reviewed TASK-0001 branch through the approved human integration workflow; do not treat integration as a production release decision
+- Latest completed task: TASK-0001 — independently reviewed bootstrap integrated into `main`
+- Main known risks/blockers: no blocker prevents implementation planning; GitHub Pages workflow is intentionally security-sensitive; browser audio/autoplay remains a later runtime verification concern
+- Decisions currently pending: none at architecture level; next executable task is the approved delivery-path materialization unless readiness analysis finds a concrete blocker
+- Next recommended action: approve/integrate the post-bootstrap implementation plan, then create TASK-0002 for routine CI plus manually triggered GitHub Pages deployment
 
 ## Recent verification
 
@@ -42,3 +42,5 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-23 | TASK-0001 Playwright verification | `make test-e2e`, debug browser launch, and `npx playwright install-deps chromium` | BLOCKED: downloaded Chromium cannot load `libnspr4.so`; official dependency installer requires an interactive sudo password unavailable to this session |
 | 2026-09-23 | TASK-0001 resumed verification after human dependency provisioning | `make bootstrap`, `make test-e2e`, and `make ci` | PASS: clean lockfile restore, Chromium production-base-path smoke, and full CI composition completed successfully; TASK-0001 is ready for formal independent review |
 | 2026-09-23 | TASK-0001 formal independent review | Actual `origin/main...origin/codex/task-0001-implementation` diff at `3a01ee19479bb8d087f99cbdad933d284b582669`; clean bootstrap; canonical verify/security/E2E/CI gates; dependency and static artifact inspection | PASS: no blocking findings; task moved to `tasks/done/` for human integration decision |
+
+| 2026-09-23 | TASK-0001 integration | Human-approved PR #16 merged after formal independent review PASS | Bootstrap baseline integrated into `main`; project may proceed to implementation planning |
