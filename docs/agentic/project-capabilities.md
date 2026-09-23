@@ -4,7 +4,7 @@ Complete and approve this review after architecture, stack, deployment, and thre
 
 Decision: Adopt one project-specific developer capability: the official VS Code `Vue - Official` extension (`Vue.volar`). No additional project-specific MCP server, repository-specific AI skill, custom agent, browser MCP, paid service, or hosted analysis integration is currently required.
 
-Approval: pending human approval and Layer 0 validation evidence
+Approval: approved by the product owner. Layer 0 workstation validation is complete for the bootstrap gate.
 
 ## Scope distinction
 
@@ -33,21 +33,23 @@ Do not count a documented recommendation or repository template as proof that th
 | GeoNames/IANA catalog acquisition and regeneration | Project tooling + ordinary network retrieval | Static generation is a development-time workflow; `curl` is a hard Layer 0 prerequisite and catalog generation will be encoded in repository scripts/tests | `make doctor` requires `curl`; architecture forbids a runtime data-service dependency | No GeoNames/IANA MCP or persistent integration is required. Network/source availability is a generation-time prerequisite and provenance must be recorded in the repository. |
 | Release decision | Human-only | Method requires an explicit human release verdict; Pages deployment is manually triggered from `main` | Architecture/toolchain baseline records manual verification-gated release semantics | Covered by human authority. No automation/integration should bypass it. |
 
-## Layer 0 validation still required
+## Layer 0 validation evidence
 
-Repository inspection cannot prove the state of a specific workstation because Layer 0 deliberately lives outside versioned project state.
+The product owner supplied local workstation evidence before bootstrap planning:
 
-Before the capability review is treated as operationally validated for bootstrap, obtain local evidence for at least:
+- `make doctor`: PASS; required tools and optional GitHub/Codex/security tools are available.
+- `make harness-check`: PASS; repository harness baseline is consistent.
+- Codex CLI: available (`codex-cli 0.154.0` at validation time).
+- Gitleaks: available (`8.30.1` at validation time).
+- OSV-Scanner: available (`2.6.0` at validation time).
+- GitHub CLI: authenticated for the repository owner account using SSH for Git operations.
+- Context7 MCP: enabled with OAuth.
+- workstation execution-profile mapping: filled and manually validated for the required cloud profiles.
+- `Vue.volar`: not installed at validation time; this is expected because it is the approved project-specific editor capability to materialize during bootstrap.
 
-- `make doctor` and `make harness-check`;
-- `codex --version` (or equivalent proof that the selected Codex surface is available);
-- the filled workstation execution-profile mapping showing usable `cloud-efficient`, `cloud-standard`, and `cloud-deep` mappings;
-- `gitleaks version`;
-- `osv-scanner --version`.
+No Layer 0 prerequisite currently blocks the first routed bootstrap task. `local-fast` remains optional.
 
-`local-fast` is optional and may remain unavailable. Context7 is a recommended global convenience, not a project bootstrap blocker.
-
-## Adopted capability proposal
+## Adopted capability
 
 | Need/purpose | Type (skill, MCP, CLI/tool, reviewer/agent, other) | Existing coverage | Decision and rationale | Source/maintainer | Scope and access | Validation | Version/pin, if relevant | Revisit/removal trigger |
 |---|---|---|---|---|---|---|---|---|
