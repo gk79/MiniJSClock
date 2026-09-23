@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: architecture
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: critically validate and approve the bootstrap capability/threat/quality gate, then create executable bootstrap work
+- Current milestone: execute and independently review the first repository bootstrap task
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 7.0.2 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: bootstrapping
-- Active task(s): none
-- Latest completed task: critical capability review distinguished project tooling from agent/developer capabilities and identified Vue SFC editor support as one project-specific capability proposal
-- Main known risks/blockers: browser audio/autoplay remains a verification concern; actual workstation Codex/profile mapping and Gitleaks/OSV availability are not verifiable from repository state; capability review awaits human approval
-- Decisions currently pending: human approval of revised `docs/agentic/project-capabilities.md` including `Vue.volar`; Layer 0 validation evidence before the first routed bootstrap task
-- Next recommended action: validate the current workstation Layer 0 (doctor/harness, Codex/profile mapping, Gitleaks, OSV-Scanner), then approve or revise the capability review
+- Active task(s): TASK-0001 — bootstrap Vue/Vite repository and local verification harness
+- Latest completed task: capability/threat/quality gate approved and Layer 0 workstation validation completed
+- Main known risks/blockers: browser audio/autoplay remains a later implementation/verification concern; no blocker prevents TASK-0001
+- Decisions currently pending: none for TASK-0001; GitHub Pages workflow remains intentionally deferred to a separate security-sensitive task
+- Next recommended action: run TASK-0001 in one primary Codex session using its assigned execution profile, then hand it to a fresh independent reviewer
 
 ## Recent verification
 
