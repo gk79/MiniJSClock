@@ -61,9 +61,8 @@ build:
 verify: format-check lint typecheck test security build
 	@./scripts/status.sh PASS VERIFY "local verification complete"
 
-# CI intentionally calls the same contract as local verification. Add integration/e2e here
-# when the chosen architecture can run their required dependencies deterministically in CI.
-ci: verify
+# CI calls the same local verification contract plus the stack's deterministic browser smoke.
+ci: verify test-integration test-e2e
 	@./scripts/status.sh PASS CI "verification complete"
 
 run:
