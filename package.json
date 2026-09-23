@@ -1,0 +1,45 @@
+{
+  "name": "minijsclock",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.21.0"
+  },
+  "packageManager": "npm@11.19.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run type-check && npm run build-only",
+    "build-only": "vite build",
+    "preview": "vite preview",
+    "format:check": "prettier --check package.json .prettierrc.json index.html env.d.ts 'src/**/*.{css,ts,vue}' 'e2e/**/*.ts' '*.config.{js,ts}' 'tsconfig*.json' .vscode/extensions.json",
+    "lint": "eslint .",
+    "type-check": "vue-tsc --build",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "vue": "3.5.43"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tsconfig/node24": "24.0.5",
+    "@types/jsdom": "30.0.0",
+    "@types/node": "24.13.4",
+    "@vitejs/plugin-vue": "6.0.9",
+    "@vitest/eslint-plugin": "1.6.27",
+    "@vue/eslint-config-typescript": "14.9.0",
+    "@vue/test-utils": "2.5.1",
+    "@vue/tsconfig": "0.9.1",
+    "eslint": "10.10.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-playwright": "2.12.0",
+    "eslint-plugin-vue": "10.11.0",
+    "jsdom": "30.0.1",
+    "prettier": "3.9.6",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vitest": "5.0.1",
+    "vue-tsc": "3.3.11"
+  }
+}

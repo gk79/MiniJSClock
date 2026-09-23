@@ -10,11 +10,14 @@
 .DS_Store
 
 # Generic generated artifacts
+node_modules/
 coverage/
 dist/
 build/
 .tmp/
 .cache/
+playwright-report/
+test-results/
 
 # Agent scratch output (keep durable project state elsewhere)
 .agent-scratch/
