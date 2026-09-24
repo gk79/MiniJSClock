@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0002 ready to establish the routine CI and manual GitHub Pages delivery baseline
+- Current milestone: TASK-0002 delivery workflows implemented locally; hosted pull-request CI evidence pending
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): TASK-0002 — ready; routine CI plus manually triggered GitHub Pages deployment
+- Active task(s): TASK-0002 — in-progress; routine CI plus manually triggered GitHub Pages deployment
 - Latest completed task: TASK-0001 — independently reviewed bootstrap integrated into `main`
-- Main known risks/blockers: no blocker prevents TASK-0002 implementation; human confirmation records the Pages configuration UI as available and Source = GitHub Actions, clearing that configuration prerequisite for deployment-path runtime verification; browser audio/autoplay remains a later runtime verification concern
+- Main known risks/blockers: TASK-0002 local gates pass, but the hosted PR-triggered CI run is still required; human confirmation and read-only API inspection show Pages Source = GitHub Actions; browser audio/autoplay remains a later runtime verification concern
 - Decisions currently pending: none at architecture level
-- Next recommended action: implement TASK-0002 under its `cloud-deep` contract, then obtain the required fresh security-focused `independent-cloud-deep` review
+- Next recommended action: open a PR from `codex/task-0002-implementation` into `main` to exercise hosted CI; inspect the result before the fresh security-focused `independent-cloud-deep` review
 
 ## Recent verification
 
@@ -45,3 +45,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 
 | 2026-09-23 | TASK-0001 integration | Human-approved PR #16 merged after formal independent review PASS | Bootstrap baseline integrated into `main`; project may proceed to implementation planning |
 | 2026-09-24 | TASK-0002 Pages readiness | Human verification of repository Settings → Pages → Build and deployment → Source | Pages configuration UI is available and Source is set to `GitHub Actions`; configuration prerequisite recorded as confirmed |
+| 2026-09-24 | TASK-0002 local implementation | Canonical baseline and post-change `make harness-check`, `make security`, `make verify`, `make test-e2e`, `make ci`, `make build`; scanner checksum and workflow/static artifact inspection | PASS locally; hosted PR CI and formal independent review remain open; no Pages deployment triggered |
