@@ -12,7 +12,7 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
 - Active task(s): TASK-0002 — ready; routine CI plus manually triggered GitHub Pages deployment
 - Latest completed task: TASK-0001 — independently reviewed bootstrap integrated into `main`
-- Main known risks/blockers: no blocker prevents TASK-0002 implementation; GitHub Pages availability and Source = GitHub Actions remain human/platform prerequisites for deployment-path runtime verification; browser audio/autoplay remains a later runtime verification concern
+- Main known risks/blockers: no blocker prevents TASK-0002 implementation; human confirmation records the Pages configuration UI as available and Source = GitHub Actions, clearing that configuration prerequisite for deployment-path runtime verification; browser audio/autoplay remains a later runtime verification concern
 - Decisions currently pending: none at architecture level
 - Next recommended action: implement TASK-0002 under its `cloud-deep` contract, then obtain the required fresh security-focused `independent-cloud-deep` review
 
@@ -44,3 +44,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-23 | TASK-0001 formal independent review | Actual `origin/main...origin/codex/task-0001-implementation` diff at `3a01ee19479bb8d087f99cbdad933d284b582669`; clean bootstrap; canonical verify/security/E2E/CI gates; dependency and static artifact inspection | PASS: no blocking findings; task moved to `tasks/done/` for human integration decision |
 
 | 2026-09-23 | TASK-0001 integration | Human-approved PR #16 merged after formal independent review PASS | Bootstrap baseline integrated into `main`; project may proceed to implementation planning |
+| 2026-09-24 | TASK-0002 Pages readiness | Human verification of repository Settings → Pages → Build and deployment → Source | Pages configuration UI is available and Source is set to `GitHub Actions`; configuration prerequisite recorded as confirmed |
