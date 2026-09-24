@@ -67,3 +67,20 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
 }
+
+.clock-label {
+  margin: 2rem 0 0.5rem;
+  color: #9fb0c5;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.clock-time {
+  display: block;
+  color: #f4f7fb;
+  font-size: clamp(2.75rem, 10vw, 4.5rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
