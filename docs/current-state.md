@@ -5,7 +5,7 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0002 complete and integrated into `main`
+- Current milestone: TASK-0003 ready for implementation
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
@@ -14,7 +14,7 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Latest completed task: TASK-0002 — independently reviewed CI and manual Pages deployment path; integrated into `main`
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern
 - Decisions currently pending: none at architecture level
-- Next recommended action: integrate the TASK-0003 planning branch, then start a fresh cloud-standard implementation session from the ready task contract
+- Next recommended action: start a fresh cloud-standard TASK-0003 implementation session from the synchronized ready planning branch
 
 ## Recent verification
 
