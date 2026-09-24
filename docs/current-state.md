@@ -2,19 +2,19 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: implementation planning
+- Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: bootstrap integrated; establish the post-bootstrap implementation sequence and prepare the next executable task
+- Current milestone: TASK-0002 ready to establish the routine CI and manual GitHub Pages delivery baseline
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none
+- Active task(s): TASK-0002 — ready; routine CI plus manually triggered GitHub Pages deployment
 - Latest completed task: TASK-0001 — independently reviewed bootstrap integrated into `main`
-- Main known risks/blockers: no blocker prevents implementation planning; GitHub Pages workflow is intentionally security-sensitive; browser audio/autoplay remains a later runtime verification concern
-- Decisions currently pending: none at architecture level; next executable task is the approved delivery-path materialization unless readiness analysis finds a concrete blocker
-- Next recommended action: approve/integrate the post-bootstrap implementation plan, then create TASK-0002 for routine CI plus manually triggered GitHub Pages deployment
+- Main known risks/blockers: no blocker prevents TASK-0002 implementation; GitHub Pages availability and Source = GitHub Actions remain human/platform prerequisites for deployment-path runtime verification; browser audio/autoplay remains a later runtime verification concern
+- Decisions currently pending: none at architecture level
+- Next recommended action: implement TASK-0002 under its `cloud-deep` contract, then obtain the required fresh security-focused `independent-cloud-deep` review
 
 ## Recent verification
 
