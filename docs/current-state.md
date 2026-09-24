@@ -10,11 +10,11 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none
+- Active task(s): [TASK-0003](../tasks/active/TASK-0003.md) — ready for cloud-standard implementation
 - Latest completed task: TASK-0002 — independently reviewed CI and manual Pages deployment path; integrated into `main`
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern
 - Decisions currently pending: none at architecture level
-- Next recommended action: readiness analysis for planned TASK-0003; do not create TASK-0003 until readiness analysis is complete
+- Next recommended action: integrate the TASK-0003 planning branch, then start a fresh cloud-standard implementation session from the ready task contract
 
 ## Recent verification
 
