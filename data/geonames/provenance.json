@@ -1,0 +1,13 @@
+{
+  "upstreamUrl": "https://download.geonames.org/export/dump/cities15000.zip",
+  "retrievedAtHttpDate": "Fri, 25 Sep 2026 13:42:59 GMT",
+  "httpLastModified": "Fri, 25 Sep 2026 01:52:51 GMT",
+  "httpETag": "\"334328-65c44f965ca2e\"",
+  "httpContentLength": 3359528,
+  "zipSha256": "76cab41461937b2fe0d8499b00a8dfa9154620e359fb58b46f3cccb190d7392f",
+  "normalizedInput": "data/geonames/cities15000.normalized.tsv",
+  "normalizedInputSha256": "f0f2515e18cb73f78bcd30366618d6e07e231006b87d36de7e9b110286fea25d",
+  "sourceReadme": "https://download.geonames.org/export/dump/readme.txt",
+  "license": "Creative Commons Attribution 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+}

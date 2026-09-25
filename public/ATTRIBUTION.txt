@@ -1,0 +1,10 @@
+City names, country codes, population, and time-zone mappings used in the
+MiniJSClock city catalog are derived from GeoNames data:
+https://www.geonames.org/
+
+GeoNames data is made available under Creative Commons Attribution 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+The data was transformed into a normalized input and curated 400-city subset.
+Source snapshot identity and transformation details are recorded in the
+MiniJSClock repository under data/geonames/.

@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0004 ready for implementation; TASK-0003 integrated into `main` with push-triggered CI passed
+- Current milestone: TASK-0004 implementation ready for independent review; TASK-0003 integrated into `main` with push-triggered CI passed
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): [TASK-0004](../tasks/active/TASK-0004.md) — ready
+- Active task(s): [TASK-0004](../tasks/active/TASK-0004.md) — review
 - Latest completed task: [TASK-0003](../tasks/done/TASK-0003.md) — deterministic time primitives and running local clock; integrated into `main` at `c24963b18c6fe5405be4c0d6c86448fbc8655061`
-- Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern
+- Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (see TASK-0004 evidence)
 - Decisions currently pending: none at architecture level
-- Next recommended action: start a fresh `cloud-standard` TASK-0004 implementation session from `codex/task-0004-planning`. Pages deployment has not been triggered and no production release verdict has been made.
+- Next recommended action: perform fresh `independent-cloud-standard` review of TASK-0004 implementation and evidence. Pages deployment has not been triggered and no production release verdict has been made.
 
 ## Recent verification
 
@@ -52,3 +52,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-24 | TASK-0003 primary implementation | Baseline `make harness-check`, unit tests, build; test-first Vitest failure; targeted Vitest, Chromium `make test-e2e`, `make security`, `make verify`, `git diff --check`, and `make ci` after implementation | PASS after a TypeScript-compatible error-constructor correction; local clock and deterministic IANA formatting implemented; formal independent review pending |
 | 2026-09-24 | TASK-0003 formal independent review | Exact implementation head `86f11f5e431228bdfb0ef0acf9694077effc60d7` against `origin/main` at `842fd1d1f9c03d758a715b172480a22d771d8661`; actual diff and dependency manifests; `git diff --check`, targeted Vitest, `make harness-check`, `make security`, `make verify`, `make test-e2e`, `make ci`, alternate-zone Chromium E2E | PASS: no blocking findings; local first-launch clock, native explicit IANA formatting, deterministic zone/DST cases, actual-time ticker and cleanup, and production `/MiniJSClock/` browser behavior verified; [task](../tasks/done/TASK-0003.md) closed for human integration decision |
 | 2026-09-24 | TASK-0003 integration and hosted CI | Integrated into `main` at `c24963b18c6fe5405be4c0d6c86448fbc8655061`; push-triggered [CI run #17](https://github.com/gk79/MiniJSClock/actions/runs/36057818322) | PASS: completed successfully for the exact integration commit; no active task; Pages deployment untriggered and production release verdict undecided; next action is readiness analysis for planned TASK-0004 (not yet created) |
+| 2026-09-25 | TASK-0004 primary implementation | Official GeoNames snapshot pinned; offline normalized input and 400-city JSON; catalog contract tests, `make test-integration`, `make security`, `make verify`, `CI=1 make ci`, and attribution build inspection | PASS for catalog and CI-mode gates; plain local `make ci` hit intermittent existing Playwright exact-second clock assertion, recorded in task and learning candidate; formal independent review pending |

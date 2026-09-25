@@ -1,0 +1,2802 @@
+[
+  {
+    "geonameId": 53654,
+    "name": "Mogadishu",
+    "asciiName": "Mogadishu",
+    "countryCode": "SO",
+    "timeZone": "Africa/Mogadishu"
+  },
+  {
+    "geonameId": 71137,
+    "name": "Sanaa",
+    "asciiName": "Sanaa",
+    "countryCode": "YE",
+    "timeZone": "Asia/Aden"
+  },
+  {
+    "geonameId": 95446,
+    "name": "Erbil",
+    "asciiName": "Erbil",
+    "countryCode": "IQ",
+    "timeZone": "Asia/Baghdad"
+  },
+  {
+    "geonameId": 98182,
+    "name": "Baghdad",
+    "asciiName": "Baghdad",
+    "countryCode": "IQ",
+    "timeZone": "Asia/Baghdad"
+  },
+  {
+    "geonameId": 99071,
+    "name": "Al Mawşil al Jadīdah",
+    "asciiName": "Al Mawsil al Jadidah",
+    "countryCode": "IQ",
+    "timeZone": "Asia/Baghdad"
+  },
+  {
+    "geonameId": 99072,
+    "name": "Mosul",
+    "asciiName": "Mosul",
+    "countryCode": "IQ",
+    "timeZone": "Asia/Baghdad"
+  },
+  {
+    "geonameId": 104515,
+    "name": "Makkah",
+    "asciiName": "Makkah",
+    "countryCode": "SA",
+    "timeZone": "Asia/Riyadh"
+  },
+  {
+    "geonameId": 105343,
+    "name": "Jeddah",
+    "asciiName": "Jeddah",
+    "countryCode": "SA",
+    "timeZone": "Asia/Riyadh"
+  },
+  {
+    "geonameId": 108410,
+    "name": "Riyadh",
+    "asciiName": "Riyadh",
+    "countryCode": "SA",
+    "timeZone": "Asia/Riyadh"
+  },
+  {
+    "geonameId": 112931,
+    "name": "Tehran",
+    "asciiName": "Tehran",
+    "countryCode": "IR",
+    "timeZone": "Asia/Tehran"
+  },
+  {
+    "geonameId": 113646,
+    "name": "Tabriz",
+    "asciiName": "Tabriz",
+    "countryCode": "IR",
+    "timeZone": "Asia/Tehran"
+  },
+  {
+    "geonameId": 124665,
+    "name": "Mashhad",
+    "asciiName": "Mashhad",
+    "countryCode": "IR",
+    "timeZone": "Asia/Tehran"
+  },
+  {
+    "geonameId": 128747,
+    "name": "Karaj",
+    "asciiName": "Karaj",
+    "countryCode": "IR",
+    "timeZone": "Asia/Tehran"
+  },
+  {
+    "geonameId": 146268,
+    "name": "Nicosia",
+    "asciiName": "Nicosia",
+    "countryCode": "CY",
+    "timeZone": "Asia/Nicosia"
+  },
+  {
+    "geonameId": 160196,
+    "name": "Dodoma",
+    "asciiName": "Dodoma",
+    "countryCode": "TZ",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  {
+    "geonameId": 160263,
+    "name": "Dar es Salaam",
+    "asciiName": "Dar es Salaam",
+    "countryCode": "TZ",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  {
+    "geonameId": 162183,
+    "name": "Ashgabat",
+    "asciiName": "Ashgabat",
+    "countryCode": "TM",
+    "timeZone": "Asia/Ashgabat"
+  },
+  {
+    "geonameId": 170063,
+    "name": "Aleppo",
+    "asciiName": "Aleppo",
+    "countryCode": "SY",
+    "timeZone": "Asia/Damascus"
+  },
+  {
+    "geonameId": 170654,
+    "name": "Damascus",
+    "asciiName": "Damascus",
+    "countryCode": "SY",
+    "timeZone": "Asia/Damascus"
+  },
+  {
+    "geonameId": 184745,
+    "name": "Nairobi",
+    "asciiName": "Nairobi",
+    "countryCode": "KE",
+    "timeZone": "Africa/Nairobi"
+  },
+  {
+    "geonameId": 195272,
+    "name": "Kakamega",
+    "asciiName": "Kakamega",
+    "countryCode": "KE",
+    "timeZone": "Africa/Nairobi"
+  },
+  {
+    "geonameId": 202061,
+    "name": "Kigali",
+    "asciiName": "Kigali",
+    "countryCode": "RW",
+    "timeZone": "Africa/Kigali"
+  },
+  {
+    "geonameId": 209228,
+    "name": "Mbuji-Mayi",
+    "asciiName": "Mbuji-Mayi",
+    "countryCode": "CD",
+    "timeZone": "Africa/Lubumbashi"
+  },
+  {
+    "geonameId": 212730,
+    "name": "Kisangani",
+    "asciiName": "Kisangani",
+    "countryCode": "CD",
+    "timeZone": "Africa/Lubumbashi"
+  },
+  {
+    "geonameId": 223817,
+    "name": "Djibouti",
+    "asciiName": "Djibouti",
+    "countryCode": "DJ",
+    "timeZone": "Africa/Djibouti"
+  },
+  {
+    "geonameId": 232422,
+    "name": "Kampala",
+    "asciiName": "Kampala",
+    "countryCode": "UG",
+    "timeZone": "Africa/Kampala"
+  },
+  {
+    "geonameId": 241131,
+    "name": "Victoria",
+    "asciiName": "Victoria",
+    "countryCode": "SC",
+    "timeZone": "Indian/Mahe"
+  },
+  {
+    "geonameId": 250441,
+    "name": "Amman",
+    "asciiName": "Amman",
+    "countryCode": "JO",
+    "timeZone": "Asia/Amman"
+  },
+  {
+    "geonameId": 264371,
+    "name": "Athens",
+    "asciiName": "Athens",
+    "countryCode": "GR",
+    "timeZone": "Europe/Athens"
+  },
+  {
+    "geonameId": 276781,
+    "name": "Beirut",
+    "asciiName": "Beirut",
+    "countryCode": "LB",
+    "timeZone": "Asia/Beirut"
+  },
+  {
+    "geonameId": 285787,
+    "name": "Kuwait City",
+    "asciiName": "Kuwait City",
+    "countryCode": "KW",
+    "timeZone": "Asia/Kuwait"
+  },
+  {
+    "geonameId": 287286,
+    "name": "Muscat",
+    "asciiName": "Muscat",
+    "countryCode": "OM",
+    "timeZone": "Asia/Muscat"
+  },
+  {
+    "geonameId": 290030,
+    "name": "Doha",
+    "asciiName": "Doha",
+    "countryCode": "QA",
+    "timeZone": "Asia/Qatar"
+  },
+  {
+    "geonameId": 290340,
+    "name": "Manama",
+    "asciiName": "Manama",
+    "countryCode": "BH",
+    "timeZone": "Asia/Bahrain"
+  },
+  {
+    "geonameId": 292223,
+    "name": "Dubai",
+    "asciiName": "Dubai",
+    "countryCode": "AE",
+    "timeZone": "Asia/Dubai"
+  },
+  {
+    "geonameId": 292672,
+    "name": "Sharjah",
+    "asciiName": "Sharjah",
+    "countryCode": "AE",
+    "timeZone": "Asia/Dubai"
+  },
+  {
+    "geonameId": 292968,
+    "name": "Abu Dhabi",
+    "asciiName": "Abu Dhabi",
+    "countryCode": "AE",
+    "timeZone": "Asia/Dubai"
+  },
+  {
+    "geonameId": 306571,
+    "name": "Konya",
+    "asciiName": "Konya",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 308464,
+    "name": "Kayseri",
+    "asciiName": "Kayseri",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 311046,
+    "name": "İzmir",
+    "asciiName": "Izmir",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 314830,
+    "name": "Gaziantep",
+    "asciiName": "Gaziantep",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 316541,
+    "name": "Diyarbakır",
+    "asciiName": "Diyarbakir",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 323786,
+    "name": "Ankara",
+    "asciiName": "Ankara",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 325363,
+    "name": "Adana",
+    "asciiName": "Adana",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 343300,
+    "name": "Asmara",
+    "asciiName": "Asmara",
+    "countryCode": "ER",
+    "timeZone": "Africa/Asmara"
+  },
+  {
+    "geonameId": 344979,
+    "name": "Addis Ababa",
+    "asciiName": "Addis Ababa",
+    "countryCode": "ET",
+    "timeZone": "Africa/Addis_Ababa"
+  },
+  {
+    "geonameId": 360630,
+    "name": "Cairo",
+    "asciiName": "Cairo",
+    "countryCode": "EG",
+    "timeZone": "Africa/Cairo"
+  },
+  {
+    "geonameId": 360995,
+    "name": "Giza",
+    "asciiName": "Giza",
+    "countryCode": "EG",
+    "timeZone": "Africa/Cairo"
+  },
+  {
+    "geonameId": 361058,
+    "name": "Alexandria",
+    "asciiName": "Alexandria",
+    "countryCode": "EG",
+    "timeZone": "Africa/Cairo"
+  },
+  {
+    "geonameId": 365137,
+    "name": "Omdurman",
+    "asciiName": "Omdurman",
+    "countryCode": "SD",
+    "timeZone": "Africa/Khartoum"
+  },
+  {
+    "geonameId": 373303,
+    "name": "Juba",
+    "asciiName": "Juba",
+    "countryCode": "SS",
+    "timeZone": "Africa/Juba"
+  },
+  {
+    "geonameId": 379252,
+    "name": "Khartoum",
+    "asciiName": "Khartoum",
+    "countryCode": "SD",
+    "timeZone": "Africa/Khartoum"
+  },
+  {
+    "geonameId": 418863,
+    "name": "Isfahan",
+    "asciiName": "Isfahan",
+    "countryCode": "IR",
+    "timeZone": "Asia/Tehran"
+  },
+  {
+    "geonameId": 426272,
+    "name": "Gitega",
+    "asciiName": "Gitega",
+    "countryCode": "BI",
+    "timeZone": "Africa/Bujumbura"
+  },
+  {
+    "geonameId": 456172,
+    "name": "Riga",
+    "asciiName": "Riga",
+    "countryCode": "LV",
+    "timeZone": "Europe/Riga"
+  },
+  {
+    "geonameId": 498817,
+    "name": "Saint Petersburg",
+    "asciiName": "Saint Petersburg",
+    "countryCode": "RU",
+    "timeZone": "Europe/Moscow"
+  },
+  {
+    "geonameId": 524901,
+    "name": "Moscow",
+    "asciiName": "Moscow",
+    "countryCode": "RU",
+    "timeZone": "Europe/Moscow"
+  },
+  {
+    "geonameId": 587084,
+    "name": "Baku",
+    "asciiName": "Baku",
+    "countryCode": "AZ",
+    "timeZone": "Asia/Baku"
+  },
+  {
+    "geonameId": 588409,
+    "name": "Tallinn",
+    "asciiName": "Tallinn",
+    "countryCode": "EE",
+    "timeZone": "Europe/Tallinn"
+  },
+  {
+    "geonameId": 593116,
+    "name": "Vilnius",
+    "asciiName": "Vilnius",
+    "countryCode": "LT",
+    "timeZone": "Europe/Vilnius"
+  },
+  {
+    "geonameId": 611717,
+    "name": "Tbilisi",
+    "asciiName": "Tbilisi",
+    "countryCode": "GE",
+    "timeZone": "Asia/Tbilisi"
+  },
+  {
+    "geonameId": 616052,
+    "name": "Yerevan",
+    "asciiName": "Yerevan",
+    "countryCode": "AM",
+    "timeZone": "Asia/Yerevan"
+  },
+  {
+    "geonameId": 618426,
+    "name": "Chisinau",
+    "asciiName": "Chisinau",
+    "countryCode": "MD",
+    "timeZone": "Europe/Chisinau"
+  },
+  {
+    "geonameId": 625144,
+    "name": "Minsk",
+    "asciiName": "Minsk",
+    "countryCode": "BY",
+    "timeZone": "Europe/Minsk"
+  },
+  {
+    "geonameId": 658225,
+    "name": "Helsinki",
+    "asciiName": "Helsinki",
+    "countryCode": "FI",
+    "timeZone": "Europe/Helsinki"
+  },
+  {
+    "geonameId": 683506,
+    "name": "Bucharest",
+    "asciiName": "Bucharest",
+    "countryCode": "RO",
+    "timeZone": "Europe/Bucharest"
+  },
+  {
+    "geonameId": 703448,
+    "name": "Kyiv",
+    "asciiName": "Kyiv",
+    "countryCode": "UA",
+    "timeZone": "Europe/Kyiv"
+  },
+  {
+    "geonameId": 706483,
+    "name": "Kharkiv",
+    "asciiName": "Kharkiv",
+    "countryCode": "UA",
+    "timeZone": "Europe/Kyiv"
+  },
+  {
+    "geonameId": 727011,
+    "name": "Sofia",
+    "asciiName": "Sofia",
+    "countryCode": "BG",
+    "timeZone": "Europe/Sofia"
+  },
+  {
+    "geonameId": 745044,
+    "name": "Istanbul",
+    "asciiName": "Istanbul",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 750269,
+    "name": "Bursa",
+    "asciiName": "Bursa",
+    "countryCode": "TR",
+    "timeZone": "Europe/Istanbul"
+  },
+  {
+    "geonameId": 756135,
+    "name": "Warsaw",
+    "asciiName": "Warsaw",
+    "countryCode": "PL",
+    "timeZone": "Europe/Warsaw"
+  },
+  {
+    "geonameId": 785842,
+    "name": "Skopje",
+    "asciiName": "Skopje",
+    "countryCode": "MK",
+    "timeZone": "Europe/Skopje"
+  },
+  {
+    "geonameId": 786714,
+    "name": "Pristina",
+    "asciiName": "Pristina",
+    "countryCode": "XK",
+    "timeZone": "Europe/Belgrade"
+  },
+  {
+    "geonameId": 792680,
+    "name": "Belgrade",
+    "asciiName": "Belgrade",
+    "countryCode": "RS",
+    "timeZone": "Europe/Belgrade"
+  },
+  {
+    "geonameId": 890299,
+    "name": "Harare",
+    "asciiName": "Harare",
+    "countryCode": "ZW",
+    "timeZone": "Africa/Harare"
+  },
+  {
+    "geonameId": 909137,
+    "name": "Lusaka",
+    "asciiName": "Lusaka",
+    "countryCode": "ZM",
+    "timeZone": "Africa/Lusaka"
+  },
+  {
+    "geonameId": 921772,
+    "name": "Moroni",
+    "asciiName": "Moroni",
+    "countryCode": "KM",
+    "timeZone": "Indian/Comoro"
+  },
+  {
+    "geonameId": 921815,
+    "name": "Mamoudzou",
+    "asciiName": "Mamoudzou",
+    "countryCode": "YT",
+    "timeZone": "Indian/Mayotte"
+  },
+  {
+    "geonameId": 922704,
+    "name": "Lubumbashi",
+    "asciiName": "Lubumbashi",
+    "countryCode": "CD",
+    "timeZone": "Africa/Lubumbashi"
+  },
+  {
+    "geonameId": 927967,
+    "name": "Lilongwe",
+    "asciiName": "Lilongwe",
+    "countryCode": "MW",
+    "timeZone": "Africa/Blantyre"
+  },
+  {
+    "geonameId": 932505,
+    "name": "Maseru",
+    "asciiName": "Maseru",
+    "countryCode": "LS",
+    "timeZone": "Africa/Maseru"
+  },
+  {
+    "geonameId": 933773,
+    "name": "Gaborone",
+    "asciiName": "Gaborone",
+    "countryCode": "BW",
+    "timeZone": "Africa/Gaborone"
+  },
+  {
+    "geonameId": 934154,
+    "name": "Port Louis",
+    "asciiName": "Port Louis",
+    "countryCode": "MU",
+    "timeZone": "Indian/Mauritius"
+  },
+  {
+    "geonameId": 934985,
+    "name": "Mbabane",
+    "asciiName": "Mbabane",
+    "countryCode": "SZ",
+    "timeZone": "Africa/Mbabane"
+  },
+  {
+    "geonameId": 935264,
+    "name": "Saint-Denis",
+    "asciiName": "Saint-Denis",
+    "countryCode": "RE",
+    "timeZone": "Indian/Reunion"
+  },
+  {
+    "geonameId": 953781,
+    "name": "Soweto",
+    "asciiName": "Soweto",
+    "countryCode": "ZA",
+    "timeZone": "Africa/Johannesburg"
+  },
+  {
+    "geonameId": 964137,
+    "name": "Pretoria",
+    "asciiName": "Pretoria",
+    "countryCode": "ZA",
+    "timeZone": "Africa/Johannesburg"
+  },
+  {
+    "geonameId": 993800,
+    "name": "Johannesburg",
+    "asciiName": "Johannesburg",
+    "countryCode": "ZA",
+    "timeZone": "Africa/Johannesburg"
+  },
+  {
+    "geonameId": 1007311,
+    "name": "Durban",
+    "asciiName": "Durban",
+    "countryCode": "ZA",
+    "timeZone": "Africa/Johannesburg"
+  },
+  {
+    "geonameId": 1040652,
+    "name": "Maputo",
+    "asciiName": "Maputo",
+    "countryCode": "MZ",
+    "timeZone": "Africa/Maputo"
+  },
+  {
+    "geonameId": 1070940,
+    "name": "Antananarivo",
+    "asciiName": "Antananarivo",
+    "countryCode": "MG",
+    "timeZone": "Indian/Antananarivo"
+  },
+  {
+    "geonameId": 1138958,
+    "name": "Kabul",
+    "asciiName": "Kabul",
+    "countryCode": "AF",
+    "timeZone": "Asia/Kabul"
+  },
+  {
+    "geonameId": 1166993,
+    "name": "Rawalpindi",
+    "asciiName": "Rawalpindi",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1167528,
+    "name": "Quetta",
+    "asciiName": "Quetta",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1168197,
+    "name": "Peshawar",
+    "asciiName": "Peshawar",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1169825,
+    "name": "Multan",
+    "asciiName": "Multan",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1172451,
+    "name": "Lahore",
+    "asciiName": "Lahore",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1174872,
+    "name": "Karachi",
+    "asciiName": "Karachi",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1176615,
+    "name": "Islamabad",
+    "asciiName": "Islamabad",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1176734,
+    "name": "Hyderabad",
+    "asciiName": "Hyderabad",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1177662,
+    "name": "Gujranwala",
+    "asciiName": "Gujranwala",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1179400,
+    "name": "Faisalabad",
+    "asciiName": "Faisalabad",
+    "countryCode": "PK",
+    "timeZone": "Asia/Karachi"
+  },
+  {
+    "geonameId": 1185241,
+    "name": "Dhaka",
+    "asciiName": "Dhaka",
+    "countryCode": "BD",
+    "timeZone": "Asia/Dhaka"
+  },
+  {
+    "geonameId": 1200109,
+    "name": "Gazipur",
+    "asciiName": "Gazipur",
+    "countryCode": "BD",
+    "timeZone": "Asia/Dhaka"
+  },
+  {
+    "geonameId": 1205733,
+    "name": "Chattogram",
+    "asciiName": "Chattogram",
+    "countryCode": "BD",
+    "timeZone": "Asia/Dhaka"
+  },
+  {
+    "geonameId": 1214520,
+    "name": "Medan",
+    "asciiName": "Medan",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1221874,
+    "name": "Dushanbe",
+    "asciiName": "Dushanbe",
+    "countryCode": "TJ",
+    "timeZone": "Asia/Dushanbe"
+  },
+  {
+    "geonameId": 1248991,
+    "name": "Colombo",
+    "asciiName": "Colombo",
+    "countryCode": "LK",
+    "timeZone": "Asia/Colombo"
+  },
+  {
+    "geonameId": 1252416,
+    "name": "Thimphu",
+    "asciiName": "Thimphu",
+    "countryCode": "BT",
+    "timeZone": "Asia/Thimphu"
+  },
+  {
+    "geonameId": 1255364,
+    "name": "Surat",
+    "asciiName": "Surat",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1259229,
+    "name": "Pune",
+    "asciiName": "Pune",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1261481,
+    "name": "New Delhi",
+    "asciiName": "New Delhi",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1264527,
+    "name": "Chennai",
+    "asciiName": "Chennai",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1269843,
+    "name": "Hyderabad",
+    "asciiName": "Hyderabad",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1273294,
+    "name": "Delhi",
+    "asciiName": "Delhi",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1275004,
+    "name": "Kolkata",
+    "asciiName": "Kolkata",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1275339,
+    "name": "Mumbai",
+    "asciiName": "Mumbai",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1277333,
+    "name": "Bengaluru",
+    "asciiName": "Bengaluru",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1279233,
+    "name": "Ahmedabad",
+    "asciiName": "Ahmedabad",
+    "countryCode": "IN",
+    "timeZone": "Asia/Kolkata"
+  },
+  {
+    "geonameId": 1282027,
+    "name": "Male",
+    "asciiName": "Male",
+    "countryCode": "MV",
+    "timeZone": "Indian/Maldives"
+  },
+  {
+    "geonameId": 1283240,
+    "name": "Kathmandu",
+    "asciiName": "Kathmandu",
+    "countryCode": "NP",
+    "timeZone": "Asia/Kathmandu"
+  },
+  {
+    "geonameId": 1298824,
+    "name": "Yangon",
+    "asciiName": "Yangon",
+    "countryCode": "MM",
+    "timeZone": "Asia/Yangon"
+  },
+  {
+    "geonameId": 1336135,
+    "name": "Khulna",
+    "asciiName": "Khulna",
+    "countryCode": "BD",
+    "timeZone": "Asia/Dhaka"
+  },
+  {
+    "geonameId": 1486209,
+    "name": "Yekaterinburg",
+    "asciiName": "Yekaterinburg",
+    "countryCode": "RU",
+    "timeZone": "Asia/Yekaterinburg"
+  },
+  {
+    "geonameId": 1496747,
+    "name": "Novosibirsk",
+    "asciiName": "Novosibirsk",
+    "countryCode": "RU",
+    "timeZone": "Asia/Novosibirsk"
+  },
+  {
+    "geonameId": 1512569,
+    "name": "Tashkent",
+    "asciiName": "Tashkent",
+    "countryCode": "UZ",
+    "timeZone": "Asia/Tashkent"
+  },
+  {
+    "geonameId": 1526273,
+    "name": "Astana",
+    "asciiName": "Astana",
+    "countryCode": "KZ",
+    "timeZone": "Asia/Almaty"
+  },
+  {
+    "geonameId": 1526384,
+    "name": "Almaty",
+    "asciiName": "Almaty",
+    "countryCode": "KZ",
+    "timeZone": "Asia/Almaty"
+  },
+  {
+    "geonameId": 1528675,
+    "name": "Bishkek",
+    "asciiName": "Bishkek",
+    "countryCode": "KG",
+    "timeZone": "Asia/Bishkek"
+  },
+  {
+    "geonameId": 1546102,
+    "name": "Port-aux-Français",
+    "asciiName": "Port-aux-Francais",
+    "countryCode": "TF",
+    "timeZone": "Indian/Kerguelen"
+  },
+  {
+    "geonameId": 1566083,
+    "name": "Ho Chi Minh City",
+    "asciiName": "Ho Chi Minh City",
+    "countryCode": "VN",
+    "timeZone": "Asia/Ho_Chi_Minh"
+  },
+  {
+    "geonameId": 1581130,
+    "name": "Hanoi",
+    "asciiName": "Hanoi",
+    "countryCode": "VN",
+    "timeZone": "Asia/Bangkok"
+  },
+  {
+    "geonameId": 1581298,
+    "name": "Haiphong",
+    "asciiName": "Haiphong",
+    "countryCode": "VN",
+    "timeZone": "Asia/Bangkok"
+  },
+  {
+    "geonameId": 1586203,
+    "name": "Cần Thơ",
+    "asciiName": "Can Tho",
+    "countryCode": "VN",
+    "timeZone": "Asia/Ho_Chi_Minh"
+  },
+  {
+    "geonameId": 1609350,
+    "name": "Bangkok",
+    "asciiName": "Bangkok",
+    "countryCode": "TH",
+    "timeZone": "Asia/Bangkok"
+  },
+  {
+    "geonameId": 1622786,
+    "name": "Makassar",
+    "asciiName": "Makassar",
+    "countryCode": "ID",
+    "timeZone": "Asia/Makassar"
+  },
+  {
+    "geonameId": 1625084,
+    "name": "Tangerang",
+    "asciiName": "Tangerang",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1625822,
+    "name": "Surabaya",
+    "asciiName": "Surabaya",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1627896,
+    "name": "Semarang",
+    "asciiName": "Semarang",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1633070,
+    "name": "Palembang",
+    "asciiName": "Palembang",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1642911,
+    "name": "Jakarta",
+    "asciiName": "Jakarta",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1645457,
+    "name": "Dili",
+    "asciiName": "Dili",
+    "countryCode": "TL",
+    "timeZone": "Asia/Dili"
+  },
+  {
+    "geonameId": 1645524,
+    "name": "Depok",
+    "asciiName": "Depok",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1649378,
+    "name": "Bekasi",
+    "asciiName": "Bekasi",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1650357,
+    "name": "Bandung",
+    "asciiName": "Bandung",
+    "countryCode": "ID",
+    "timeZone": "Asia/Jakarta"
+  },
+  {
+    "geonameId": 1651944,
+    "name": "Vientiane",
+    "asciiName": "Vientiane",
+    "countryCode": "LA",
+    "timeZone": "Asia/Vientiane"
+  },
+  {
+    "geonameId": 1668341,
+    "name": "Taipei",
+    "asciiName": "Taipei",
+    "countryCode": "TW",
+    "timeZone": "Asia/Taipei"
+  },
+  {
+    "geonameId": 1668355,
+    "name": "Tainan",
+    "asciiName": "Tainan",
+    "countryCode": "TW",
+    "timeZone": "Asia/Taipei"
+  },
+  {
+    "geonameId": 1668399,
+    "name": "Taichung",
+    "asciiName": "Taichung",
+    "countryCode": "TW",
+    "timeZone": "Asia/Taipei"
+  },
+  {
+    "geonameId": 1673820,
+    "name": "Kaohsiung",
+    "asciiName": "Kaohsiung",
+    "countryCode": "TW",
+    "timeZone": "Asia/Taipei"
+  },
+  {
+    "geonameId": 1692192,
+    "name": "Quezon City",
+    "asciiName": "Quezon City",
+    "countryCode": "PH",
+    "timeZone": "Asia/Manila"
+  },
+  {
+    "geonameId": 1701668,
+    "name": "Manila",
+    "asciiName": "Manila",
+    "countryCode": "PH",
+    "timeZone": "Asia/Manila"
+  },
+  {
+    "geonameId": 1715348,
+    "name": "Davao",
+    "asciiName": "Davao",
+    "countryCode": "PH",
+    "timeZone": "Asia/Manila"
+  },
+  {
+    "geonameId": 1720151,
+    "name": "Caloocan",
+    "asciiName": "Caloocan",
+    "countryCode": "PH",
+    "timeZone": "Asia/Manila"
+  },
+  {
+    "geonameId": 1735161,
+    "name": "Kuala Lumpur",
+    "asciiName": "Kuala Lumpur",
+    "countryCode": "MY",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  {
+    "geonameId": 1790630,
+    "name": "Xi’an",
+    "asciiName": "Xi'an",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1791247,
+    "name": "Wuhan",
+    "asciiName": "Wuhan",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1792947,
+    "name": "Tianjin",
+    "asciiName": "Tianjin",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1795565,
+    "name": "Shenzhen",
+    "asciiName": "Shenzhen",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1796236,
+    "name": "Shanghai",
+    "asciiName": "Shanghai",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1808926,
+    "name": "Hangzhou",
+    "asciiName": "Hangzhou",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1809858,
+    "name": "Guangzhou",
+    "asciiName": "Guangzhou",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1814906,
+    "name": "Chongqing",
+    "asciiName": "Chongqing",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1815286,
+    "name": "Chengdu",
+    "asciiName": "Chengdu",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1816670,
+    "name": "Beijing",
+    "asciiName": "Beijing",
+    "countryCode": "CN",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "geonameId": 1819609,
+    "name": "Kowloon",
+    "asciiName": "Kowloon",
+    "countryCode": "HK",
+    "timeZone": "Asia/Hong_Kong"
+  },
+  {
+    "geonameId": 1819729,
+    "name": "Hong Kong",
+    "asciiName": "Hong Kong",
+    "countryCode": "HK",
+    "timeZone": "Asia/Hong_Kong"
+  },
+  {
+    "geonameId": 1820906,
+    "name": "Bandar Seri Begawan",
+    "asciiName": "Bandar Seri Begawan",
+    "countryCode": "BN",
+    "timeZone": "Asia/Brunei"
+  },
+  {
+    "geonameId": 1821274,
+    "name": "Macau",
+    "asciiName": "Macau",
+    "countryCode": "MO",
+    "timeZone": "Asia/Macau"
+  },
+  {
+    "geonameId": 1821306,
+    "name": "Phnom Penh",
+    "asciiName": "Phnom Penh",
+    "countryCode": "KH",
+    "timeZone": "Asia/Phnom_Penh"
+  },
+  {
+    "geonameId": 1835235,
+    "name": "Daejeon",
+    "asciiName": "Daejeon",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1835329,
+    "name": "Daegu",
+    "asciiName": "Daegu",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1835848,
+    "name": "Seoul",
+    "asciiName": "Seoul",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1838524,
+    "name": "Busan",
+    "asciiName": "Busan",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1841811,
+    "name": "Gwangju",
+    "asciiName": "Gwangju",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1843564,
+    "name": "Incheon",
+    "asciiName": "Incheon",
+    "countryCode": "KR",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "geonameId": 1848354,
+    "name": "Yokohama",
+    "asciiName": "Yokohama",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1850147,
+    "name": "Tokyo",
+    "asciiName": "Tokyo",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1853909,
+    "name": "Osaka",
+    "asciiName": "Osaka",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1856057,
+    "name": "Nagoya",
+    "asciiName": "Nagoya",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1857910,
+    "name": "Kyoto",
+    "asciiName": "Kyoto",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1859171,
+    "name": "Kobe",
+    "asciiName": "Kobe",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1859642,
+    "name": "Kawasaki",
+    "asciiName": "Kawasaki",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1863967,
+    "name": "Fukuoka",
+    "asciiName": "Fukuoka",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 1871859,
+    "name": "Pyongyang",
+    "asciiName": "Pyongyang",
+    "countryCode": "KP",
+    "timeZone": "Asia/Pyongyang"
+  },
+  {
+    "geonameId": 1880252,
+    "name": "Singapore",
+    "asciiName": "Singapore",
+    "countryCode": "SG",
+    "timeZone": "Asia/Singapore"
+  },
+  {
+    "geonameId": 2028462,
+    "name": "Ulan Bator",
+    "asciiName": "Ulan Bator",
+    "countryCode": "MN",
+    "timeZone": "Asia/Ulaanbaatar"
+  },
+  {
+    "geonameId": 2063523,
+    "name": "Perth",
+    "asciiName": "Perth",
+    "countryCode": "AU",
+    "timeZone": "Australia/Perth"
+  },
+  {
+    "geonameId": 2078025,
+    "name": "Adelaide",
+    "asciiName": "Adelaide",
+    "countryCode": "AU",
+    "timeZone": "Australia/Adelaide"
+  },
+  {
+    "geonameId": 2078127,
+    "name": "Flying Fish Cove",
+    "asciiName": "Flying Fish Cove",
+    "countryCode": "CX",
+    "timeZone": "Indian/Christmas"
+  },
+  {
+    "geonameId": 2081986,
+    "name": "Palikir",
+    "asciiName": "Palikir",
+    "countryCode": "FM",
+    "timeZone": "Pacific/Pohnpei"
+  },
+  {
+    "geonameId": 2088122,
+    "name": "Port Moresby",
+    "asciiName": "Port Moresby",
+    "countryCode": "PG",
+    "timeZone": "Pacific/Port_Moresby"
+  },
+  {
+    "geonameId": 2108502,
+    "name": "Honiara",
+    "asciiName": "Honiara",
+    "countryCode": "SB",
+    "timeZone": "Pacific/Guadalcanal"
+  },
+  {
+    "geonameId": 2110257,
+    "name": "Tarawa",
+    "asciiName": "Tarawa",
+    "countryCode": "KI",
+    "timeZone": "Pacific/Tarawa"
+  },
+  {
+    "geonameId": 2110394,
+    "name": "Funafuti",
+    "asciiName": "Funafuti",
+    "countryCode": "TV",
+    "timeZone": "Pacific/Funafuti"
+  },
+  {
+    "geonameId": 2113779,
+    "name": "Majuro",
+    "asciiName": "Majuro",
+    "countryCode": "MH",
+    "timeZone": "Pacific/Majuro"
+  },
+  {
+    "geonameId": 2128295,
+    "name": "Sapporo",
+    "asciiName": "Sapporo",
+    "countryCode": "JP",
+    "timeZone": "Asia/Tokyo"
+  },
+  {
+    "geonameId": 2135171,
+    "name": "Port-Vila",
+    "asciiName": "Port-Vila",
+    "countryCode": "VU",
+    "timeZone": "Pacific/Efate"
+  },
+  {
+    "geonameId": 2139521,
+    "name": "Nouméa",
+    "asciiName": "Noumea",
+    "countryCode": "NC",
+    "timeZone": "Pacific/Noumea"
+  },
+  {
+    "geonameId": 2147714,
+    "name": "Sydney",
+    "asciiName": "Sydney",
+    "countryCode": "AU",
+    "timeZone": "Australia/Sydney"
+  },
+  {
+    "geonameId": 2158177,
+    "name": "Melbourne",
+    "asciiName": "Melbourne",
+    "countryCode": "AU",
+    "timeZone": "Australia/Melbourne"
+  },
+  {
+    "geonameId": 2161314,
+    "name": "Kingston",
+    "asciiName": "Kingston",
+    "countryCode": "NF",
+    "timeZone": "Pacific/Norfolk"
+  },
+  {
+    "geonameId": 2172517,
+    "name": "Canberra",
+    "asciiName": "Canberra",
+    "countryCode": "AU",
+    "timeZone": "Australia/Sydney"
+  },
+  {
+    "geonameId": 2174003,
+    "name": "Brisbane",
+    "asciiName": "Brisbane",
+    "countryCode": "AU",
+    "timeZone": "Australia/Brisbane"
+  },
+  {
+    "geonameId": 2179537,
+    "name": "Wellington",
+    "asciiName": "Wellington",
+    "countryCode": "NZ",
+    "timeZone": "Pacific/Auckland"
+  },
+  {
+    "geonameId": 2193733,
+    "name": "Auckland",
+    "asciiName": "Auckland",
+    "countryCode": "NZ",
+    "timeZone": "Pacific/Auckland"
+  },
+  {
+    "geonameId": 2198148,
+    "name": "Suva",
+    "asciiName": "Suva",
+    "countryCode": "FJ",
+    "timeZone": "Pacific/Fiji"
+  },
+  {
+    "geonameId": 2210247,
+    "name": "Tripoli",
+    "asciiName": "Tripoli",
+    "countryCode": "LY",
+    "timeZone": "Africa/Tripoli"
+  },
+  {
+    "geonameId": 2220957,
+    "name": "Yaoundé",
+    "asciiName": "Yaounde",
+    "countryCode": "CM",
+    "timeZone": "Africa/Douala"
+  },
+  {
+    "geonameId": 2240449,
+    "name": "Luanda",
+    "asciiName": "Luanda",
+    "countryCode": "AO",
+    "timeZone": "Africa/Luanda"
+  },
+  {
+    "geonameId": 2253354,
+    "name": "Dakar",
+    "asciiName": "Dakar",
+    "countryCode": "SN",
+    "timeZone": "Africa/Dakar"
+  },
+  {
+    "geonameId": 2260535,
+    "name": "Brazzaville",
+    "asciiName": "Brazzaville",
+    "countryCode": "CG",
+    "timeZone": "Africa/Brazzaville"
+  },
+  {
+    "geonameId": 2267057,
+    "name": "Lisbon",
+    "asciiName": "Lisbon",
+    "countryCode": "PT",
+    "timeZone": "Europe/Lisbon"
+  },
+  {
+    "geonameId": 2274895,
+    "name": "Monrovia",
+    "asciiName": "Monrovia",
+    "countryCode": "LR",
+    "timeZone": "Africa/Monrovia"
+  },
+  {
+    "geonameId": 2279755,
+    "name": "Yamoussoukro",
+    "asciiName": "Yamoussoukro",
+    "countryCode": "CI",
+    "timeZone": "Africa/Abidjan"
+  },
+  {
+    "geonameId": 2293538,
+    "name": "Abidjan",
+    "asciiName": "Abidjan",
+    "countryCode": "CI",
+    "timeZone": "Africa/Abidjan"
+  },
+  {
+    "geonameId": 2298890,
+    "name": "Kumasi",
+    "asciiName": "Kumasi",
+    "countryCode": "GH",
+    "timeZone": "Africa/Accra"
+  },
+  {
+    "geonameId": 2306104,
+    "name": "Accra",
+    "asciiName": "Accra",
+    "countryCode": "GH",
+    "timeZone": "Africa/Accra"
+  },
+  {
+    "geonameId": 2314302,
+    "name": "Kinshasa",
+    "asciiName": "Kinshasa",
+    "countryCode": "CD",
+    "timeZone": "Africa/Kinshasa"
+  },
+  {
+    "geonameId": 2324774,
+    "name": "Port Harcourt",
+    "asciiName": "Port Harcourt",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2326016,
+    "name": "Onitsha",
+    "asciiName": "Onitsha",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2332459,
+    "name": "Lagos",
+    "asciiName": "Lagos",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2335204,
+    "name": "Kano",
+    "asciiName": "Kano",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2335727,
+    "name": "Kaduna",
+    "asciiName": "Kaduna",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2339354,
+    "name": "Ibadan",
+    "asciiName": "Ibadan",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2347283,
+    "name": "Benin City",
+    "asciiName": "Benin City",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2352778,
+    "name": "Abuja",
+    "asciiName": "Abuja",
+    "countryCode": "NG",
+    "timeZone": "Africa/Lagos"
+  },
+  {
+    "geonameId": 2357048,
+    "name": "Ouagadougou",
+    "asciiName": "Ouagadougou",
+    "countryCode": "BF",
+    "timeZone": "Africa/Ouagadougou"
+  },
+  {
+    "geonameId": 2365267,
+    "name": "Lomé",
+    "asciiName": "Lome",
+    "countryCode": "TG",
+    "timeZone": "Africa/Lome"
+  },
+  {
+    "geonameId": 2374775,
+    "name": "Bissau",
+    "asciiName": "Bissau",
+    "countryCode": "GW",
+    "timeZone": "Africa/Bissau"
+  },
+  {
+    "geonameId": 2377450,
+    "name": "Nouakchott",
+    "asciiName": "Nouakchott",
+    "countryCode": "MR",
+    "timeZone": "Africa/Nouakchott"
+  },
+  {
+    "geonameId": 2389853,
+    "name": "Bangui",
+    "asciiName": "Bangui",
+    "countryCode": "CF",
+    "timeZone": "Africa/Bangui"
+  },
+  {
+    "geonameId": 2392087,
+    "name": "Porto-Novo",
+    "asciiName": "Porto-Novo",
+    "countryCode": "BJ",
+    "timeZone": "Africa/Porto-Novo"
+  },
+  {
+    "geonameId": 2399697,
+    "name": "Libreville",
+    "asciiName": "Libreville",
+    "countryCode": "GA",
+    "timeZone": "Africa/Libreville"
+  },
+  {
+    "geonameId": 2409306,
+    "name": "Freetown",
+    "asciiName": "Freetown",
+    "countryCode": "SL",
+    "timeZone": "Africa/Freetown"
+  },
+  {
+    "geonameId": 2410763,
+    "name": "São Tomé",
+    "asciiName": "Sao Tome",
+    "countryCode": "ST",
+    "timeZone": "Africa/Sao_Tome"
+  },
+  {
+    "geonameId": 2411585,
+    "name": "Gibraltar",
+    "asciiName": "Gibraltar",
+    "countryCode": "GI",
+    "timeZone": "Europe/Gibraltar"
+  },
+  {
+    "geonameId": 2413876,
+    "name": "Banjul",
+    "asciiName": "Banjul",
+    "countryCode": "GM",
+    "timeZone": "Africa/Banjul"
+  },
+  {
+    "geonameId": 2422465,
+    "name": "Conakry",
+    "asciiName": "Conakry",
+    "countryCode": "GN",
+    "timeZone": "Africa/Conakry"
+  },
+  {
+    "geonameId": 2422488,
+    "name": "Camayenne",
+    "asciiName": "Camayenne",
+    "countryCode": "GN",
+    "timeZone": "Africa/Conakry"
+  },
+  {
+    "geonameId": 2427123,
+    "name": "N'Djamena",
+    "asciiName": "N'Djamena",
+    "countryCode": "TD",
+    "timeZone": "Africa/Ndjamena"
+  },
+  {
+    "geonameId": 2440485,
+    "name": "Niamey",
+    "asciiName": "Niamey",
+    "countryCode": "NE",
+    "timeZone": "Africa/Niamey"
+  },
+  {
+    "geonameId": 2460596,
+    "name": "Bamako",
+    "asciiName": "Bamako",
+    "countryCode": "ML",
+    "timeZone": "Africa/Bamako"
+  },
+  {
+    "geonameId": 2464470,
+    "name": "Tunis",
+    "asciiName": "Tunis",
+    "countryCode": "TN",
+    "timeZone": "Africa/Tunis"
+  },
+  {
+    "geonameId": 2507480,
+    "name": "Algiers",
+    "asciiName": "Algiers",
+    "countryCode": "DZ",
+    "timeZone": "Africa/Algiers"
+  },
+  {
+    "geonameId": 2538475,
+    "name": "Rabat",
+    "asciiName": "Rabat",
+    "countryCode": "MA",
+    "timeZone": "Africa/Casablanca"
+  },
+  {
+    "geonameId": 2553604,
+    "name": "Casablanca",
+    "asciiName": "Casablanca",
+    "countryCode": "MA",
+    "timeZone": "Africa/Casablanca"
+  },
+  {
+    "geonameId": 2562305,
+    "name": "Valletta",
+    "asciiName": "Valletta",
+    "countryCode": "MT",
+    "timeZone": "Europe/Malta"
+  },
+  {
+    "geonameId": 2611396,
+    "name": "Tórshavn",
+    "asciiName": "Torshavn",
+    "countryCode": "FO",
+    "timeZone": "Atlantic/Faroe"
+  },
+  {
+    "geonameId": 2618425,
+    "name": "Copenhagen",
+    "asciiName": "Copenhagen",
+    "countryCode": "DK",
+    "timeZone": "Europe/Copenhagen"
+  },
+  {
+    "geonameId": 2643743,
+    "name": "London",
+    "asciiName": "London",
+    "countryCode": "GB",
+    "timeZone": "Europe/London"
+  },
+  {
+    "geonameId": 2660646,
+    "name": "Geneva",
+    "asciiName": "Geneva",
+    "countryCode": "CH",
+    "timeZone": "Europe/Zurich"
+  },
+  {
+    "geonameId": 2661552,
+    "name": "Bern",
+    "asciiName": "Bern",
+    "countryCode": "CH",
+    "timeZone": "Europe/Zurich"
+  },
+  {
+    "geonameId": 2673730,
+    "name": "Stockholm",
+    "asciiName": "Stockholm",
+    "countryCode": "SE",
+    "timeZone": "Europe/Stockholm"
+  },
+  {
+    "geonameId": 2729907,
+    "name": "Longyearbyen",
+    "asciiName": "Longyearbyen",
+    "countryCode": "SJ",
+    "timeZone": "Arctic/Longyearbyen"
+  },
+  {
+    "geonameId": 2759794,
+    "name": "Amsterdam",
+    "asciiName": "Amsterdam",
+    "countryCode": "NL",
+    "timeZone": "Europe/Amsterdam"
+  },
+  {
+    "geonameId": 2761369,
+    "name": "Vienna",
+    "asciiName": "Vienna",
+    "countryCode": "AT",
+    "timeZone": "Europe/Vienna"
+  },
+  {
+    "geonameId": 2800866,
+    "name": "Brussels",
+    "asciiName": "Brussels",
+    "countryCode": "BE",
+    "timeZone": "Europe/Brussels"
+  },
+  {
+    "geonameId": 2867714,
+    "name": "Munich",
+    "asciiName": "Munich",
+    "countryCode": "DE",
+    "timeZone": "Europe/Berlin"
+  },
+  {
+    "geonameId": 2911298,
+    "name": "Hamburg",
+    "asciiName": "Hamburg",
+    "countryCode": "DE",
+    "timeZone": "Europe/Berlin"
+  },
+  {
+    "geonameId": 2950159,
+    "name": "Berlin",
+    "asciiName": "Berlin",
+    "countryCode": "DE",
+    "timeZone": "Europe/Berlin"
+  },
+  {
+    "geonameId": 2960316,
+    "name": "Luxembourg",
+    "asciiName": "Luxembourg",
+    "countryCode": "LU",
+    "timeZone": "Europe/Luxembourg"
+  },
+  {
+    "geonameId": 2964574,
+    "name": "Dublin",
+    "asciiName": "Dublin",
+    "countryCode": "IE",
+    "timeZone": "Europe/Dublin"
+  },
+  {
+    "geonameId": 2988507,
+    "name": "Paris",
+    "asciiName": "Paris",
+    "countryCode": "FR",
+    "timeZone": "Europe/Paris"
+  },
+  {
+    "geonameId": 2993458,
+    "name": "Monaco",
+    "asciiName": "Monaco",
+    "countryCode": "MC",
+    "timeZone": "Europe/Monaco"
+  },
+  {
+    "geonameId": 3041563,
+    "name": "Andorra la Vella",
+    "asciiName": "Andorra la Vella",
+    "countryCode": "AD",
+    "timeZone": "Europe/Andorra"
+  },
+  {
+    "geonameId": 3041732,
+    "name": "Mariehamn",
+    "asciiName": "Mariehamn",
+    "countryCode": "AX",
+    "timeZone": "Europe/Mariehamn"
+  },
+  {
+    "geonameId": 3042030,
+    "name": "Vaduz",
+    "asciiName": "Vaduz",
+    "countryCode": "LI",
+    "timeZone": "Europe/Vaduz"
+  },
+  {
+    "geonameId": 3042091,
+    "name": "Saint Helier",
+    "asciiName": "Saint Helier",
+    "countryCode": "JE",
+    "timeZone": "Europe/Jersey"
+  },
+  {
+    "geonameId": 3042237,
+    "name": "Douglas",
+    "asciiName": "Douglas",
+    "countryCode": "IM",
+    "timeZone": "Europe/Isle_of_Man"
+  },
+  {
+    "geonameId": 3042287,
+    "name": "Saint Peter Port",
+    "asciiName": "Saint Peter Port",
+    "countryCode": "GG",
+    "timeZone": "Europe/Guernsey"
+  },
+  {
+    "geonameId": 3054643,
+    "name": "Budapest",
+    "asciiName": "Budapest",
+    "countryCode": "HU",
+    "timeZone": "Europe/Budapest"
+  },
+  {
+    "geonameId": 3060972,
+    "name": "Bratislava",
+    "asciiName": "Bratislava",
+    "countryCode": "SK",
+    "timeZone": "Europe/Bratislava"
+  },
+  {
+    "geonameId": 3067696,
+    "name": "Prague",
+    "asciiName": "Prague",
+    "countryCode": "CZ",
+    "timeZone": "Europe/Prague"
+  },
+  {
+    "geonameId": 3117735,
+    "name": "Madrid",
+    "asciiName": "Madrid",
+    "countryCode": "ES",
+    "timeZone": "Europe/Madrid"
+  },
+  {
+    "geonameId": 3128760,
+    "name": "Barcelona",
+    "asciiName": "Barcelona",
+    "countryCode": "ES",
+    "timeZone": "Europe/Madrid"
+  },
+  {
+    "geonameId": 3143244,
+    "name": "Oslo",
+    "asciiName": "Oslo",
+    "countryCode": "NO",
+    "timeZone": "Europe/Oslo"
+  },
+  {
+    "geonameId": 3168070,
+    "name": "San Marino",
+    "asciiName": "San Marino",
+    "countryCode": "SM",
+    "timeZone": "Europe/San_Marino"
+  },
+  {
+    "geonameId": 3169070,
+    "name": "Rome",
+    "asciiName": "Rome",
+    "countryCode": "IT",
+    "timeZone": "Europe/Rome"
+  },
+  {
+    "geonameId": 3183875,
+    "name": "Tirana",
+    "asciiName": "Tirana",
+    "countryCode": "AL",
+    "timeZone": "Europe/Tirane"
+  },
+  {
+    "geonameId": 3186886,
+    "name": "Zagreb",
+    "asciiName": "Zagreb",
+    "countryCode": "HR",
+    "timeZone": "Europe/Zagreb"
+  },
+  {
+    "geonameId": 3191281,
+    "name": "Sarajevo",
+    "asciiName": "Sarajevo",
+    "countryCode": "BA",
+    "timeZone": "Europe/Sarajevo"
+  },
+  {
+    "geonameId": 3193044,
+    "name": "Podgorica",
+    "asciiName": "Podgorica",
+    "countryCode": "ME",
+    "timeZone": "Europe/Podgorica"
+  },
+  {
+    "geonameId": 3196359,
+    "name": "Ljubljana",
+    "asciiName": "Ljubljana",
+    "countryCode": "SI",
+    "timeZone": "Europe/Ljubljana"
+  },
+  {
+    "geonameId": 3352136,
+    "name": "Windhoek",
+    "asciiName": "Windhoek",
+    "countryCode": "NA",
+    "timeZone": "Africa/Windhoek"
+  },
+  {
+    "geonameId": 3369157,
+    "name": "Cape Town",
+    "asciiName": "Cape Town",
+    "countryCode": "ZA",
+    "timeZone": "Africa/Johannesburg"
+  },
+  {
+    "geonameId": 3370903,
+    "name": "Jamestown",
+    "asciiName": "Jamestown",
+    "countryCode": "SH",
+    "timeZone": "Atlantic/St_Helena"
+  },
+  {
+    "geonameId": 3374036,
+    "name": "Bridgetown",
+    "asciiName": "Bridgetown",
+    "countryCode": "BB",
+    "timeZone": "America/Barbados"
+  },
+  {
+    "geonameId": 3374333,
+    "name": "Praia",
+    "asciiName": "Praia",
+    "countryCode": "CV",
+    "timeZone": "Atlantic/Cape_Verde"
+  },
+  {
+    "geonameId": 3378644,
+    "name": "Georgetown",
+    "asciiName": "Georgetown",
+    "countryCode": "GY",
+    "timeZone": "America/Guyana"
+  },
+  {
+    "geonameId": 3382160,
+    "name": "Cayenne",
+    "asciiName": "Cayenne",
+    "countryCode": "GF",
+    "timeZone": "America/Cayenne"
+  },
+  {
+    "geonameId": 3383330,
+    "name": "Paramaribo",
+    "asciiName": "Paramaribo",
+    "countryCode": "SR",
+    "timeZone": "America/Paramaribo"
+  },
+  {
+    "geonameId": 3390760,
+    "name": "Recife",
+    "asciiName": "Recife",
+    "countryCode": "BR",
+    "timeZone": "America/Recife"
+  },
+  {
+    "geonameId": 3399415,
+    "name": "Fortaleza",
+    "asciiName": "Fortaleza",
+    "countryCode": "BR",
+    "timeZone": "America/Fortaleza"
+  },
+  {
+    "geonameId": 3413829,
+    "name": "Reykjavík",
+    "asciiName": "Reykjavik",
+    "countryCode": "IS",
+    "timeZone": "Atlantic/Reykjavik"
+  },
+  {
+    "geonameId": 3421319,
+    "name": "Nuuk",
+    "asciiName": "Nuuk",
+    "countryCode": "GL",
+    "timeZone": "America/Nuuk"
+  },
+  {
+    "geonameId": 3424934,
+    "name": "Saint-Pierre",
+    "asciiName": "Saint-Pierre",
+    "countryCode": "PM",
+    "timeZone": "America/Miquelon"
+  },
+  {
+    "geonameId": 3426466,
+    "name": "Grytviken",
+    "asciiName": "Grytviken",
+    "countryCode": "GS",
+    "timeZone": "Atlantic/South_Georgia"
+  },
+  {
+    "geonameId": 3426691,
+    "name": "Stanley",
+    "asciiName": "Stanley",
+    "countryCode": "FK",
+    "timeZone": "Atlantic/Stanley"
+  },
+  {
+    "geonameId": 3435910,
+    "name": "Buenos Aires",
+    "asciiName": "Buenos Aires",
+    "countryCode": "AR",
+    "timeZone": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "geonameId": 3439389,
+    "name": "Asunción",
+    "asciiName": "Asuncion",
+    "countryCode": "PY",
+    "timeZone": "America/Asuncion"
+  },
+  {
+    "geonameId": 3441575,
+    "name": "Montevideo",
+    "asciiName": "Montevideo",
+    "countryCode": "UY",
+    "timeZone": "America/Montevideo"
+  },
+  {
+    "geonameId": 3448439,
+    "name": "São Paulo",
+    "asciiName": "Sao Paulo",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3450554,
+    "name": "Salvador",
+    "asciiName": "Salvador",
+    "countryCode": "BR",
+    "timeZone": "America/Bahia"
+  },
+  {
+    "geonameId": 3451190,
+    "name": "Rio de Janeiro",
+    "asciiName": "Rio de Janeiro",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3462377,
+    "name": "Goiânia",
+    "asciiName": "Goiania",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3464975,
+    "name": "Curitiba",
+    "asciiName": "Curitiba",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3469058,
+    "name": "Brasília",
+    "asciiName": "Brasilia",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3470127,
+    "name": "Belo Horizonte",
+    "asciiName": "Belo Horizonte",
+    "countryCode": "BR",
+    "timeZone": "America/Sao_Paulo"
+  },
+  {
+    "geonameId": 3489854,
+    "name": "Kingston",
+    "asciiName": "Kingston",
+    "countryCode": "JM",
+    "timeZone": "America/Jamaica"
+  },
+  {
+    "geonameId": 3492908,
+    "name": "Santo Domingo",
+    "asciiName": "Santo Domingo",
+    "countryCode": "DO",
+    "timeZone": "America/Santo_Domingo"
+  },
+  {
+    "geonameId": 3513090,
+    "name": "Willemstad",
+    "asciiName": "Willemstad",
+    "countryCode": "CW",
+    "timeZone": "America/Curacao"
+  },
+  {
+    "geonameId": 3513392,
+    "name": "Philipsburg",
+    "asciiName": "Philipsburg",
+    "countryCode": "SX",
+    "timeZone": "America/Lower_Princes"
+  },
+  {
+    "geonameId": 3513563,
+    "name": "Kralendijk",
+    "asciiName": "Kralendijk",
+    "countryCode": "BQ",
+    "timeZone": "America/Kralendijk"
+  },
+  {
+    "geonameId": 3521081,
+    "name": "Puebla",
+    "asciiName": "Puebla",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3526683,
+    "name": "Iztapalapa",
+    "asciiName": "Iztapalapa",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3529612,
+    "name": "Ecatepec de Morelos",
+    "asciiName": "Ecatepec de Morelos",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3530597,
+    "name": "Mexico City",
+    "asciiName": "Mexico City",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3553478,
+    "name": "Havana",
+    "asciiName": "Havana",
+    "countryCode": "CU",
+    "timeZone": "America/Havana"
+  },
+  {
+    "geonameId": 3570675,
+    "name": "Fort-de-France",
+    "asciiName": "Fort-de-France",
+    "countryCode": "MQ",
+    "timeZone": "America/Martinique"
+  },
+  {
+    "geonameId": 3571824,
+    "name": "Nassau",
+    "asciiName": "Nassau",
+    "countryCode": "BS",
+    "timeZone": "America/Nassau"
+  },
+  {
+    "geonameId": 3573197,
+    "name": "Hamilton",
+    "asciiName": "Hamilton",
+    "countryCode": "BM",
+    "timeZone": "Atlantic/Bermuda"
+  },
+  {
+    "geonameId": 3573374,
+    "name": "The Valley",
+    "asciiName": "The Valley",
+    "countryCode": "AI",
+    "timeZone": "America/Anguilla"
+  },
+  {
+    "geonameId": 3573890,
+    "name": "Port of Spain",
+    "asciiName": "Port of Spain",
+    "countryCode": "TT",
+    "timeZone": "America/Port_of_Spain"
+  },
+  {
+    "geonameId": 3575551,
+    "name": "Basseterre",
+    "asciiName": "Basseterre",
+    "countryCode": "KN",
+    "timeZone": "America/St_Kitts"
+  },
+  {
+    "geonameId": 3575635,
+    "name": "Roseau",
+    "asciiName": "Roseau",
+    "countryCode": "DM",
+    "timeZone": "America/Dominica"
+  },
+  {
+    "geonameId": 3576022,
+    "name": "Saint John’s",
+    "asciiName": "Saint John's",
+    "countryCode": "AG",
+    "timeZone": "America/Antigua"
+  },
+  {
+    "geonameId": 3576812,
+    "name": "Castries",
+    "asciiName": "Castries",
+    "countryCode": "LC",
+    "timeZone": "America/St_Lucia"
+  },
+  {
+    "geonameId": 3576994,
+    "name": "Cockburn Town",
+    "asciiName": "Cockburn Town",
+    "countryCode": "TC",
+    "timeZone": "America/Grand_Turk"
+  },
+  {
+    "geonameId": 3577154,
+    "name": "Oranjestad",
+    "asciiName": "Oranjestad",
+    "countryCode": "AW",
+    "timeZone": "America/Aruba"
+  },
+  {
+    "geonameId": 3577430,
+    "name": "Road Town",
+    "asciiName": "Road Town",
+    "countryCode": "VG",
+    "timeZone": "America/Tortola"
+  },
+  {
+    "geonameId": 3577887,
+    "name": "Kingstown",
+    "asciiName": "Kingstown",
+    "countryCode": "VC",
+    "timeZone": "America/St_Vincent"
+  },
+  {
+    "geonameId": 3578069,
+    "name": "Plymouth",
+    "asciiName": "Plymouth",
+    "countryCode": "MS",
+    "timeZone": "America/Montserrat"
+  },
+  {
+    "geonameId": 3578851,
+    "name": "Marigot",
+    "asciiName": "Marigot",
+    "countryCode": "MF",
+    "timeZone": "America/Marigot"
+  },
+  {
+    "geonameId": 3579132,
+    "name": "Gustavia",
+    "asciiName": "Gustavia",
+    "countryCode": "BL",
+    "timeZone": "America/St_Barthelemy"
+  },
+  {
+    "geonameId": 3579732,
+    "name": "Basse-Terre",
+    "asciiName": "Basse-Terre",
+    "countryCode": "GP",
+    "timeZone": "America/Guadeloupe"
+  },
+  {
+    "geonameId": 3579925,
+    "name": "Saint George's",
+    "asciiName": "Saint George's",
+    "countryCode": "GD",
+    "timeZone": "America/Grenada"
+  },
+  {
+    "geonameId": 3580661,
+    "name": "George Town",
+    "asciiName": "George Town",
+    "countryCode": "KY",
+    "timeZone": "America/Cayman"
+  },
+  {
+    "geonameId": 3582672,
+    "name": "Belmopan",
+    "asciiName": "Belmopan",
+    "countryCode": "BZ",
+    "timeZone": "America/Belize"
+  },
+  {
+    "geonameId": 3583361,
+    "name": "San Salvador",
+    "asciiName": "San Salvador",
+    "countryCode": "SV",
+    "timeZone": "America/El_Salvador"
+  },
+  {
+    "geonameId": 3598132,
+    "name": "Guatemala City",
+    "asciiName": "Guatemala City",
+    "countryCode": "GT",
+    "timeZone": "America/Guatemala"
+  },
+  {
+    "geonameId": 3600949,
+    "name": "Tegucigalpa",
+    "asciiName": "Tegucigalpa",
+    "countryCode": "HN",
+    "timeZone": "America/Tegucigalpa"
+  },
+  {
+    "geonameId": 3617763,
+    "name": "Managua",
+    "asciiName": "Managua",
+    "countryCode": "NI",
+    "timeZone": "America/Managua"
+  },
+  {
+    "geonameId": 3621849,
+    "name": "San José",
+    "asciiName": "San Jose",
+    "countryCode": "CR",
+    "timeZone": "America/Costa_Rica"
+  },
+  {
+    "geonameId": 3625549,
+    "name": "Valencia",
+    "asciiName": "Valencia",
+    "countryCode": "VE",
+    "timeZone": "America/Caracas"
+  },
+  {
+    "geonameId": 3633009,
+    "name": "Maracaibo",
+    "asciiName": "Maracaibo",
+    "countryCode": "VE",
+    "timeZone": "America/Caracas"
+  },
+  {
+    "geonameId": 3646738,
+    "name": "Caracas",
+    "asciiName": "Caracas",
+    "countryCode": "VE",
+    "timeZone": "America/Caracas"
+  },
+  {
+    "geonameId": 3652462,
+    "name": "Quito",
+    "asciiName": "Quito",
+    "countryCode": "EC",
+    "timeZone": "America/Guayaquil"
+  },
+  {
+    "geonameId": 3657509,
+    "name": "Guayaquil",
+    "asciiName": "Guayaquil",
+    "countryCode": "EC",
+    "timeZone": "America/Guayaquil"
+  },
+  {
+    "geonameId": 3663517,
+    "name": "Manaus",
+    "asciiName": "Manaus",
+    "countryCode": "BR",
+    "timeZone": "America/Manaus"
+  },
+  {
+    "geonameId": 3674962,
+    "name": "Medellín",
+    "asciiName": "Medellin",
+    "countryCode": "CO",
+    "timeZone": "America/Bogota"
+  },
+  {
+    "geonameId": 3687925,
+    "name": "Cali",
+    "asciiName": "Cali",
+    "countryCode": "CO",
+    "timeZone": "America/Bogota"
+  },
+  {
+    "geonameId": 3688689,
+    "name": "Bogotá",
+    "asciiName": "Bogota",
+    "countryCode": "CO",
+    "timeZone": "America/Bogota"
+  },
+  {
+    "geonameId": 3703443,
+    "name": "Panama City",
+    "asciiName": "Panama City",
+    "countryCode": "PA",
+    "timeZone": "America/Panama"
+  },
+  {
+    "geonameId": 3718426,
+    "name": "Port-au-Prince",
+    "asciiName": "Port-au-Prince",
+    "countryCode": "HT",
+    "timeZone": "America/Port-au-Prince"
+  },
+  {
+    "geonameId": 3860259,
+    "name": "Córdoba",
+    "asciiName": "Cordoba",
+    "countryCode": "AR",
+    "timeZone": "America/Argentina/Cordoba"
+  },
+  {
+    "geonameId": 3871336,
+    "name": "Santiago",
+    "asciiName": "Santiago",
+    "countryCode": "CL",
+    "timeZone": "America/Santiago"
+  },
+  {
+    "geonameId": 3903987,
+    "name": "Sucre",
+    "asciiName": "Sucre",
+    "countryCode": "BO",
+    "timeZone": "America/La_Paz"
+  },
+  {
+    "geonameId": 3904906,
+    "name": "Santa Cruz de la Sierra",
+    "asciiName": "Santa Cruz de la Sierra",
+    "countryCode": "BO",
+    "timeZone": "America/La_Paz"
+  },
+  {
+    "geonameId": 3911925,
+    "name": "La Paz",
+    "asciiName": "La Paz",
+    "countryCode": "BO",
+    "timeZone": "America/La_Paz"
+  },
+  {
+    "geonameId": 3936456,
+    "name": "Lima",
+    "asciiName": "Lima",
+    "countryCode": "PE",
+    "timeZone": "America/Lima"
+  },
+  {
+    "geonameId": 3979770,
+    "name": "Zapopan",
+    "asciiName": "Zapopan",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3981609,
+    "name": "Tijuana",
+    "asciiName": "Tijuana",
+    "countryCode": "MX",
+    "timeZone": "America/Tijuana"
+  },
+  {
+    "geonameId": 3991164,
+    "name": "Santiago de Querétaro",
+    "asciiName": "Santiago de Queretaro",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 3998655,
+    "name": "León de los Aldama",
+    "asciiName": "Leon de los Aldama",
+    "countryCode": "MX",
+    "timeZone": "America/Mexico_City"
+  },
+  {
+    "geonameId": 4013708,
+    "name": "Ciudad Juárez",
+    "asciiName": "Ciudad Juarez",
+    "countryCode": "MX",
+    "timeZone": "America/Ciudad_Juarez"
+  },
+  {
+    "geonameId": 4030723,
+    "name": "Adamstown",
+    "asciiName": "Adamstown",
+    "countryCode": "PN",
+    "timeZone": "Pacific/Pitcairn"
+  },
+  {
+    "geonameId": 4032402,
+    "name": "Nuku‘alofa",
+    "asciiName": "Nuku'alofa",
+    "countryCode": "TO",
+    "timeZone": "Pacific/Tongatapu"
+  },
+  {
+    "geonameId": 4033936,
+    "name": "Papeete",
+    "asciiName": "Papeete",
+    "countryCode": "PF",
+    "timeZone": "Pacific/Tahiti"
+  },
+  {
+    "geonameId": 4034821,
+    "name": "Mata-Utu",
+    "asciiName": "Mata-Utu",
+    "countryCode": "WF",
+    "timeZone": "Pacific/Wallis"
+  },
+  {
+    "geonameId": 4035413,
+    "name": "Apia",
+    "asciiName": "Apia",
+    "countryCode": "WS",
+    "timeZone": "Pacific/Apia"
+  },
+  {
+    "geonameId": 4035715,
+    "name": "Avarua",
+    "asciiName": "Avarua",
+    "countryCode": "CK",
+    "timeZone": "Pacific/Rarotonga"
+  },
+  {
+    "geonameId": 4036284,
+    "name": "Alofi",
+    "asciiName": "Alofi",
+    "countryCode": "NU",
+    "timeZone": "Pacific/Niue"
+  },
+  {
+    "geonameId": 4044012,
+    "name": "Hagåtña",
+    "asciiName": "Hagatna",
+    "countryCode": "GU",
+    "timeZone": "Pacific/Guam"
+  },
+  {
+    "geonameId": 4140963,
+    "name": "Washington",
+    "asciiName": "Washington",
+    "countryCode": "US",
+    "timeZone": "America/New_York"
+  },
+  {
+    "geonameId": 4560349,
+    "name": "Philadelphia",
+    "asciiName": "Philadelphia",
+    "countryCode": "US",
+    "timeZone": "America/New_York"
+  },
+  {
+    "geonameId": 4568127,
+    "name": "San Juan",
+    "asciiName": "San Juan",
+    "countryCode": "PR",
+    "timeZone": "America/Puerto_Rico"
+  },
+  {
+    "geonameId": 4699066,
+    "name": "Houston",
+    "asciiName": "Houston",
+    "countryCode": "US",
+    "timeZone": "America/Chicago"
+  },
+  {
+    "geonameId": 4795467,
+    "name": "Charlotte Amalie",
+    "asciiName": "Charlotte Amalie",
+    "countryCode": "VI",
+    "timeZone": "America/St_Thomas"
+  },
+  {
+    "geonameId": 4887398,
+    "name": "Chicago",
+    "asciiName": "Chicago",
+    "countryCode": "US",
+    "timeZone": "America/Chicago"
+  },
+  {
+    "geonameId": 5110302,
+    "name": "Brooklyn",
+    "asciiName": "Brooklyn",
+    "countryCode": "US",
+    "timeZone": "America/New_York"
+  },
+  {
+    "geonameId": 5128581,
+    "name": "New York City",
+    "asciiName": "New York City",
+    "countryCode": "US",
+    "timeZone": "America/New_York"
+  },
+  {
+    "geonameId": 5133273,
+    "name": "Queens",
+    "asciiName": "Queens",
+    "countryCode": "US",
+    "timeZone": "America/New_York"
+  },
+  {
+    "geonameId": 5308655,
+    "name": "Phoenix",
+    "asciiName": "Phoenix",
+    "countryCode": "US",
+    "timeZone": "America/Phoenix"
+  },
+  {
+    "geonameId": 5368361,
+    "name": "Los Angeles",
+    "asciiName": "Los Angeles",
+    "countryCode": "US",
+    "timeZone": "America/Los_Angeles"
+  },
+  {
+    "geonameId": 5391959,
+    "name": "San Francisco",
+    "asciiName": "San Francisco",
+    "countryCode": "US",
+    "timeZone": "America/Los_Angeles"
+  },
+  {
+    "geonameId": 5881576,
+    "name": "Pago Pago",
+    "asciiName": "Pago Pago",
+    "countryCode": "AS",
+    "timeZone": "Pacific/Pago_Pago"
+  },
+  {
+    "geonameId": 6077243,
+    "name": "Montréal",
+    "asciiName": "Montreal",
+    "countryCode": "CA",
+    "timeZone": "America/Toronto"
+  },
+  {
+    "geonameId": 6094817,
+    "name": "Ottawa",
+    "asciiName": "Ottawa",
+    "countryCode": "CA",
+    "timeZone": "America/Toronto"
+  },
+  {
+    "geonameId": 6167865,
+    "name": "Toronto",
+    "asciiName": "Toronto",
+    "countryCode": "CA",
+    "timeZone": "America/Toronto"
+  },
+  {
+    "geonameId": 6611854,
+    "name": "Nay Pyi Taw",
+    "asciiName": "Nay Pyi Taw",
+    "countryCode": "MM",
+    "timeZone": "Asia/Yangon"
+  },
+  {
+    "geonameId": 6691831,
+    "name": "Vatican City",
+    "asciiName": "Vatican City",
+    "countryCode": "VA",
+    "timeZone": "Europe/Vatican"
+  },
+  {
+    "geonameId": 7304591,
+    "name": "West Island",
+    "asciiName": "West Island",
+    "countryCode": "CC",
+    "timeZone": "Indian/Cocos"
+  },
+  {
+    "geonameId": 7626461,
+    "name": "Yaren",
+    "asciiName": "Yaren",
+    "countryCode": "NR",
+    "timeZone": "Pacific/Nauru"
+  },
+  {
+    "geonameId": 7828758,
+    "name": "Saipan",
+    "asciiName": "Saipan",
+    "countryCode": "MP",
+    "timeZone": "Pacific/Saipan"
+  },
+  {
+    "geonameId": 8063361,
+    "name": "Ngerulmud",
+    "asciiName": "Ngerulmud",
+    "countryCode": "PW",
+    "timeZone": "Pacific/Palau"
+  },
+  {
+    "geonameId": 12226438,
+    "name": "Ciudad de la Paz",
+    "asciiName": "Ciudad de la Paz",
+    "countryCode": "GQ",
+    "timeZone": "Africa/Malabo"
+  },
+  {
+    "geonameId": 12747063,
+    "name": "New Territories",
+    "asciiName": "New Territories",
+    "countryCode": "HK",
+    "timeZone": "Asia/Hong_Kong"
+  },
+  {
+    "geonameId": 12908892,
+    "name": "New Taipei City",
+    "asciiName": "New Taipei City",
+    "countryCode": "TW",
+    "timeZone": "Asia/Taipei"
+  }
+]
