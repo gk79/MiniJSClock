@@ -14,7 +14,7 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Latest completed task: [TASK-0004](../tasks/done/TASK-0004.md) — deterministic 400-city GeoNames catalog; independent review PASS and integrated into `main` at `40a7d9137058257b23f1950b486652a210a042e6`
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (see TASK-0004 evidence)
 - Decisions currently pending: none at architecture level
-- Next recommended action: fresh top-level `independent-cloud-standard` review of the local TASK-0005 implementation branch and evidence; obtain explicit user approval before publishing it to `origin` if remote review is needed. Pages deployment has not been triggered and no production release verdict has been made.
+- Next recommended action: fresh top-level `independent-cloud-standard` review of `origin/codex/task-0005-implementation` and the TASK-0005 evidence. Pages deployment has not been triggered and no production release verdict has been made.
 
 ## Recent verification
 
