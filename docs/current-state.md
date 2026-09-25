@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0003 integrated into `main`; push-triggered CI passed for the integration commit
+- Current milestone: TASK-0004 ready for implementation; TASK-0003 integrated into `main` with push-triggered CI passed
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none
+- Active task(s): [TASK-0004](../tasks/active/TASK-0004.md) — ready
 - Latest completed task: [TASK-0003](../tasks/done/TASK-0003.md) — deterministic time primitives and running local clock; integrated into `main` at `c24963b18c6fe5405be4c0d6c86448fbc8655061`
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern
 - Decisions currently pending: none at architecture level
-- Next recommended action: readiness analysis for planned TASK-0004; do not create TASK-0004 yet. Pages deployment has not been triggered and no production release verdict has been made.
+- Next recommended action: start a fresh `cloud-standard` TASK-0004 implementation session from `codex/task-0004-planning`. Pages deployment has not been triggered and no production release verdict has been made.
 
 ## Recent verification
 
