@@ -84,3 +84,121 @@ h1 {
   letter-spacing: -0.04em;
   line-height: 1.1;
 }
+
+.dashboard {
+  width: min(100%, 65rem);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.status-panel {
+  width: 100%;
+}
+
+.world-section {
+  padding: 2rem;
+  border: 1px solid #2e3948;
+  border-radius: 0.75rem;
+  background: #171e28;
+}
+
+.world-section h2,
+.world-card h3 {
+  margin: 0;
+}
+
+.picker {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 30rem;
+  margin-top: 1.5rem;
+}
+
+.picker label {
+  color: #c1ccda;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.picker input,
+.picker select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #64758b;
+  border-radius: 0.375rem;
+  background: #10151d;
+  color: #f4f7fb;
+}
+
+.picker-count,
+.empty-state,
+.zone-label {
+  color: #9fb0c5;
+}
+
+.picker-count {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.storage-warning {
+  padding: 0.75rem;
+  border: 1px solid #a98236;
+  border-radius: 0.375rem;
+  color: #ffe3a1;
+}
+
+.clock-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  list-style: none;
+}
+
+.world-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid #3c4a5c;
+  border-radius: 0.5rem;
+  background: #202a36;
+}
+
+.country-code {
+  color: #9fb0c5;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.zone-label {
+  margin: 0.25rem 0 1rem;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.world-time {
+  color: #f4f7fb;
+  font-size: clamp(1.75rem, 6vw, 2.25rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.world-card button {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #8295ae;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #f4f7fb;
+  cursor: pointer;
+}
+
+.world-card button:hover,
+.world-card button:focus-visible {
+  background: #344357;
+}
