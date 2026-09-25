@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0005 implementation verified and awaiting fresh independent review
+- Current milestone: TASK-0005 review-complete and awaiting human integration decision
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): [TASK-0005](../tasks/active/TASK-0005.md) — world clocks with versioned local persistence and recovery; review
-- Latest completed task: [TASK-0004](../tasks/done/TASK-0004.md) — deterministic 400-city GeoNames catalog; independent review PASS and integrated into `main` at `40a7d9137058257b23f1950b486652a210a042e6`
-- Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (see TASK-0004 evidence)
+- Active task(s): none
+- Latest completed task: [TASK-0005](../tasks/done/TASK-0005.md) — world clocks with versioned local persistence and recovery; fresh independent review PASS at `237b7a943d8aeee58d858e71f34bb2a4eb2f7153`; awaiting human integration decision
+- Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (tracked separately under `LEARN-20260925-155537`)
 - Decisions currently pending: none at architecture level
-- Next recommended action: fresh top-level `independent-cloud-standard` review of `origin/codex/task-0005-implementation` and the TASK-0005 evidence. Pages deployment has not been triggered and no production release verdict has been made.
+- Next recommended action: human integration decision for `origin/codex/task-0005-implementation`. GitHub Pages has not been deployed and no production release verdict has been made.
 
 ## Recent verification
 
@@ -56,3 +56,4 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-25 | TASK-0004 formal independent review | Exact head `d6354b8e2f178554fa423613e52fa2b52b8fb0d9` against `origin/main` at `311c7a716410caeb051f03979f0efcfe5b74f93b`; official ZIP/TSV hash and byte check; independent 400-row selection; catalog drift, security, verify, CI-mode and hosted CI run 36145528467 | PASS: no blocking findings; [task](../tasks/done/TASK-0004.md) closed for human PR #19 integration decision; plain local `make ci` intermittency remains a separate learning candidate |
 | 2026-09-25 | TASK-0004 integration and hosted CI | Human-controlled local fast-forward integration into `main` at `40a7d9137058257b23f1950b486652a210a042e6`; [PR #19](https://github.com/gk79/MiniJSClock/pull/19) closed/marked merged; push-triggered [CI run #21](https://github.com/gk79/MiniJSClock/actions/runs/36150220611) | PASS: run completed successfully for that exact commit; no active task; Pages deployment untriggered and production release verdict undecided; existing local exact-second Playwright intermittency remains open under its learning candidate |
 | 2026-09-25 | TASK-0005 primary implementation | Reviewed planning head `1432378a86c6e3a3bea2d2250389712f2125874a`; baseline harness/test/build; focused persistence tests; `make test-integration`, `make test-e2e`, `make security`, `make verify`, `make ci`, and diff check | PASS: versioned browser-local selection, safe recovery, bundled-catalog picker, single-ticker world clocks, and production-base-path Chromium scenarios verified; fresh independent review pending. Existing local-clock Playwright assertion remained unchanged. |
+| 2026-09-25 | TASK-0005 formal independent review closeout | User-reported fresh top-level verdict PASS for remote head `237b7a943d8aeee58d858e71f34bb2a4eb2f7153`; reviewed implementation diff, contract, persistence, world clocks, E2E, requirements, ADR-001, and TM-004/TM-005/TM-006/TM-009; closeout `make harness-check` and `git diff --check` | PASS: no blocking findings reported; [TASK-0005](../tasks/done/TASK-0005.md) moved to done; human integration decision pending. Playwright timing learning remains separate; Pages undeployed and production release undecided. |
