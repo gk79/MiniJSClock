@@ -5,17 +5,17 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0010 integrated into `main`; hosted CI and product-owner manual searchable-combobox acceptance PASS; TASK-0006 planning contract materialized
+- Current milestone: TASK-0010 integrated into `main`; hosted CI and product-owner manual searchable-combobox acceptance PASS; TASK-0006 implementation verified and awaiting formal independent review
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): [TASK-0006](../tasks/active/TASK-0006.md) — ready; global clock presentation and time-format settings
+- Active task(s): [TASK-0006](../tasks/active/TASK-0006.md) — review; global clock presentation/time-format settings implemented with V2 persistence
 - Latest completed task: [TASK-0010](../tasks/done/TASK-0010.md) — searchable city combobox; fresh top-level independent review PASS at `52669e4352d62a56960f2de5dba55394d140bde6`; human-approved fast-forward integration into `main` at `e3f5cbacacd3d807572e0477c2ee14b1fcd76e77`; push-triggered [CI run #25](https://github.com/gk79/MiniJSClock/actions/runs/36232430067) PASS for that exact commit.
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (tracked separately under `LEARN-20260925-155537`)
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
 - Decisions currently pending: none at architecture level
-- Next recommended action: TASK-0006 implementation after planning review. TASK-0007 must wait for TASK-0006 required review and integration. GitHub Pages has not been deployed and no production release verdict has been made.
+- Next recommended action: fresh top-level `independent-cloud-standard` review of TASK-0006 implementation on `codex/task-0006-implementation`. TASK-0007 must wait for TASK-0006 required review and integration. GitHub Pages has not been deployed and no production release verdict has been made.
 
 ## Recent verification
 

@@ -182,7 +182,7 @@ test('filters prefixes and supports keyboard selection, Escape and empty results
   await expect(picker).toHaveValue('')
   await expect(picker).toBeFocused()
   await picker.fill('Tokyo')
-  await expect(page.getByRole('option')).toHaveCount(0)
+  await expect(page.getByRole('listbox').getByRole('option')).toHaveCount(0)
   await picker.press('ArrowDown')
   await picker.press('Enter')
   await expect(page.locator('[data-city-id]')).toHaveCount(1)
