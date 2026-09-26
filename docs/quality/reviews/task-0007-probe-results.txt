@@ -1,0 +1,2 @@
+{"parserChecks":46,"resolverCases":13,"catalogCities":400,"zones":258,"offsetChecks":50310,"offsetHours":[-11,13],"roundTrips":516,"intervalChecks":3,"runtime":"v24.21.0","icu":"78.3","tz":"2026c"}
+{"boundaryCivil":{"day":"9999-12-31","time":"23:59"},"actualInstant":"+010000-01-01T04:59:00.000Z","observed":{"ok":false,"reason":"nonexistent"}}

@@ -1,0 +1,463 @@
+[
+  {
+    "runtime": "Node",
+    "versions": {
+      "node": "24.21.0",
+      "acorn": "8.18.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.8",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "137",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.8",
+      "simdjson": "4.6.7",
+      "simdutf": "6.4.0",
+      "sqlite": "3.53.4",
+      "tz": "2026c",
+      "undici": "7.29.1",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "13.6.233.17-node.53",
+      "zlib": "1.3.2.1-motley-8002e91",
+      "zstd": "1.5.7"
+    },
+    "results": [
+      {
+        "count": 1,
+        "intervalSeconds": 1,
+        "ms": [
+          25.97,
+          24.94,
+          22.9
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 60,
+        "ms": [
+          18.76,
+          22.57,
+          23.33
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 3600,
+        "ms": [
+          15.34,
+          15.86,
+          15.97
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 2592000,
+        "ms": [
+          15.6,
+          15.29,
+          15.93
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 31536000,
+        "ms": [
+          15.38,
+          14.93,
+          14.94
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 1,
+        "ms": [
+          84.45,
+          82.15,
+          83.89
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 60,
+        "ms": [
+          83.84,
+          84.66,
+          84.55
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 3600,
+        "ms": [
+          84.72,
+          85.6,
+          82.88
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 2592000,
+        "ms": [
+          60.56,
+          61.3,
+          62.52
+        ],
+        "formatToParts": [
+          23048,
+          23048,
+          23048
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 31536000,
+        "ms": [
+          61.93,
+          60.97,
+          60.76
+        ],
+        "formatToParts": [
+          23048,
+          23048,
+          23048
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 1,
+        "ms": [
+          266.14,
+          269.76,
+          267.56
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 60,
+        "ms": [
+          273.47,
+          266.86,
+          265.5
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 3600,
+        "ms": [
+          272.46,
+          265.8,
+          278.72
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 2592000,
+        "ms": [
+          197.39,
+          199.63,
+          197
+        ],
+        "formatToParts": [
+          74906,
+          74906,
+          74906
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 31536000,
+        "ms": [
+          196.7,
+          194.15,
+          196.35
+        ],
+        "formatToParts": [
+          74906,
+          74906,
+          74906
+        ]
+      }
+    ]
+  },
+  {
+    "runtime": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "results": [
+      {
+        "count": 1,
+        "intervalSeconds": 1,
+        "ms": [
+          25.1,
+          17.8,
+          14.2
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 60,
+        "ms": [
+          12.9,
+          13,
+          13.2
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 3600,
+        "ms": [
+          12.9,
+          12.7,
+          12.4
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 2592000,
+        "ms": [
+          12.3,
+          12.8,
+          12.7
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 31536000,
+        "ms": [
+          13.1,
+          12.4,
+          13
+        ],
+        "formatToParts": [
+          5762,
+          5762,
+          5762
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 1,
+        "ms": [
+          70.5,
+          69.5,
+          68.2
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 60,
+        "ms": [
+          68.7,
+          68.6,
+          70.9
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 3600,
+        "ms": [
+          67.6,
+          67.7,
+          70.9
+        ],
+        "formatToParts": [
+          31691,
+          31691,
+          31691
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 2592000,
+        "ms": [
+          50,
+          51.8,
+          52
+        ],
+        "formatToParts": [
+          23048,
+          23048,
+          23048
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 31536000,
+        "ms": [
+          52.1,
+          51.5,
+          51.7
+        ],
+        "formatToParts": [
+          23048,
+          23048,
+          23048
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 1,
+        "ms": [
+          220.4,
+          220.4,
+          220.2
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 60,
+        "ms": [
+          222,
+          220.9,
+          218.1
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 3600,
+        "ms": [
+          213.4,
+          214.8,
+          213.3
+        ],
+        "formatToParts": [
+          100835,
+          100835,
+          100835
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 2592000,
+        "ms": [
+          162.3,
+          161.7,
+          165.3
+        ],
+        "formatToParts": [
+          74906,
+          74906,
+          74906
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 31536000,
+        "ms": [
+          162.2,
+          172.6,
+          163.4
+        ],
+        "formatToParts": [
+          74906,
+          74906,
+          74906
+        ]
+      }
+    ]
+  }
+]
