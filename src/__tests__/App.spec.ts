@@ -102,7 +102,7 @@ describe('global clock settings', () => {
       await wrapper.get('#city-search').setValue('Tokyo')
       await wrapper.get('#city-option-1850147').trigger('click')
       expect(wrapper.findAll('[data-city-id]')).toHaveLength(1)
-      await wrapper.get('button').trigger('click')
+      await wrapper.get('[aria-label="Remove Tokyo"]').trigger('click')
       expect(wrapper.findAll('[data-city-id]')).toHaveLength(0)
       expect(localStorage.getItem(CONFIG_KEY)).toBe(raw)
       expect(wrapper.get('[role="status"]').text()).toContain('unsupported version')

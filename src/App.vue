@@ -4,6 +4,8 @@ import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import catalog from './cityCatalog.json'
 import { loadConfig, saveConfig, defaultConfig, type ConfigV3 } from './config'
 import ClockPresenter from './ClockPresenter.vue'
+import AlarmEditor from './AlarmEditor.vue'
+import type { Alarm } from './alarms'
 
 const catalogById = new Map(catalog.map((city) => [city.geonameId, city]))
 const catalogIds = new Set(catalogById.keys())
@@ -107,6 +109,25 @@ function removeCity(id: number) {
   config.value = {
     ...config.value,
     selectedCityIds: config.value.selectedCityIds.filter((selectedId) => selectedId !== id),
+    alarms: config.value.alarms.filter((alarm) => alarm.cityId !== id),
+  }
+  persist()
+}
+
+function saveAlarm(alarm: Alarm) {
+  if (!config.value.selectedCityIds.includes(alarm.cityId)) return
+  const index = config.value.alarms.findIndex((existing) => existing.cityId === alarm.cityId)
+  const alarms = [...config.value.alarms]
+  if (index < 0) alarms.push(alarm)
+  else alarms[index] = alarm
+  config.value = { ...config.value, alarms }
+  persist()
+}
+
+function removeAlarm(cityId: number) {
+  config.value = {
+    ...config.value,
+    alarms: config.value.alarms.filter((alarm) => alarm.cityId !== cityId),
   }
   persist()
 }
@@ -239,6 +260,14 @@ onUnmounted(() => {
                 :time-format="config.timeFormat"
               />
             </div>
+            <AlarmEditor
+              :city-id="city.geonameId"
+              :city-name="city.name"
+              :time-zone="city.timeZone"
+              :alarm="config.alarms.find((alarm) => alarm.cityId === city.geonameId)"
+              @save="saveAlarm"
+              @remove="removeAlarm(city.geonameId)"
+            />
             <button
               type="button"
               :aria-label="`Remove ${city.name}`"

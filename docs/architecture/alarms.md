@@ -23,3 +23,9 @@ References: [ECMA-402 formatToParts](https://tc39.es/ecma402/#sec-intl.datetimef
 The exact document has `version: 3`, ordered unique `selectedCityIds`, `presentationMode`, `timeFormat`, and `alarms`. An alarm has exactly `cityId`, `recurrence`, and either `instant` (once) or `time` (daily). Alarm city IDs are selected and unique; extra/mixed fields are invalid. No separate alarm ID exists.
 
 Loading exact V1/V2 migrates in memory, preserving order and available display preferences with empty alarms. Loading never writes. Ordinary mutations persist V3. Safe-integer future versions above 3 remain unsupported and the application's single persistence path protects their stored bytes. Malformed discriminators remain invalid. Read/access/write failure behavior remains graceful.
+
+## Configuration UI
+
+Each world-city card owns one small alarm editor. Set/Edit opens city-local date/time controls; Save validates against an actual instant read at submission. Daily input stays exact HH:mm regardless of the global clock display preference. One-time summaries format the persisted instant into the city's civil date/minute and also show UTC time to distinguish overlap occurrences. Editing replaces the city's alarm; Cancel does not write. Saving, removing, and city removal share the existing protected persistence path. City removal updates selected IDs and alarm collection together in a single write; re-add has no alarm.
+
+Native date/time controls may visually use the browser's input locale (including AM/PM); their values and domain semantics remain canonical HH:mm. Error text is visible and linked to the inputs. Opening moves focus to recurrence; Save/Cancel/Remove alarm return focus to the Set/Edit control. No alarm editor appears on the browser-local top clock.
