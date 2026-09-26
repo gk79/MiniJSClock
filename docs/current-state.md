@@ -5,16 +5,16 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0005 integrated into `main`; push-triggered hosted CI passed
+- Current milestone: TASK-0005 integrated; TASK-0010 searchable city-combobox follow-up ready before TASK-0006
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none
+- Active task(s): [TASK-0010](../tasks/active/TASK-0010.md) — replace separate city search/select controls with one searchable combobox; ready
 - Latest completed task: [TASK-0005](../tasks/done/TASK-0005.md) — world clocks with versioned local persistence and recovery; fresh independent review PASS at `237b7a943d8aeee58d858e71f34bb2a4eb2f7153`, integrated into `main` at `fdf7612adf1d4238d43970d53a6788bb8504427e`
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (tracked separately under `LEARN-20260925-155537`)
 - Decisions currently pending: none at architecture level
-- Next recommended action: assess readiness for separately planned follow-up work. GitHub Pages has not been deployed and no production release verdict has been made.
+- Next recommended action: fresh `cloud-standard` implementation session for TASK-0010 from `codex/task-0010-planning`, then independent review and integration before TASK-0006. GitHub Pages has not been deployed and no production release verdict has been made.
 
 ## Recent verification
 
