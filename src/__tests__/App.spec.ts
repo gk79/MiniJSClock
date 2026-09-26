@@ -90,21 +90,24 @@ describe('global clock settings', () => {
     restored.unmount()
   })
 
-  it('protects a future document through settings and city changes', async () => {
-    const raw = '{"version":99,"selectedCityIds":[1850147],"future":true}'
-    localStorage.setItem(CONFIG_KEY, raw)
-    const wrapper = mount(App)
-    await wrapper.get('#presentation-mode').setValue('analog')
-    await wrapper.get('#time-format').setValue('12h')
-    await wrapper.get('#city-search').setValue('Tokyo')
-    await wrapper.get('#city-option-1850147').trigger('click')
-    expect(wrapper.findAll('[data-city-id]')).toHaveLength(1)
-    await wrapper.get('button').trigger('click')
-    expect(wrapper.findAll('[data-city-id]')).toHaveLength(0)
-    expect(localStorage.getItem(CONFIG_KEY)).toBe(raw)
-    expect(wrapper.get('[role="status"]').text()).toContain('unsupported version')
-    wrapper.unmount()
-  })
+  it.each([3, 99])(
+    'protects future version %i through settings and city changes',
+    async (version) => {
+      const raw = JSON.stringify({ version, selectedCityIds: [1850147], future: true })
+      localStorage.setItem(CONFIG_KEY, raw)
+      const wrapper = mount(App)
+      await wrapper.get('#presentation-mode').setValue('analog')
+      await wrapper.get('#time-format').setValue('12h')
+      await wrapper.get('#city-search').setValue('Tokyo')
+      await wrapper.get('#city-option-1850147').trigger('click')
+      expect(wrapper.findAll('[data-city-id]')).toHaveLength(1)
+      await wrapper.get('button').trigger('click')
+      expect(wrapper.findAll('[data-city-id]')).toHaveLength(0)
+      expect(localStorage.getItem(CONFIG_KEY)).toBe(raw)
+      expect(wrapper.get('[role="status"]').text()).toContain('unsupported version')
+      wrapper.unmount()
+    },
+  )
 
   it('keeps settings usable when localStorage access is unavailable', async () => {
     vi.spyOn(window, 'localStorage', 'get').mockImplementation(() => {

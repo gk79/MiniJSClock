@@ -65,8 +65,19 @@ describe('browser-local configuration', () => {
     expect(setItem).not.toHaveBeenCalled()
   })
 
+  it.each(
+    ['2', '3', null, true, false, 0, -1, 2.5, 3.5, Number.MAX_SAFE_INTEGER + 1, [], {}].map(
+      (version) => ({ version }),
+    ),
+  )('recovers malformed version discriminator $version as invalid', ({ version }) => {
+    expect(parseConfig(JSON.stringify({ ...current, version }), knownIds)).toEqual({
+      status: 'invalid',
+      config: defaultConfig(),
+    })
+  })
+
   it('protects unsupported versions with safe defaults', () => {
-    for (const version of [3, 99, '2', null]) {
+    for (const version of [3, 99, Number.MAX_SAFE_INTEGER]) {
       expect(parseConfig(JSON.stringify({ ...current, version }), knownIds)).toEqual({
         status: 'unsupported',
         config: defaultConfig(),

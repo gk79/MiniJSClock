@@ -69,7 +69,11 @@ export function parseConfig(raw: string, catalogIds: ReadonlySet<number>): LoadR
   }
   if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
     const record = value as Record<string, unknown>
-    if ('version' in record && record.version !== 1 && record.version !== 2) {
+    if (
+      typeof record.version === 'number' &&
+      Number.isSafeInteger(record.version) &&
+      record.version > 2
+    ) {
       return { config: defaultConfig(), status: 'unsupported' }
     }
   }

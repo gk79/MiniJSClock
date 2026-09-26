@@ -93,3 +93,44 @@ test('recovers a malformed current document and persists safe settings on user c
   await expect(page.getByLabel('Presentation', { exact: true })).toHaveValue('analog')
   await expect(page.locator('.clock-face')).toHaveCount(1)
 })
+
+for (const version of ['2', null]) {
+  test(`recovers malformed version ${JSON.stringify(version)} and preserves settings after reload`, async ({
+    page,
+  }) => {
+    await page.goto('./')
+    await page.evaluate(
+      ({ key, version }) =>
+        localStorage.setItem(
+          key,
+          JSON.stringify({
+            version,
+            selectedCityIds: [1850147],
+            presentationMode: 'analog',
+            timeFormat: '12h',
+          }),
+        ),
+      { key, version },
+    )
+    await page.reload()
+    const presentation = page.getByLabel('Presentation', { exact: true })
+    const format = page.getByLabel('Digital time format', { exact: true })
+    await expect(page.getByRole('status')).toContainText('selection was reset')
+    await expect(page.getByRole('status')).not.toContainText('unsupported version')
+    await expect(presentation).toHaveValue('digital')
+    await expect(format).toHaveValue('24h')
+    await expect(page.locator('[data-city-id]')).toHaveCount(0)
+    await presentation.selectOption('analog')
+    await format.selectOption('12h')
+    expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), key))!)).toEqual({
+      version: 2,
+      selectedCityIds: [],
+      presentationMode: 'analog',
+      timeFormat: '12h',
+    })
+    await page.reload()
+    await expect(presentation).toHaveValue('analog')
+    await expect(format).toHaveValue('12h')
+    await expect(page.getByRole('status')).toHaveCount(0)
+  })
+}
