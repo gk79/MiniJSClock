@@ -62,10 +62,11 @@ test('migrates lazily, propagates settings, moves analog hands and restores sett
   await expect(presentation).toHaveValue('digital')
   await expect(format).toHaveValue('24h')
   expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), key))!)).toEqual({
-    version: 2,
+    version: 3,
     selectedCityIds: [1850147, 2643743],
     presentationMode: 'digital',
     timeFormat: '24h',
+    alarms: [],
   })
   expect(errors).toEqual([])
 })
@@ -123,10 +124,11 @@ for (const version of ['2', null]) {
     await presentation.selectOption('analog')
     await format.selectOption('12h')
     expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), key))!)).toEqual({
-      version: 2,
+      version: 3,
       selectedCityIds: [],
       presentationMode: 'analog',
       timeFormat: '12h',
+      alarms: [],
     })
     await page.reload()
     await expect(presentation).toHaveValue('analog')

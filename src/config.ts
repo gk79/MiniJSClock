@@ -1,3 +1,4 @@
+import { isCanonicalInstant, isDailyTime, type Alarm } from './alarms'
 import type { TimeFormat } from './time'
 
 export const CONFIG_KEY = 'minijsclock.config'
@@ -16,19 +17,25 @@ export type ConfigV2 = {
   timeFormat: TimeFormat
 }
 
+export type ConfigV3 = Omit<ConfigV2, 'version'> & {
+  version: 3
+  alarms: Alarm[]
+}
+
 export type LoadResult = {
-  config: ConfigV2
+  config: ConfigV3
   status: 'ok' | 'invalid' | 'unsupported' | 'unavailable'
 }
 
 type ReadStorage = Pick<Storage, 'getItem'>
 type WriteStorage = Pick<Storage, 'setItem'>
 
-export const defaultConfig = (): ConfigV2 => ({
-  version: 2,
+export const defaultConfig = (): ConfigV3 => ({
+  version: 3,
   selectedCityIds: [],
   presentationMode: 'digital',
   timeFormat: '24h',
+  alarms: [],
 })
 
 function isConfigV1(value: unknown, catalogIds: ReadonlySet<number>): value is ConfigV1 {
@@ -60,6 +67,44 @@ function isConfigV2(value: unknown, catalogIds: ReadonlySet<number>): value is C
   )
 }
 
+function isConfigV3(value: unknown, catalogIds: ReadonlySet<number>): value is ConfigV3 {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
+  const record = value as Record<string, unknown>
+  if (
+    Object.keys(record).length !== 5 ||
+    record.version !== 3 ||
+    !Array.isArray(record.alarms) ||
+    !isConfigV2(
+      {
+        version: 2,
+        selectedCityIds: record.selectedCityIds,
+        presentationMode: record.presentationMode,
+        timeFormat: record.timeFormat,
+      },
+      catalogIds,
+    )
+  )
+    return false
+  const selectedIds = new Set(record.selectedCityIds as number[])
+  const alarmIds = new Set<number>()
+  return record.alarms.every((value: unknown) => {
+    if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
+    const alarm = value as Record<string, unknown>
+    if (
+      Object.keys(alarm).length !== 3 ||
+      typeof alarm.cityId !== 'number' ||
+      !selectedIds.has(alarm.cityId) ||
+      alarmIds.has(alarm.cityId)
+    )
+      return false
+    alarmIds.add(alarm.cityId)
+    return (
+      (alarm.recurrence === 'once' && isCanonicalInstant(alarm.instant)) ||
+      (alarm.recurrence === 'daily' && isDailyTime(alarm.time))
+    )
+  })
+}
+
 export function parseConfig(raw: string, catalogIds: ReadonlySet<number>): LoadResult {
   let value: unknown
   try {
@@ -72,7 +117,7 @@ export function parseConfig(raw: string, catalogIds: ReadonlySet<number>): LoadR
     if (
       typeof record.version === 'number' &&
       Number.isSafeInteger(record.version) &&
-      record.version > 2
+      record.version > 3
     ) {
       return { config: defaultConfig(), status: 'unsupported' }
     }
@@ -80,7 +125,9 @@ export function parseConfig(raw: string, catalogIds: ReadonlySet<number>): LoadR
   if (isConfigV1(value, catalogIds)) {
     return { config: { ...defaultConfig(), selectedCityIds: value.selectedCityIds }, status: 'ok' }
   }
-  return isConfigV2(value, catalogIds)
+  if (isConfigV2(value, catalogIds))
+    return { config: { ...value, version: 3, alarms: [] }, status: 'ok' }
+  return isConfigV3(value, catalogIds)
     ? { config: value, status: 'ok' }
     : { config: defaultConfig(), status: 'invalid' }
 }
@@ -96,10 +143,10 @@ export function loadConfig(storage: ReadStorage, catalogIds: ReadonlySet<number>
 
 export function saveConfig(
   storage: WriteStorage,
-  config: ConfigV2,
+  config: ConfigV3,
   catalogIds: ReadonlySet<number>,
 ): boolean {
-  if (!isConfigV2(config, catalogIds)) return false
+  if (!isConfigV3(config, catalogIds)) return false
   try {
     storage.setItem(CONFIG_KEY, JSON.stringify(config))
     return true

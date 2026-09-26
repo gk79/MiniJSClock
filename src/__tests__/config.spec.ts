@@ -4,10 +4,14 @@ import { CONFIG_KEY, defaultConfig, loadConfig, parseConfig, saveConfig } from '
 
 const knownIds = new Set([1, 2])
 const current = {
-  version: 2 as const,
+  version: 3 as const,
   selectedCityIds: [2, 1],
   presentationMode: 'analog' as const,
   timeFormat: '12h' as const,
+  alarms: [
+    { cityId: 2, recurrence: 'daily' as const, time: '08:15' },
+    { cityId: 1, recurrence: 'once' as const, instant: '2026-01-15T13:00:00.000Z' },
+  ],
 }
 
 describe('browser-local configuration', () => {
@@ -17,6 +21,22 @@ describe('browser-local configuration', () => {
     expect(loadConfig(storage, knownIds)).toEqual({
       status: 'ok',
       config: { ...defaultConfig(), selectedCityIds: [2, 1] },
+    })
+    expect(setItem).not.toHaveBeenCalled()
+  })
+
+  it('migrates exact V2 lazily preserving settings and order', () => {
+    const legacy = {
+      version: 2,
+      selectedCityIds: [2, 1],
+      presentationMode: 'analog',
+      timeFormat: '12h',
+    }
+    const setItem = vi.fn()
+    const storage = { getItem: () => JSON.stringify(legacy), setItem }
+    expect(loadConfig(storage, knownIds)).toEqual({
+      status: 'ok',
+      config: { ...legacy, version: 3, alarms: [] },
     })
     expect(setItem).not.toHaveBeenCalled()
   })
@@ -35,9 +55,7 @@ describe('browser-local configuration', () => {
         knownIds,
       ),
     ).toBe(true)
-    expect(raw).toBe(
-      '{"version":2,"selectedCityIds":[2,1],"presentationMode":"analog","timeFormat":"12h"}',
-    )
+    expect(raw).toBe(JSON.stringify(current))
     expect(parseConfig(raw, knownIds)).toEqual({ status: 'ok', config: current })
     expect(parseConfig(JSON.stringify(defaultConfig()), knownIds).status).toBe('ok')
   })
@@ -77,7 +95,7 @@ describe('browser-local configuration', () => {
   })
 
   it('protects unsupported versions with safe defaults', () => {
-    for (const version of [3, 99, Number.MAX_SAFE_INTEGER]) {
+    for (const version of [4, 99, Number.MAX_SAFE_INTEGER]) {
       expect(parseConfig(JSON.stringify({ ...current, version }), knownIds)).toEqual({
         status: 'unsupported',
         config: defaultConfig(),
@@ -111,5 +129,55 @@ describe('browser-local configuration', () => {
         knownIds,
       ),
     ).toBe(false)
+  })
+})
+
+describe('exact alarm persistence boundary', () => {
+  it.each(
+    [
+      null,
+      {},
+      [null],
+      [{ cityId: 3, recurrence: 'daily', time: '08:00' }],
+      [
+        { cityId: 2, recurrence: 'daily', time: '08:00' },
+        { cityId: 2, recurrence: 'once', instant: '2026-01-15T13:00:00.000Z' },
+      ],
+      ...['8:00', '24:00', '08:60', '08:00:00', null].map((time) => [
+        { cityId: 2, recurrence: 'daily', time },
+      ]),
+      ...['2026-02-30T13:00:00.000Z', '2026-01-15T13:00:00Z', '2026-01-15T13:00:01.000Z', null].map(
+        (instant) => [{ cityId: 1, recurrence: 'once', instant }],
+      ),
+      [{ cityId: '2', recurrence: 'daily', time: '08:00' }],
+      [{ cityId: 2, recurrence: 'daily', time: '08:00', instant: '2026-01-15T13:00:00.000Z' }],
+      [{ cityId: 2, recurrence: 'once', time: '08:00', instant: '2026-01-15T13:00:00.000Z' }],
+      [{ cityId: 2, recurrence: 'weekly', time: '08:00' }],
+      [{ cityId: 2, recurrence: 'once' }],
+      [{ cityId: 2, recurrence: 'daily' }],
+      [{ cityId: 2, recurrence: 'daily', time: '08:00', id: 10 }],
+    ].map((alarms) => ({ alarms })),
+  )('rejects invalid alarm collection $alarms', ({ alarms }) => {
+    expect(parseConfig(JSON.stringify({ ...current, alarms }), knownIds)).toEqual({
+      status: 'invalid',
+      config: defaultConfig(),
+    })
+    const setItem = vi.fn()
+    expect(saveConfig({ setItem }, { ...current, alarms } as never, knownIds)).toBe(false)
+    expect(setItem).not.toHaveBeenCalled()
+  })
+  it('rejects an alarm on a known but unselected city', () => {
+    expect(parseConfig(JSON.stringify({ ...current, selectedCityIds: [2] }), knownIds).status).toBe(
+      'invalid',
+    )
+  })
+  it('rejects missing alarms and extras in V3, and alarm fields in older schemas', () => {
+    for (const value of [
+      { version: 3, selectedCityIds: [], presentationMode: 'digital', timeFormat: '24h' },
+      { ...current, extra: true },
+      { version: 1, selectedCityIds: [], alarms: [] },
+      { ...current, version: 2 },
+    ])
+      expect(parseConfig(JSON.stringify(value), knownIds).status).toBe('invalid')
   })
 })

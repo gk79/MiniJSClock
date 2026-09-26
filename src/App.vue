@@ -2,13 +2,13 @@
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 
 import catalog from './cityCatalog.json'
-import { loadConfig, saveConfig, defaultConfig, type ConfigV2 } from './config'
+import { loadConfig, saveConfig, defaultConfig, type ConfigV3 } from './config'
 import ClockPresenter from './ClockPresenter.vue'
 
 const catalogById = new Map(catalog.map((city) => [city.geonameId, city]))
 const catalogIds = new Set(catalogById.keys())
 const currentInstant = ref(new Date())
-const config = ref<ConfigV2>(defaultConfig())
+const config = ref<ConfigV3>(defaultConfig())
 const search = ref('')
 const pickerOpen = ref(false)
 const activeIndex = ref(-1)

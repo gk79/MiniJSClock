@@ -76,10 +76,11 @@ describe('global clock settings', () => {
     expect(wrapper.findAll('.clock-face')).toHaveLength(0)
     expect(wrapper.get('[data-testid="city-time-1850147"]').text()).toBe('09:34:57 PM')
     expect(JSON.parse(localStorage.getItem(CONFIG_KEY)!)).toEqual({
-      version: 2,
+      version: 3,
       selectedCityIds: [1850147, 2643743],
       presentationMode: 'digital',
       timeFormat: '12h',
+      alarms: [],
     })
     wrapper.unmount()
     expect(clearIntervalSpy).toHaveBeenCalledWith(interval.mock.results[0]?.value)
@@ -90,7 +91,7 @@ describe('global clock settings', () => {
     restored.unmount()
   })
 
-  it.each([3, 99])(
+  it.each([4, 99])(
     'protects future version %i through settings and city changes',
     async (version) => {
       const raw = JSON.stringify({ version, selectedCityIds: [1850147], future: true })

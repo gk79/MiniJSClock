@@ -17,3 +17,9 @@ References: [ECMA-402 formatToParts](https://tc39.es/ecma402/#sec-intl.datetimef
 `dailyOccurrence` returns the first candidate for a civil date; gaps have no occurrence. `evaluateAlarms` evaluates `(previous, current]` and returns `due` entries plus `nextAlarms`. Daily evaluation visits dates in reverse calendar order with offset padding and returns at most one (latest) crossed occurrence per alarm. Calendar traversal uses UTC arithmetic, so browser-local DST cannot affect it. One-time due alarms are consumed; daily alarms remain. Inputs must be validated alarm configuration and finite ordered actual instants; a daily alarm requires a city-zone lookup.
 
 `openAlarmSession` returns expired one-time alarms as `stale` and removes them from its returned `nextAlarms`; occurrences at or before the session start cannot become retroactive due events. A future caller must initialize the session with this result and begin evaluation at the session boundary. No production startup orchestration is included here.
+
+## Config V3
+
+The exact document has `version: 3`, ordered unique `selectedCityIds`, `presentationMode`, `timeFormat`, and `alarms`. An alarm has exactly `cityId`, `recurrence`, and either `instant` (once) or `time` (daily). Alarm city IDs are selected and unique; extra/mixed fields are invalid. No separate alarm ID exists.
+
+Loading exact V1/V2 migrates in memory, preserving order and available display preferences with empty alarms. Loading never writes. Ordinary mutations persist V3. Safe-integer future versions above 3 remain unsupported and the application's single persistence path protects their stored bytes. Malformed discriminators remain invalid. Read/access/write failure behavior remains graceful.
