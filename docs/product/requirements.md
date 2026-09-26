@@ -31,6 +31,66 @@ Use stable IDs so tasks/tests can reference them.
 | NFR-006 | Maintainability | City/time-zone mapping and clock/alarm logic shall be structured so that maintained source data can be refreshed without redesigning product behavior. | Architecture/code review and reproducible catalog-generation checks. |
 | NFR-007 | Browser compatibility | The first release shall target current stable Chrome, Edge, and Firefox on desktop/laptop. Safari is optional unless compatibility requires no material extra complexity. Mobile/tablet are not guaranteed support targets, but narrower layouts should remain basically usable. | Manual smoke checks in the supported desktop browsers plus representative narrow-viewport checks. |
 
+## First-release alarm semantics
+
+These semantics refine FR-007 through FR-010 and NFR-002/NFR-004/NFR-005 within the existing client-only product boundary.
+
+### Alarm attachment
+
+- Alarms are attached to selected world-city clocks.
+- The first release supports zero or one configured alarm per selected city clock.
+- The browser-local clock at the top of the dashboard does not receive an alarm in this slice.
+- Removing a city clock removes its attached alarm atomically.
+- Re-adding the city does not resurrect a previously removed alarm.
+
+### Input precision
+
+- Alarm configuration uses minute precision.
+- Daily alarm input is city-local `HH:mm`.
+- One-time alarm input is city-local calendar date plus `HH:mm`.
+
+### One-time alarm resolution
+
+A one-time alarm is configured from local civil date/time in the selected city's IANA zone and resolves to one concrete future instant.
+
+- If the local civil minute does not exist because of a forward DST/offset transition, reject the configuration as invalid rather than silently shifting it.
+- If the local civil minute is ambiguous because of a backward transition, select the earliest matching occurrence that is still strictly in the future at configuration time.
+- If no matching occurrence is still in the future, reject it as past.
+- Persist the resolved one-time instant rather than relying on ambiguous civil-time reinterpretation after reload.
+- After it becomes due during an open application session, it is one-shot and must not recur.
+
+### Daily alarm semantics
+
+A daily alarm remains expressed as city-local `HH:mm`.
+
+For each city-local calendar date:
+
+- normal time: one scheduled occurrence;
+- DST/offset gap: no occurrence that day;
+- repeated/ambiguous civil time: use the first occurrence only;
+- never emit two daily occurrences merely because a local hour repeats.
+
+### Delayed execution / overdue semantics
+
+The alarm domain must not assume timer callbacks happen on schedule.
+
+Evaluation receives an actual previous evaluation instant and actual current instant.
+
+- Detect whether a scheduled occurrence lies in the interval
+  `(previousInstant, currentInstant]`.
+- If browser throttling delays evaluation, an alarm whose occurrence lies in that interval is due at the next execution opportunity.
+- If multiple daily occurrences were crossed during one long delayed interval, return at most one due event for that alarm during that evaluation; do not burst multiple notifications.
+- Daily configuration remains after a due occurrence.
+- A one-time configuration becomes consumed/removed after its due occurrence.
+
+### Application-closed boundary
+
+Alarm delivery is required only while the application remains open.
+
+- Do not retroactively fire alarms for occurrences that happened before the current open application session.
+- An expired one-time alarm discovered after reopening must be treated as expired/stale rather than fired retroactively.
+- TASK-0008 will own runtime session initialization, ticking, browser throttling integration, and audible delivery.
+
 ## Data and privacy
 
 The application intentionally stores only local product configuration such as selected city clocks, global display preferences, and alarm definitions. No personal account data or other personally identifiable information is required by the current scope.
