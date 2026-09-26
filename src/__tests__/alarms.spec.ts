@@ -74,6 +74,12 @@ describe('civil minute resolution', () => {
       alarm: once,
     })
   })
+  it('rejects a repeated minute after both occurrences have passed', () => {
+    expect(configureOnce(1, ny, '2026-11-01', '01:30', date('2026-11-01T07:00:00Z'))).toEqual({
+      ok: false,
+      reason: 'past',
+    })
+  })
   it('accepts only valid canonical UTC minute instants', () => {
     expect(isCanonicalInstant(once.instant)).toBe(true)
     for (const value of [
