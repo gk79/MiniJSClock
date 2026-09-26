@@ -56,6 +56,8 @@ function save() {
         nonexistent:
           'This local time does not exist because the clocks move forward. Choose another time.',
         past: 'This local time is already in the past. Choose a future date and time.',
+        range:
+          'This city-local date and time cannot be stored within the supported alarm range. Choose another date and time.',
       }[result.reason]
       return
     }

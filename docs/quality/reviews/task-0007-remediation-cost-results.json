@@ -1,0 +1,4447 @@
+[
+  {
+    "runtime": "Node",
+    "versions": {
+      "node": "24.21.0",
+      "acorn": "8.18.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.8",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "137",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.8",
+      "simdjson": "4.6.7",
+      "simdutf": "6.4.0",
+      "sqlite": "3.53.4",
+      "tz": "2026c",
+      "undici": "7.29.1",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "13.6.233.17-node.53",
+      "zlib": "1.3.2.1-motley-8002e91",
+      "zstd": "1.5.7"
+    },
+    "results": [
+      {
+        "count": 1,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 29.418,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.018,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 11.731,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.041,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 26.205,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 10.243,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.011,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 19.694,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.014,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 11.461,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.011,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 22.887,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 10.791,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.01,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 14.76,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.01,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.318,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.861,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.403,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 15.414,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.442,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.017,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.406,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.26,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.011,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.648,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.01,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 14.553,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.415,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.41,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.37,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.278,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 9.437,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.022,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 15.208,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.01,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 17.864,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.448,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.011,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.179,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.526,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.009,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 82.347,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.019,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.793,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.014,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 85.634,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.023,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.617,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.015,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 83.966,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.724,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.031,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 92.553,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.022,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.526,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.014,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 84.786,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.848,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.014,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 81.943,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.391,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.015,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 83.077,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.021,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 8.07,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.015,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 83.857,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.385,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.014,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 87.099,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.022,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.559,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.015,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 61.524,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.018,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 29.772,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 59.738,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.017,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 29.099,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.021,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 61.827,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.018,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 32.483,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.019,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 59.806,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.018,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 29.656,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.019,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 59.89,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.018,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 29.964,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 60.099,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.017,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 30.173,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.02,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 264.44,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.077,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.426,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 264.724,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.039,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.452,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 266.313,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.04,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.767,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.034,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 266.584,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.04,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.499,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 263.436,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.073,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 8.386,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.032,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 260.006,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.038,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.713,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 264.013,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.041,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.769,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 264.626,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.04,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 8.066,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 262.962,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.041,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.524,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 195.374,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.032,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 75.501,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.038,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 196.426,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.032,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 75.726,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.039,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 198.809,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 76.103,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.037,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 194.736,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.032,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 76.117,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.038,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 199.406,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.033,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 74.948,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.038,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 195.123,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.032,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 75.785,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.055,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "runtime": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "results": [
+      {
+        "count": 1,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 29.3,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 8.6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 15.4,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.9,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 12.9,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 12.2,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 13,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.4,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 12.5,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.2,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 13.3,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 12.9,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.4,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 14.4,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 12.2,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 12.2,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.8,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 13.9,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.9,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 13.4,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.8,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 12.6,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 13,
+              "formatToParts": 5762,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.4,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 69.5,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 69.5,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.5,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 71.5,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 68.4,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.2,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 69.2,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 68.4,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 68.9,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.9,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 69,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 67,
+              "formatToParts": 31691,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.8,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 49.4,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 24.4,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 50.6,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 26.2,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 50.2,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 24.2,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 4,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 48.3,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 24.1,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 50.5,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 25.5,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 49.8,
+              "formatToParts": 23048,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 25.4,
+              "formatToParts": 11524,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 1,
+        "samples": [
+          {
+            "cold": {
+              "ms": 217.8,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.2,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 213.5,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.1,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 217.3,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.3,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 60,
+        "samples": [
+          {
+            "cold": {
+              "ms": 219.7,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 217.7,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 7.3,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 219.6,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.2,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 3600,
+        "samples": [
+          {
+            "cold": {
+              "ms": 220.7,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 222.7,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.3,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 218.4,
+              "formatToParts": 100835,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 6.2,
+              "formatToParts": 2881,
+              "due": []
+            },
+            "steady": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 2592000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 161.2,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 63.4,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 164.3,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 63.9,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 161.9,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 63.2,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      },
+      {
+        "count": 12,
+        "intervalSeconds": 31536000,
+        "samples": [
+          {
+            "cold": {
+              "ms": 159,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 62.8,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 158,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 63.5,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          },
+          {
+            "cold": {
+              "ms": 159,
+              "formatToParts": 74906,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "warm": {
+              "ms": 0.1,
+              "formatToParts": 0,
+              "due": [
+                {
+                  "cityId": 4140963,
+                  "instant": "2026-09-26T12:00:00.000Z"
+                },
+                {
+                  "cityId": 2643743,
+                  "instant": "2026-09-26T07:00:00.000Z"
+                },
+                {
+                  "cityId": 1848354,
+                  "instant": "2026-09-25T23:00:00.000Z"
+                },
+                {
+                  "cityId": 1283240,
+                  "instant": "2026-09-26T02:15:00.000Z"
+                },
+                {
+                  "cityId": 2078025,
+                  "instant": "2026-09-25T22:30:00.000Z"
+                },
+                {
+                  "cityId": 4035413,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 2179537,
+                  "instant": "2026-09-25T20:00:00.000Z"
+                },
+                {
+                  "cityId": 5881576,
+                  "instant": "2026-09-25T19:00:00.000Z"
+                },
+                {
+                  "cityId": 756135,
+                  "instant": "2026-09-26T06:00:00.000Z"
+                },
+                {
+                  "cityId": 360630,
+                  "instant": "2026-09-26T05:00:00.000Z"
+                },
+                {
+                  "cityId": 5368361,
+                  "instant": "2026-09-25T15:00:00.000Z"
+                },
+                {
+                  "cityId": 3448439,
+                  "instant": "2026-09-26T11:00:00.000Z"
+                }
+              ]
+            },
+            "adjacent": {
+              "ms": 61.9,
+              "formatToParts": 28810,
+              "due": []
+            },
+            "steady": {
+              "ms": 0,
+              "formatToParts": 0,
+              "due": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

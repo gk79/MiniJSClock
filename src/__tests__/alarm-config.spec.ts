@@ -103,6 +103,7 @@ describe('world-city alarm configuration', () => {
   it.each([
     ['2026-01-15', '07:00', 'past'],
     ['2026-03-08', '02:30', 'does not exist'],
+    ['9999-12-31', '23:59', 'supported alarm range'],
     ['', '', 'valid'],
   ])('shows usable feedback for %s %s', async (day, time, feedback) => {
     localStorage.setItem(CONFIG_KEY, JSON.stringify({ ...defaultConfig(), selectedCityIds: [ny] }))

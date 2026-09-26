@@ -47,7 +47,7 @@ These semantics refine FR-007 through FR-010 and NFR-002/NFR-004/NFR-005 within 
 
 - Alarm configuration uses minute precision.
 - Daily alarm input is city-local `HH:mm`.
-- One-time alarm input is city-local calendar date plus `HH:mm`.
+- One-time alarm input is city-local calendar date (0001-01-01 through 9999-12-31) plus `HH:mm`.
 
 ### One-time alarm resolution
 
@@ -56,6 +56,7 @@ A one-time alarm is configured from local civil date/time in the selected city's
 - If the local civil minute does not exist because of a forward DST/offset transition, reject the configuration as invalid rather than silently shifting it.
 - If the local civil minute is ambiguous because of a backward transition, select the earliest matching occurrence that is still strictly in the future at configuration time.
 - If no matching occurrence is still in the future, reject it as past.
+- Save only an occurrence representable by Config V3 as an exact four-digit UTC canonical minute (UTC years 0001–9999). Choose the earliest representable future match. A real civil minute whose future occurrences all lie outside that persistence range is rejected with a range error asking for another date/time, not classified as nonexistent.
 - Persist the resolved one-time instant rather than relying on ambiguous civil-time reinterpretation after reload.
 - After it becomes due during an open application session, it is one-shot and must not recur.
 

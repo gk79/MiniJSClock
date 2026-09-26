@@ -165,3 +165,40 @@ test('restores an ambiguous once alarm as its exact persisted second occurrence'
   await page.getByLabel('Digital time format', { exact: true }).selectOption('12h')
   expect((await configuration(page)).alarms[0].instant).toBe(instant)
 })
+
+test('rejects a real endpoint outside the alarm range without replacing saved configuration', async ({
+  page,
+}, testInfo) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  page.on('console', (message) => {
+    if (message.type() === 'error' || message.type() === 'warning') errors.push(message.text())
+  })
+  await addCity(page, 'New York', 'New York City (US)')
+  const city = card(page, ny)
+  await city.getByRole('button', { name: 'Set alarm', exact: true }).click()
+  await city.getByLabel('Recurrence', { exact: true }).selectOption('daily')
+  await city.getByLabel('Local time', { exact: true }).fill('08:00')
+  await city.getByRole('button', { name: 'Save', exact: true }).click()
+  const before = await configuration(page)
+  await city.getByRole('button', { name: 'Edit alarm', exact: true }).click()
+  await city.getByLabel('Recurrence', { exact: true }).selectOption('once')
+  const day = city.getByLabel('Local date', { exact: true })
+  await expect(day).toHaveAttribute('min', '0001-01-01')
+  await expect(day).toHaveAttribute('max', '9999-12-31')
+  await day.fill('9999-12-31')
+  await city.getByLabel('Local time', { exact: true }).fill('23:59')
+  await city.getByRole('button', { name: 'Save', exact: true }).click()
+  await expect(city.getByRole('alert')).toHaveText(
+    'This city-local date and time cannot be stored within the supported alarm range. Choose another date and time.',
+  )
+  await expect(day).toHaveAttribute('aria-invalid', 'true')
+  await expect(day).toHaveAttribute('aria-describedby', `alarm-${ny}-hint alarm-${ny}-error`)
+  expect(await configuration(page)).toEqual(before)
+  await page.setViewportSize({ width: 320, height: 900 })
+  await expect(city.getByRole('alert')).toBeVisible()
+  await page.screenshot({ path: testInfo.outputPath('alarm-range-error.png'), fullPage: true })
+  expect(errors).toEqual([])
+  await page.reload()
+  await expect(city.locator('.alarm-summary')).toHaveText('Daily at 08:00 · America/New_York')
+})

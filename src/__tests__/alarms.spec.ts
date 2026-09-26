@@ -206,3 +206,27 @@ describe('candidate search bound for the bundled product domain', () => {
     expect(resolveCivilMinute('UTC', '9999-12-31', '23:59')).toEqual(['9999-12-31T23:59:00.000Z'])
   })
 })
+
+describe('one-time persistence range versus civil gaps', () => {
+  it.each([
+    [ny, '9999-12-31', '23:59', '+010000-01-01T04:59:00.000Z', '2026-01-01T00:00:00Z'],
+    ['Europe/Warsaw', '0001-01-01', '00:00', '0000-12-31T22:36:00.000Z', '0000-12-30T00:00:00Z'],
+  ])('rejects real %s endpoint %s %s as range, not gap', (zone, day, time, instant, now) => {
+    expect(civilInputAt(date(instant), zone)).toEqual({ day, time })
+    expect(resolveCivilMinute(zone, day, time)).toContain(instant)
+    expect(isCanonicalInstant(instant)).toBe(false)
+    expect(configureOnce(1, zone, day, time, date(now))).toEqual({ ok: false, reason: 'range' })
+    expect(configureOnce(1, zone, day, time, date(instant))).toEqual({ ok: false, reason: 'past' })
+  })
+  it.each([
+    ['0001-01-01', '00:00', '0000-12-31T23:59:00Z'],
+    ['9999-12-31', '23:59', '9999-12-31T23:58:00Z'],
+  ])('saves representable UTC endpoint %s', (day, time, now) => {
+    const instant = `${day}T${time}:00.000Z`
+    expect(configureOnce(1, 'UTC', day, time, date(now))).toEqual({
+      ok: true,
+      alarm: { cityId: 1, recurrence: 'once', instant },
+    })
+    expect(isCanonicalInstant(instant)).toBe(true)
+  })
+})

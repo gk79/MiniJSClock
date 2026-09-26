@@ -61,7 +61,7 @@ export function civilInputAt(instant: Date, timeZone: string) {
   return { day, time }
 }
 
-/** Enumerate every UTC minute in the bound and validate actual city-local components. */
+/** Actual matches, including instants outside Config V3; validate before persistence. */
 export function resolveCivilMinute(timeZone: string, day: string, time: string): string[] {
   const target = civilEpoch(day, time)
   const formatter = civilFormatter(timeZone)
@@ -73,8 +73,7 @@ export function resolveCivilMinute(timeZone: string, day: string, time: string):
   ) {
     const civil = civilFields(formatter, candidate)
     if (civil.era === 'AD' && civil.day === day && civil.time === time && civil.second === '00') {
-      const canonical = new Date(candidate).toISOString()
-      if (isCanonicalInstant(canonical)) candidates.push(canonical)
+      candidates.push(new Date(candidate).toISOString())
     }
   }
   return candidates
@@ -88,7 +87,7 @@ export function configureOnce(
   now: Date,
 ):
   | { ok: true; alarm: Extract<Alarm, { recurrence: 'once' }> }
-  | { ok: false; reason: 'invalid' | 'nonexistent' | 'past' } {
+  | { ok: false; reason: 'invalid' | 'nonexistent' | 'past' | 'range' } {
   if (!Number.isFinite(now.getTime())) return { ok: false, reason: 'invalid' }
   let candidates: string[]
   try {
@@ -98,10 +97,12 @@ export function configureOnce(
     throw error
   }
   if (!candidates.length) return { ok: false, reason: 'nonexistent' }
-  const instant = candidates.find((candidate) => Date.parse(candidate) > now.getTime())
+  const future = candidates.filter((candidate) => Date.parse(candidate) > now.getTime())
+  if (!future.length) return { ok: false, reason: 'past' }
+  const instant = future.find(isCanonicalInstant)
   return instant
     ? { ok: true, alarm: { cityId, recurrence: 'once', instant } }
-    : { ok: false, reason: 'past' }
+    : { ok: false, reason: 'range' }
 }
 
 export function dailyOccurrence(timeZone: string, day: string, time: string): string | undefined {
@@ -117,12 +118,45 @@ export function openAlarmSession(alarms: readonly Alarm[], sessionStart: Date) {
   return { stale, nextAlarms: alarms.filter((alarm) => !stale.includes(alarm)) }
 }
 
-/** Validated configuration in; one latest due occurrence per alarm out. No timers or sound. */
+/** Ephemeral domain state. Retain one evaluator across runtime evaluations, not in Config V3. */
+export function createAlarmEvaluator() {
+  // FIFO eviction only causes recomputation. Keys include all occurrence identity inputs.
+  const occurrences = new Map<string, string | undefined>()
+  const resolve: typeof dailyOccurrence = (zone, day, time) => {
+    const key = JSON.stringify([zone, day, time])
+    if (occurrences.has(key)) return occurrences.get(key)
+    const occurrence = dailyOccurrence(zone, day, time)
+    if (occurrences.size === 128) occurrences.delete(occurrences.keys().next().value!)
+    occurrences.set(key, occurrence)
+    return occurrence
+  }
+  return {
+    evaluate: (
+      alarms: readonly Alarm[],
+      cityZones: ReadonlyMap<number, string>,
+      previous: Date,
+      current: Date,
+    ) => evaluateWithResolver(alarms, cityZones, previous, current, resolve),
+  }
+}
+
+/** Stateless evaluation; repeated runtime callers should retain createAlarmEvaluator(). */
 export function evaluateAlarms(
   alarms: readonly Alarm[],
   cityZones: ReadonlyMap<number, string>,
   previous: Date,
   current: Date,
+) {
+  return evaluateWithResolver(alarms, cityZones, previous, current, dailyOccurrence)
+}
+
+/** Validated configuration in; one latest due occurrence per alarm out. No timers or sound. */
+function evaluateWithResolver(
+  alarms: readonly Alarm[],
+  cityZones: ReadonlyMap<number, string>,
+  previous: Date,
+  current: Date,
+  resolve: typeof dailyOccurrence,
 ) {
   const start = previous.getTime()
   const end = current.getTime()
@@ -143,7 +177,7 @@ export function evaluateAlarms(
       for (let day = lastDay; day >= firstDay; day -= DAY) {
         const dayText = new Date(day).toISOString().slice(0, 10)
         if (!/^(?!0000)\d{4}-/.test(dayText)) continue
-        const occurrence = dailyOccurrence(zone, dayText, alarm.time)
+        const occurrence = resolve(zone, dayText, alarm.time)
         if (occurrence && Date.parse(occurrence) > start && Date.parse(occurrence) <= end) {
           due.push({ alarm, instant: occurrence })
           break
