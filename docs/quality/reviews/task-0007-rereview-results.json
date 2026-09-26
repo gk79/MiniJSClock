@@ -1,0 +1,1919 @@
+[
+  {
+    "runtime": "Node",
+    "versions": {
+      "node": "24.21.0",
+      "acorn": "8.18.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.8",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "137",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.8",
+      "simdjson": "4.6.7",
+      "simdutf": "6.4.0",
+      "sqlite": "3.53.4",
+      "tz": "2026c",
+      "undici": "7.29.1",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "13.6.233.17-node.53",
+      "zlib": "1.3.2.1-motley-8002e91",
+      "zstd": "1.5.7"
+    },
+    "checks": 187,
+    "maxCacheSize": 128,
+    "work": [
+      {
+        "label": "1 cold",
+        "calls": 5762,
+        "ms": 26.059,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 warm",
+        "calls": 0,
+        "ms": 0.022,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 adjacent",
+        "calls": 2881,
+        "ms": 7.907,
+        "due": []
+      },
+      {
+        "label": "1 established adjacent",
+        "calls": 0,
+        "ms": 0.016,
+        "due": []
+      },
+      {
+        "label": "1 rollover",
+        "calls": 2881,
+        "ms": 7.482,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 rollover warm",
+        "calls": 0,
+        "ms": 0.017,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 time edit",
+        "calls": 8643,
+        "ms": 24.655,
+        "due": []
+      },
+      {
+        "label": "1 time edit warm",
+        "calls": 0,
+        "ms": 0.012,
+        "due": []
+      },
+      {
+        "label": "1 zone edit",
+        "calls": 8643,
+        "ms": 22.978,
+        "due": []
+      },
+      {
+        "label": "1 zone edit warm",
+        "calls": 0,
+        "ms": 0.014,
+        "due": []
+      },
+      {
+        "label": "1 30-day cold",
+        "calls": 5762,
+        "ms": 14.584,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 30-day warm",
+        "calls": 0,
+        "ms": 0.009,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 resume adjacent",
+        "calls": 2881,
+        "ms": 9.528,
+        "due": []
+      },
+      {
+        "label": "1 resume established",
+        "calls": 0,
+        "ms": 0.01,
+        "due": []
+      },
+      {
+        "label": "4 cold",
+        "calls": 31691,
+        "ms": 81.908,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 warm",
+        "calls": 0,
+        "ms": 0.021,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 adjacent",
+        "calls": 2881,
+        "ms": 7.781,
+        "due": []
+      },
+      {
+        "label": "4 established adjacent",
+        "calls": 0,
+        "ms": 0.037,
+        "due": []
+      },
+      {
+        "label": "4 rollover",
+        "calls": 11524,
+        "ms": 29.96,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 rollover warm",
+        "calls": 0,
+        "ms": 0.021,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 time edit",
+        "calls": 8643,
+        "ms": 22.256,
+        "due": []
+      },
+      {
+        "label": "4 time edit warm",
+        "calls": 0,
+        "ms": 0.022,
+        "due": []
+      },
+      {
+        "label": "4 zone edit",
+        "calls": 8643,
+        "ms": 22.693,
+        "due": []
+      },
+      {
+        "label": "4 zone edit warm",
+        "calls": 0,
+        "ms": 0.022,
+        "due": []
+      },
+      {
+        "label": "4 30-day cold",
+        "calls": 23048,
+        "ms": 60.653,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 30-day warm",
+        "calls": 0,
+        "ms": 0.017,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 resume adjacent",
+        "calls": 11524,
+        "ms": 29.938,
+        "due": []
+      },
+      {
+        "label": "4 resume established",
+        "calls": 0,
+        "ms": 0.02,
+        "due": []
+      },
+      {
+        "label": "12 cold",
+        "calls": 100835,
+        "ms": 263.179,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 warm",
+        "calls": 0,
+        "ms": 0.05,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 adjacent",
+        "calls": 2881,
+        "ms": 8.004,
+        "due": []
+      },
+      {
+        "label": "12 established adjacent",
+        "calls": 0,
+        "ms": 0.052,
+        "due": []
+      },
+      {
+        "label": "12 rollover",
+        "calls": 34572,
+        "ms": 89.329,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 rollover warm",
+        "calls": 0,
+        "ms": 0.053,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 time edit",
+        "calls": 8643,
+        "ms": 22.748,
+        "due": []
+      },
+      {
+        "label": "12 time edit warm",
+        "calls": 0,
+        "ms": 0.057,
+        "due": []
+      },
+      {
+        "label": "12 zone edit",
+        "calls": 8643,
+        "ms": 25.364,
+        "due": []
+      },
+      {
+        "label": "12 zone edit warm",
+        "calls": 0,
+        "ms": 0.053,
+        "due": []
+      },
+      {
+        "label": "12 30-day cold",
+        "calls": 74906,
+        "ms": 196.679,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          },
+          {
+            "cityId": 2078025,
+            "instant": "2026-09-25T22:30:00.000Z"
+          },
+          {
+            "cityId": 4035413,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 2179537,
+            "instant": "2026-09-25T20:00:00.000Z"
+          },
+          {
+            "cityId": 5881576,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 756135,
+            "instant": "2026-09-26T06:00:00.000Z"
+          },
+          {
+            "cityId": 360630,
+            "instant": "2026-09-26T05:00:00.000Z"
+          },
+          {
+            "cityId": 5368361,
+            "instant": "2026-09-25T15:00:00.000Z"
+          },
+          {
+            "cityId": 3448439,
+            "instant": "2026-09-26T11:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 30-day warm",
+        "calls": 0,
+        "ms": 0.04,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          },
+          {
+            "cityId": 2078025,
+            "instant": "2026-09-25T22:30:00.000Z"
+          },
+          {
+            "cityId": 4035413,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 2179537,
+            "instant": "2026-09-25T20:00:00.000Z"
+          },
+          {
+            "cityId": 5881576,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 756135,
+            "instant": "2026-09-26T06:00:00.000Z"
+          },
+          {
+            "cityId": 360630,
+            "instant": "2026-09-26T05:00:00.000Z"
+          },
+          {
+            "cityId": 5368361,
+            "instant": "2026-09-25T15:00:00.000Z"
+          },
+          {
+            "cityId": 3448439,
+            "instant": "2026-09-26T11:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 resume adjacent",
+        "calls": 28810,
+        "ms": 76.308,
+        "due": []
+      },
+      {
+        "label": "12 resume established",
+        "calls": 0,
+        "ms": 0.048,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 0",
+        "calls": 8643,
+        "ms": 22.56,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 1",
+        "calls": 8643,
+        "ms": 22.422,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 2",
+        "calls": 8643,
+        "ms": 25.776,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 3",
+        "calls": 8643,
+        "ms": 22.822,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 4",
+        "calls": 8643,
+        "ms": 23.281,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 5",
+        "calls": 8643,
+        "ms": 22.083,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 6",
+        "calls": 8643,
+        "ms": 23.728,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 7",
+        "calls": 8643,
+        "ms": 22.418,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 8",
+        "calls": 8643,
+        "ms": 22.622,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 9",
+        "calls": 8643,
+        "ms": 23.048,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 10",
+        "calls": 8643,
+        "ms": 22.576,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 11",
+        "calls": 8643,
+        "ms": 22.629,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 12",
+        "calls": 8643,
+        "ms": 23.31,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 13",
+        "calls": 8643,
+        "ms": 23.749,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 14",
+        "calls": 8643,
+        "ms": 23.2,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 15",
+        "calls": 8643,
+        "ms": 24.257,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 16",
+        "calls": 8643,
+        "ms": 22.522,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 17",
+        "calls": 8643,
+        "ms": 22.794,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 18",
+        "calls": 8643,
+        "ms": 22.121,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 19",
+        "calls": 8643,
+        "ms": 21.859,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 20",
+        "calls": 8643,
+        "ms": 22.157,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 21",
+        "calls": 8643,
+        "ms": 22.508,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 22",
+        "calls": 8643,
+        "ms": 23.03,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 23",
+        "calls": 8643,
+        "ms": 21.919,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 24",
+        "calls": 8643,
+        "ms": 22.127,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 25",
+        "calls": 8643,
+        "ms": 22.706,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 26",
+        "calls": 8643,
+        "ms": 22.157,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 27",
+        "calls": 8643,
+        "ms": 22.639,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 28",
+        "calls": 8643,
+        "ms": 22.184,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 29",
+        "calls": 8643,
+        "ms": 22.047,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 30",
+        "calls": 8643,
+        "ms": 22.114,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 31",
+        "calls": 8643,
+        "ms": 23.314,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 32",
+        "calls": 8643,
+        "ms": 22.605,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 33",
+        "calls": 8643,
+        "ms": 22.255,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 34",
+        "calls": 8643,
+        "ms": 23.091,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 35",
+        "calls": 8643,
+        "ms": 23.399,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 36",
+        "calls": 8643,
+        "ms": 23.299,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 37",
+        "calls": 8643,
+        "ms": 22.809,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 38",
+        "calls": 8643,
+        "ms": 22.138,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 39",
+        "calls": 8643,
+        "ms": 22.244,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 40",
+        "calls": 8643,
+        "ms": 22.764,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 41",
+        "calls": 8643,
+        "ms": 23.048,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 42",
+        "calls": 8643,
+        "ms": 22.906,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 43",
+        "calls": 8643,
+        "ms": 23.126,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 44",
+        "calls": 8643,
+        "ms": 22.895,
+        "due": []
+      },
+      {
+        "label": "FIFO evicted recomputation",
+        "calls": 8643,
+        "ms": 22.269,
+        "due": []
+      },
+      {
+        "label": "FIFO recomputed warm",
+        "calls": 0,
+        "ms": 0.015,
+        "due": []
+      },
+      {
+        "label": "independent instance",
+        "calls": 8643,
+        "ms": 22.067,
+        "due": []
+      },
+      {
+        "label": "identical semantics other city",
+        "calls": 0,
+        "ms": 0.017,
+        "due": []
+      },
+      {
+        "label": "gap cold",
+        "calls": 11524,
+        "ms": 31.508,
+        "due": []
+      },
+      {
+        "label": "gap warm",
+        "calls": 0,
+        "ms": 0.006,
+        "due": []
+      },
+      {
+        "label": "overlap first cold",
+        "calls": 5762,
+        "ms": 15.347,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-11-01T05:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "overlap first warm",
+        "calls": 0,
+        "ms": 0.009,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-11-01T05:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "overlap second cold",
+        "calls": 8643,
+        "ms": 22.226,
+        "due": []
+      },
+      {
+        "label": "overlap second warm",
+        "calls": 0,
+        "ms": 0.005,
+        "due": []
+      },
+      {
+        "label": "inclusive cold",
+        "calls": 5762,
+        "ms": 15.127,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "inclusive warm",
+        "calls": 0,
+        "ms": 0.004,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "exclusive cold",
+        "calls": 8643,
+        "ms": 22.007,
+        "due": []
+      },
+      {
+        "label": "exclusive warm",
+        "calls": 0,
+        "ms": 0.004,
+        "due": []
+      }
+    ],
+    "endpoints": [
+      {
+        "zone": "America/New_York",
+        "day": "9999-12-31",
+        "time": "23:59",
+        "instant": "+010000-01-01T04:59:00.000Z",
+        "fields": {
+          "day": "31",
+          "literal": ":",
+          "month": "12",
+          "year": "9999",
+          "era": "AD",
+          "hour": "23",
+          "minute": "59",
+          "second": "00"
+        },
+        "candidates": [
+          "+010000-01-01T04:59:00.000Z"
+        ],
+        "configured": {
+          "ok": false,
+          "reason": "range"
+        }
+      },
+      {
+        "zone": "Europe/Warsaw",
+        "day": "0001-01-01",
+        "time": "00:00",
+        "instant": "0000-12-31T22:36:00.000Z",
+        "fields": {
+          "day": "01",
+          "literal": ":",
+          "month": "01",
+          "year": "1",
+          "era": "AD",
+          "hour": "00",
+          "minute": "00",
+          "second": "00"
+        },
+        "candidates": [
+          "0000-12-31T22:36:00.000Z"
+        ],
+        "configured": {
+          "ok": false,
+          "reason": "range"
+        }
+      },
+      {
+        "zone": "UTC",
+        "day": "0001-01-01",
+        "time": "00:00",
+        "instant": "0001-01-01T00:00:00.000Z",
+        "fields": {
+          "day": "01",
+          "literal": ":",
+          "month": "01",
+          "year": "1",
+          "era": "AD",
+          "hour": "00",
+          "minute": "00",
+          "second": "00"
+        },
+        "candidates": [
+          "0001-01-01T00:00:00.000Z"
+        ],
+        "configured": {
+          "ok": true,
+          "alarm": {
+            "cityId": 1,
+            "recurrence": "once",
+            "instant": "0001-01-01T00:00:00.000Z"
+          }
+        }
+      },
+      {
+        "zone": "UTC",
+        "day": "9999-12-31",
+        "time": "23:59",
+        "instant": "9999-12-31T23:59:00.000Z",
+        "fields": {
+          "day": "31",
+          "literal": ":",
+          "month": "12",
+          "year": "9999",
+          "era": "AD",
+          "hour": "23",
+          "minute": "59",
+          "second": "00"
+        },
+        "candidates": [
+          "9999-12-31T23:59:00.000Z"
+        ],
+        "configured": {
+          "ok": true,
+          "alarm": {
+            "cityId": 1,
+            "recurrence": "once",
+            "instant": "9999-12-31T23:59:00.000Z"
+          }
+        }
+      }
+    ],
+    "syntheticSelectionChecks": 4,
+    "persistence": {
+      "checks": 10,
+      "rejectedInstants": [
+        "+010000-01-01T04:59:00.000Z",
+        "0000-12-31T22:36:00.000Z",
+        "2026-01-01T01:00:00.000+01:00",
+        "2026-01-01T00:00:01.000Z",
+        "2026-01-01T00:00:00Z"
+      ]
+    }
+  },
+  {
+    "runtime": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "checks": 187,
+    "maxCacheSize": 128,
+    "work": [
+      {
+        "label": "1 cold",
+        "calls": 5762,
+        "ms": 27.8,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 adjacent",
+        "calls": 2881,
+        "ms": 6.2,
+        "due": []
+      },
+      {
+        "label": "1 established adjacent",
+        "calls": 0,
+        "ms": 0.1,
+        "due": []
+      },
+      {
+        "label": "1 rollover",
+        "calls": 2881,
+        "ms": 6.9,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 rollover warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 time edit",
+        "calls": 8643,
+        "ms": 19.4,
+        "due": []
+      },
+      {
+        "label": "1 time edit warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "1 zone edit",
+        "calls": 8643,
+        "ms": 19.4,
+        "due": []
+      },
+      {
+        "label": "1 zone edit warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "1 30-day cold",
+        "calls": 5762,
+        "ms": 12.3,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 30-day warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "1 resume adjacent",
+        "calls": 2881,
+        "ms": 6.5,
+        "due": []
+      },
+      {
+        "label": "1 resume established",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "4 cold",
+        "calls": 31691,
+        "ms": 70.9,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 adjacent",
+        "calls": 2881,
+        "ms": 6.4,
+        "due": []
+      },
+      {
+        "label": "4 established adjacent",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "4 rollover",
+        "calls": 11524,
+        "ms": 24.5,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 rollover warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 time edit",
+        "calls": 8643,
+        "ms": 18.8,
+        "due": []
+      },
+      {
+        "label": "4 time edit warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": []
+      },
+      {
+        "label": "4 zone edit",
+        "calls": 8643,
+        "ms": 18.1,
+        "due": []
+      },
+      {
+        "label": "4 zone edit warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": []
+      },
+      {
+        "label": "4 30-day cold",
+        "calls": 23048,
+        "ms": 49.3,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 30-day warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "4 resume adjacent",
+        "calls": 11524,
+        "ms": 25.5,
+        "due": []
+      },
+      {
+        "label": "4 resume established",
+        "calls": 0,
+        "ms": 0.1,
+        "due": []
+      },
+      {
+        "label": "12 cold",
+        "calls": 100835,
+        "ms": 219.4,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 adjacent",
+        "calls": 2881,
+        "ms": 6.8,
+        "due": []
+      },
+      {
+        "label": "12 established adjacent",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "12 rollover",
+        "calls": 34572,
+        "ms": 75.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 rollover warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-27T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 time edit",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "12 time edit warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": []
+      },
+      {
+        "label": "12 zone edit",
+        "calls": 8643,
+        "ms": 20.2,
+        "due": []
+      },
+      {
+        "label": "12 zone edit warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "12 30-day cold",
+        "calls": 74906,
+        "ms": 162.3,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          },
+          {
+            "cityId": 2078025,
+            "instant": "2026-09-25T22:30:00.000Z"
+          },
+          {
+            "cityId": 4035413,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 2179537,
+            "instant": "2026-09-25T20:00:00.000Z"
+          },
+          {
+            "cityId": 5881576,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 756135,
+            "instant": "2026-09-26T06:00:00.000Z"
+          },
+          {
+            "cityId": 360630,
+            "instant": "2026-09-26T05:00:00.000Z"
+          },
+          {
+            "cityId": 5368361,
+            "instant": "2026-09-25T15:00:00.000Z"
+          },
+          {
+            "cityId": 3448439,
+            "instant": "2026-09-26T11:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 30-day warm",
+        "calls": 0,
+        "ms": 0.1,
+        "due": [
+          {
+            "cityId": 4140963,
+            "instant": "2026-09-26T12:00:00.000Z"
+          },
+          {
+            "cityId": 2643743,
+            "instant": "2026-09-26T07:00:00.000Z"
+          },
+          {
+            "cityId": 1848354,
+            "instant": "2026-09-25T23:00:00.000Z"
+          },
+          {
+            "cityId": 1283240,
+            "instant": "2026-09-26T02:15:00.000Z"
+          },
+          {
+            "cityId": 2078025,
+            "instant": "2026-09-25T22:30:00.000Z"
+          },
+          {
+            "cityId": 4035413,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 2179537,
+            "instant": "2026-09-25T20:00:00.000Z"
+          },
+          {
+            "cityId": 5881576,
+            "instant": "2026-09-25T19:00:00.000Z"
+          },
+          {
+            "cityId": 756135,
+            "instant": "2026-09-26T06:00:00.000Z"
+          },
+          {
+            "cityId": 360630,
+            "instant": "2026-09-26T05:00:00.000Z"
+          },
+          {
+            "cityId": 5368361,
+            "instant": "2026-09-25T15:00:00.000Z"
+          },
+          {
+            "cityId": 3448439,
+            "instant": "2026-09-26T11:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "12 resume adjacent",
+        "calls": 28810,
+        "ms": 62.9,
+        "due": []
+      },
+      {
+        "label": "12 resume established",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 0",
+        "calls": 8643,
+        "ms": 18.9,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 1",
+        "calls": 8643,
+        "ms": 18.5,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 2",
+        "calls": 8643,
+        "ms": 18.6,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 3",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 4",
+        "calls": 8643,
+        "ms": 18.1,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 5",
+        "calls": 8643,
+        "ms": 18.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 6",
+        "calls": 8643,
+        "ms": 21,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 7",
+        "calls": 8643,
+        "ms": 18.6,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 8",
+        "calls": 8643,
+        "ms": 17.9,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 9",
+        "calls": 8643,
+        "ms": 19,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 10",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 11",
+        "calls": 8643,
+        "ms": 19,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 12",
+        "calls": 8643,
+        "ms": 18.9,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 13",
+        "calls": 8643,
+        "ms": 19.8,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 14",
+        "calls": 8643,
+        "ms": 18.4,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 15",
+        "calls": 8643,
+        "ms": 18.4,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 16",
+        "calls": 8643,
+        "ms": 18.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 17",
+        "calls": 8643,
+        "ms": 20.2,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 18",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 19",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 20",
+        "calls": 8643,
+        "ms": 18.6,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 21",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 22",
+        "calls": 8643,
+        "ms": 18.8,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 23",
+        "calls": 8643,
+        "ms": 19.2,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 24",
+        "calls": 8643,
+        "ms": 20.1,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 25",
+        "calls": 8643,
+        "ms": 18.4,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 26",
+        "calls": 8643,
+        "ms": 19.1,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 27",
+        "calls": 8643,
+        "ms": 18.5,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 28",
+        "calls": 8643,
+        "ms": 19.1,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 29",
+        "calls": 8643,
+        "ms": 19.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 30",
+        "calls": 8643,
+        "ms": 18.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 31",
+        "calls": 8643,
+        "ms": 18.6,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 32",
+        "calls": 8643,
+        "ms": 19.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 33",
+        "calls": 8643,
+        "ms": 19.4,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 34",
+        "calls": 8643,
+        "ms": 19.8,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 35",
+        "calls": 8643,
+        "ms": 18.2,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 36",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 37",
+        "calls": 8643,
+        "ms": 19.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 38",
+        "calls": 8643,
+        "ms": 18.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 39",
+        "calls": 8643,
+        "ms": 19.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 40",
+        "calls": 8643,
+        "ms": 19.8,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 41",
+        "calls": 8643,
+        "ms": 20.7,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 42",
+        "calls": 8643,
+        "ms": 19.3,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 43",
+        "calls": 8643,
+        "ms": 19.1,
+        "due": []
+      },
+      {
+        "label": "FIFO fill 44",
+        "calls": 8643,
+        "ms": 19.7,
+        "due": []
+      },
+      {
+        "label": "FIFO evicted recomputation",
+        "calls": 8643,
+        "ms": 18.4,
+        "due": []
+      },
+      {
+        "label": "FIFO recomputed warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "independent instance",
+        "calls": 8643,
+        "ms": 17.9,
+        "due": []
+      },
+      {
+        "label": "identical semantics other city",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "gap cold",
+        "calls": 11524,
+        "ms": 24.5,
+        "due": []
+      },
+      {
+        "label": "gap warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "overlap first cold",
+        "calls": 5762,
+        "ms": 12.7,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-11-01T05:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "overlap first warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-11-01T05:30:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "overlap second cold",
+        "calls": 8643,
+        "ms": 19.7,
+        "due": []
+      },
+      {
+        "label": "overlap second warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      },
+      {
+        "label": "inclusive cold",
+        "calls": 5762,
+        "ms": 12.2,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "inclusive warm",
+        "calls": 0,
+        "ms": 0,
+        "due": [
+          {
+            "cityId": 1,
+            "instant": "2026-09-26T12:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "label": "exclusive cold",
+        "calls": 8643,
+        "ms": 18.8,
+        "due": []
+      },
+      {
+        "label": "exclusive warm",
+        "calls": 0,
+        "ms": 0,
+        "due": []
+      }
+    ],
+    "endpoints": [
+      {
+        "zone": "America/New_York",
+        "day": "9999-12-31",
+        "time": "23:59",
+        "instant": "+010000-01-01T04:59:00.000Z",
+        "fields": {
+          "day": "31",
+          "literal": ":",
+          "month": "12",
+          "year": "9999",
+          "era": "AD",
+          "hour": "23",
+          "minute": "59",
+          "second": "00"
+        },
+        "candidates": [
+          "+010000-01-01T04:59:00.000Z"
+        ],
+        "configured": {
+          "ok": false,
+          "reason": "range"
+        }
+      },
+      {
+        "zone": "Europe/Warsaw",
+        "day": "0001-01-01",
+        "time": "00:00",
+        "instant": "0000-12-31T22:36:00.000Z",
+        "fields": {
+          "day": "01",
+          "literal": ":",
+          "month": "01",
+          "year": "1",
+          "era": "AD",
+          "hour": "00",
+          "minute": "00",
+          "second": "00"
+        },
+        "candidates": [
+          "0000-12-31T22:36:00.000Z"
+        ],
+        "configured": {
+          "ok": false,
+          "reason": "range"
+        }
+      },
+      {
+        "zone": "UTC",
+        "day": "0001-01-01",
+        "time": "00:00",
+        "instant": "0001-01-01T00:00:00.000Z",
+        "fields": {
+          "day": "01",
+          "literal": ":",
+          "month": "01",
+          "year": "1",
+          "era": "AD",
+          "hour": "00",
+          "minute": "00",
+          "second": "00"
+        },
+        "candidates": [
+          "0001-01-01T00:00:00.000Z"
+        ],
+        "configured": {
+          "ok": true,
+          "alarm": {
+            "cityId": 1,
+            "recurrence": "once",
+            "instant": "0001-01-01T00:00:00.000Z"
+          }
+        }
+      },
+      {
+        "zone": "UTC",
+        "day": "9999-12-31",
+        "time": "23:59",
+        "instant": "9999-12-31T23:59:00.000Z",
+        "fields": {
+          "day": "31",
+          "literal": ":",
+          "month": "12",
+          "year": "9999",
+          "era": "AD",
+          "hour": "23",
+          "minute": "59",
+          "second": "00"
+        },
+        "candidates": [
+          "9999-12-31T23:59:00.000Z"
+        ],
+        "configured": {
+          "ok": true,
+          "alarm": {
+            "cityId": 1,
+            "recurrence": "once",
+            "instant": "9999-12-31T23:59:00.000Z"
+          }
+        }
+      }
+    ],
+    "syntheticSelectionChecks": 4
+  }
+]
