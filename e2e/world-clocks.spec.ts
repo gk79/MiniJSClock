@@ -26,7 +26,7 @@ test('adds, restores, removes and advances catalog-zone clocks under the product
   await expect(page.locator('[data-city-id]').first()).toHaveAttribute('data-city-id', '1850147')
   await expect(page.locator('[data-city-id]').last()).toHaveAttribute('data-city-id', '2643743')
   expect(await page.evaluate((storageKey) => localStorage.getItem(storageKey), key)).toBe(
-    '{"version":1,"selectedCityIds":[1850147,2643743]}',
+    '{"version":2,"selectedCityIds":[1850147,2643743],"presentationMode":"digital","timeFormat":"24h"}',
   )
 
   const matchesZoneTime = async (id: number, zone: string) =>
@@ -63,7 +63,7 @@ test('adds, restores, removes and advances catalog-zone clocks under the product
   await expect(page.locator('[data-city-id]')).toHaveCount(1)
   await expect(page.locator('[data-city-id]')).toHaveAttribute('data-city-id', '2643743')
   expect(await page.evaluate((storageKey) => localStorage.getItem(storageKey), key)).toBe(
-    '{"version":1,"selectedCityIds":[2643743]}',
+    '{"version":2,"selectedCityIds":[2643743],"presentationMode":"digital","timeFormat":"24h"}',
   )
 })
 
@@ -80,7 +80,7 @@ test('recovers from malformed and unsupported stored documents without crashing'
   await expect(page.locator('[data-city-id]')).toHaveCount(1)
 
   await page.evaluate(
-    (storageKey) => localStorage.setItem(storageKey, '{"version":2,"selectedCityIds":[1850147]}'),
+    (storageKey) => localStorage.setItem(storageKey, '{"version":3,"selectedCityIds":[1850147]}'),
     key,
   )
   await page.reload()
@@ -88,8 +88,12 @@ test('recovers from malformed and unsupported stored documents without crashing'
   await expect(page.locator('[data-city-id]')).toHaveCount(0)
   await addCity(page, 'Tokyo', 'Tokyo (JP)')
   await expect(page.locator('[data-city-id]')).toHaveCount(1)
+  await page.getByLabel('Presentation', { exact: true }).selectOption('analog')
+  await page.getByLabel('Digital time format', { exact: true }).selectOption('12h')
+  await page.getByRole('button', { name: 'Remove Tokyo' }).click()
+  await expect(page.getByRole('status')).toContainText('unsupported version')
   expect(await page.evaluate((storageKey) => localStorage.getItem(storageKey), key)).toBe(
-    '{"version":2,"selectedCityIds":[1850147]}',
+    '{"version":3,"selectedCityIds":[1850147]}',
   )
 })
 
@@ -102,6 +106,9 @@ test('keeps selection usable when browser storage writes fail', async ({ page })
   await page.goto('./')
   await addCity(page, 'Tokyo', 'Tokyo (JP)')
   await expect(page.locator('[data-city-id]')).toHaveCount(1)
+  await page.getByLabel('Presentation', { exact: true }).selectOption('analog')
+  await page.getByLabel('Digital time format', { exact: true }).selectOption('12h')
+  await expect(page.locator('.clock-face')).toHaveCount(2)
   await expect(page.getByRole('status')).toContainText('saving failed')
   await page.getByRole('button', { name: 'Remove Tokyo' }).click()
   await expect(page.locator('[data-city-id]')).toHaveCount(0)

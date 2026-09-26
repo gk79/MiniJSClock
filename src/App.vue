@@ -2,13 +2,13 @@
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 
 import catalog from './cityCatalog.json'
-import { loadConfig, saveConfig, type ConfigV1 } from './config'
-import { formatTime } from './time'
+import { loadConfig, saveConfig, defaultConfig, type ConfigV2 } from './config'
+import ClockPresenter from './ClockPresenter.vue'
 
 const catalogById = new Map(catalog.map((city) => [city.geonameId, city]))
 const catalogIds = new Set(catalogById.keys())
 const currentInstant = ref(new Date())
-const config = ref<ConfigV1>({ version: 1, selectedCityIds: [] })
+const config = ref<ConfigV2>(defaultConfig())
 const search = ref('')
 const pickerOpen = ref(false)
 const activeIndex = ref(-1)
@@ -17,7 +17,6 @@ const storageStatus = ref<'ok' | 'invalid' | 'unsupported' | 'unavailable' | 'wr
 let storage: Storage | undefined
 let ticker: ReturnType<typeof setInterval> | undefined
 
-const localTime = computed(() => formatTime(currentInstant.value))
 const selectedCities = computed(() =>
   config.value.selectedCityIds.flatMap((id) => {
     const city = catalogById.get(id)
@@ -96,7 +95,7 @@ function persist() {
 
 function addCity(id: number) {
   if (catalogIds.has(id) && !config.value.selectedCityIds.includes(id)) {
-    config.value = { version: 1, selectedCityIds: [...config.value.selectedCityIds, id] }
+    config.value = { ...config.value, selectedCityIds: [...config.value.selectedCityIds, id] }
     persist()
   }
   search.value = ''
@@ -106,7 +105,7 @@ function addCity(id: number) {
 
 function removeCity(id: number) {
   config.value = {
-    version: 1,
+    ...config.value,
     selectedCityIds: config.value.selectedCityIds.filter((selectedId) => selectedId !== id),
   }
   persist()
@@ -138,7 +137,26 @@ onUnmounted(() => {
         <p class="eyebrow">Local-first world clock</p>
         <h1 id="app-title">MiniJSClock</h1>
         <h2 id="local-clock-title" class="clock-label">Your local time</h2>
-        <time class="clock-time" data-testid="local-time">{{ localTime }}</time>
+        <ClockPresenter
+          class="clock-time"
+          test-id="local-time"
+          :instant="currentInstant"
+          :presentation-mode="config.presentationMode"
+          :time-format="config.timeFormat"
+        />
+        <fieldset class="clock-settings">
+          <legend>Clock settings (all clocks)</legend>
+          <label for="presentation-mode">Presentation</label>
+          <select id="presentation-mode" v-model="config.presentationMode" @change="persist">
+            <option value="digital">Digital</option>
+            <option value="analog">Analog</option>
+          </select>
+          <label for="time-format">Digital time format</label>
+          <select id="time-format" v-model="config.timeFormat" @change="persist">
+            <option value="24h">24-hour</option>
+            <option value="12h">12-hour</option>
+          </select>
+        </fieldset>
       </section>
 
       <section class="world-section" aria-labelledby="world-title">
@@ -212,9 +230,14 @@ onUnmounted(() => {
                 {{ city.name }} <span class="country-code">{{ city.countryCode }}</span>
               </h3>
               <p class="zone-label">{{ city.timeZone }}</p>
-              <time class="world-time" :data-testid="`city-time-${city.geonameId}`">{{
-                formatTime(currentInstant, city.timeZone)
-              }}</time>
+              <ClockPresenter
+                class="world-time"
+                :test-id="`city-time-${city.geonameId}`"
+                :instant="currentInstant"
+                :time-zone="city.timeZone"
+                :presentation-mode="config.presentationMode"
+                :time-format="config.timeFormat"
+              />
             </div>
             <button
               type="button"

@@ -1,3 +1,5 @@
+import type { TimeFormat } from './time'
+
 export const CONFIG_KEY = 'minijsclock.config'
 
 export type ConfigV1 = {
@@ -5,15 +7,29 @@ export type ConfigV1 = {
   selectedCityIds: number[]
 }
 
+export type PresentationMode = 'digital' | 'analog'
+
+export type ConfigV2 = {
+  version: 2
+  selectedCityIds: number[]
+  presentationMode: PresentationMode
+  timeFormat: TimeFormat
+}
+
 export type LoadResult = {
-  config: ConfigV1
+  config: ConfigV2
   status: 'ok' | 'invalid' | 'unsupported' | 'unavailable'
 }
 
 type ReadStorage = Pick<Storage, 'getItem'>
 type WriteStorage = Pick<Storage, 'setItem'>
 
-const defaults = (): ConfigV1 => ({ version: 1, selectedCityIds: [] })
+export const defaultConfig = (): ConfigV2 => ({
+  version: 2,
+  selectedCityIds: [],
+  presentationMode: 'digital',
+  timeFormat: '24h',
+})
 
 function isConfigV1(value: unknown, catalogIds: ReadonlySet<number>): value is ConfigV1 {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
@@ -32,39 +48,54 @@ function isConfigV1(value: unknown, catalogIds: ReadonlySet<number>): value is C
   )
 }
 
+function isConfigV2(value: unknown, catalogIds: ReadonlySet<number>): value is ConfigV2 {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
+  const record = value as Record<string, unknown>
+  return (
+    Object.keys(record).length === 4 &&
+    record.version === 2 &&
+    (record.presentationMode === 'digital' || record.presentationMode === 'analog') &&
+    (record.timeFormat === '24h' || record.timeFormat === '12h') &&
+    isConfigV1({ version: 1, selectedCityIds: record.selectedCityIds }, catalogIds)
+  )
+}
+
 export function parseConfig(raw: string, catalogIds: ReadonlySet<number>): LoadResult {
   let value: unknown
   try {
     value = JSON.parse(raw)
   } catch {
-    return { config: defaults(), status: 'invalid' }
+    return { config: defaultConfig(), status: 'invalid' }
   }
   if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
     const record = value as Record<string, unknown>
-    if ('version' in record && record.version !== 1) {
-      return { config: defaults(), status: 'unsupported' }
+    if ('version' in record && record.version !== 1 && record.version !== 2) {
+      return { config: defaultConfig(), status: 'unsupported' }
     }
   }
-  return isConfigV1(value, catalogIds)
+  if (isConfigV1(value, catalogIds)) {
+    return { config: { ...defaultConfig(), selectedCityIds: value.selectedCityIds }, status: 'ok' }
+  }
+  return isConfigV2(value, catalogIds)
     ? { config: value, status: 'ok' }
-    : { config: defaults(), status: 'invalid' }
+    : { config: defaultConfig(), status: 'invalid' }
 }
 
 export function loadConfig(storage: ReadStorage, catalogIds: ReadonlySet<number>): LoadResult {
   try {
     const raw = storage.getItem(CONFIG_KEY)
-    return raw === null ? { config: defaults(), status: 'ok' } : parseConfig(raw, catalogIds)
+    return raw === null ? { config: defaultConfig(), status: 'ok' } : parseConfig(raw, catalogIds)
   } catch {
-    return { config: defaults(), status: 'unavailable' }
+    return { config: defaultConfig(), status: 'unavailable' }
   }
 }
 
 export function saveConfig(
   storage: WriteStorage,
-  config: ConfigV1,
+  config: ConfigV2,
   catalogIds: ReadonlySet<number>,
 ): boolean {
-  if (!isConfigV1(config, catalogIds)) return false
+  if (!isConfigV2(config, catalogIds)) return false
   try {
     storage.setItem(CONFIG_KEY, JSON.stringify(config))
     return true

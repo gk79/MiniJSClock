@@ -238,3 +238,76 @@ h1 {
 .city-results li[aria-selected='true'] {
   background: #344357;
 }
+
+.clock-settings {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  border: 1px solid #64758b;
+  border-radius: 0.375rem;
+  color: #c1ccda;
+  font-size: 0.875rem;
+}
+
+.clock-settings select {
+  min-width: 0;
+  padding: 0.4rem;
+  border: 1px solid #64758b;
+  border-radius: 0.375rem;
+  background: #10151d;
+  color: #f4f7fb;
+}
+
+.clock-settings select:focus-visible {
+  outline: 2px solid #9fb0c5;
+  outline-offset: 2px;
+}
+
+.analog-clock {
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
+}
+
+.clock-face {
+  width: 10rem;
+  max-width: 100%;
+}
+
+.clock-rim {
+  fill: #10151d;
+  stroke: #8295ae;
+  stroke-width: 1.5;
+}
+
+.clock-mark,
+.hour-hand,
+.minute-hand {
+  stroke: #f4f7fb;
+  stroke-linecap: round;
+}
+
+.clock-mark {
+  stroke-width: 1;
+}
+.hour-hand {
+  stroke-width: 3;
+}
+.minute-hand {
+  stroke-width: 2;
+}
+.second-hand {
+  stroke: #ffe3a1;
+  stroke-width: 1;
+}
+.clock-hub {
+  fill: #ffe3a1;
+}
+
+.analog-time-text {
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: normal;
+}
