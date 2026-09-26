@@ -120,8 +120,7 @@ h1 {
   font-weight: 600;
 }
 
-.picker input,
-.picker select {
+.picker input {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border: 1px solid #64758b;
@@ -200,5 +199,42 @@ h1 {
 
 .world-card button:hover,
 .world-card button:focus-visible {
+  background: #344357;
+}
+
+.city-combobox {
+  position: relative;
+}
+
+.picker input:focus-visible {
+  outline: 2px solid #9fb0c5;
+  outline-offset: 2px;
+}
+
+.city-results {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-height: 16rem;
+  overflow-y: auto;
+  margin: 0.5rem 0 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid #64758b;
+  border-radius: 0.375rem;
+  background: #10151d;
+}
+
+.city-results:empty {
+  display: none;
+}
+
+.city-results li {
+  padding: 0.65rem 0.75rem;
+  cursor: pointer;
+}
+
+.city-results li:hover,
+.city-results li[aria-selected='true'] {
   background: #344357;
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 
 import catalog from './cityCatalog.json'
 import { loadConfig, saveConfig, type ConfigV1 } from './config'
@@ -10,7 +10,9 @@ const catalogIds = new Set(catalogById.keys())
 const currentInstant = ref(new Date())
 const config = ref<ConfigV1>({ version: 1, selectedCityIds: [] })
 const search = ref('')
-const selectedOption = ref('')
+const pickerOpen = ref(false)
+const activeIndex = ref(-1)
+const cityInput = ref<HTMLInputElement>()
 const storageStatus = ref<'ok' | 'invalid' | 'unsupported' | 'unavailable' | 'write-failed'>('ok')
 let storage: Storage | undefined
 let ticker: ReturnType<typeof setInterval> | undefined
@@ -28,11 +30,46 @@ const availableCities = computed(() => {
   return catalog.filter(
     (city) =>
       !selected.has(city.geonameId) &&
-      [city.name, city.asciiName, city.countryCode].some((value) =>
-        value.toLowerCase().includes(query),
-      ),
+      ([city.name, city.asciiName].some((value) => value.toLowerCase().startsWith(query)) ||
+        city.countryCode.toLowerCase().includes(query)),
   )
 })
+const activeCity = computed(() => availableCities.value[activeIndex.value])
+watch(availableCities, () => {
+  activeIndex.value = -1
+})
+
+function closePicker() {
+  pickerOpen.value = false
+  activeIndex.value = -1
+}
+
+async function handlePickerKey(event: KeyboardEvent) {
+  if (event.isComposing) return
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    closePicker()
+  } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault()
+    pickerOpen.value = true
+    const count = availableCities.value.length
+    if (!count) return
+    activeIndex.value =
+      activeIndex.value < 0
+        ? event.key === 'ArrowDown'
+          ? 0
+          : count - 1
+        : (activeIndex.value + (event.key === 'ArrowDown' ? 1 : -1) + count) % count
+    await nextTick()
+    document
+      .getElementById(`city-option-${activeCity.value?.geonameId}`)
+      ?.scrollIntoView({ block: 'nearest' })
+  } else if (event.key === 'Enter' && pickerOpen.value) {
+    event.preventDefault()
+    if (activeCity.value) addCity(activeCity.value.geonameId)
+  }
+}
+
 const warning = computed(() => {
   switch (storageStatus.value) {
     case 'invalid':
@@ -57,13 +94,14 @@ function persist() {
   }
 }
 
-function addCity(event: Event) {
-  const id = Number((event.target as HTMLSelectElement).value)
+function addCity(id: number) {
   if (catalogIds.has(id) && !config.value.selectedCityIds.includes(id)) {
     config.value = { version: 1, selectedCityIds: [...config.value.selectedCityIds, id] }
     persist()
   }
-  selectedOption.value = ''
+  search.value = ''
+  closePicker()
+  cityInput.value?.focus()
 }
 
 function removeCity(id: number) {
@@ -107,22 +145,56 @@ onUnmounted(() => {
         <h2 id="world-title">World clocks</h2>
         <p v-if="warning" class="storage-warning" role="status">{{ warning }}</p>
         <div class="picker">
-          <label for="city-search">Search cities</label>
-          <input
-            id="city-search"
-            v-model="search"
-            type="search"
-            autocomplete="off"
-            placeholder="City or country code"
-          />
-          <label for="city-select">Add a city</label>
-          <select id="city-select" v-model="selectedOption" @change="addCity">
-            <option value="">Choose a city</option>
-            <option v-for="city in availableCities" :key="city.geonameId" :value="city.geonameId">
-              {{ city.name }} ({{ city.countryCode }})
-            </option>
-          </select>
-          <p class="picker-count">{{ availableCities.length }} cities available</p>
+          <label id="city-label" for="city-search">Add a city</label>
+          <div class="city-combobox">
+            <input
+              id="city-search"
+              ref="cityInput"
+              v-model="search"
+              type="text"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-controls="city-results"
+              :aria-expanded="pickerOpen"
+              :aria-activedescendant="
+                pickerOpen && activeCity ? `city-option-${activeCity.geonameId}` : undefined
+              "
+              aria-describedby="city-result-count"
+              autocomplete="off"
+              placeholder="City or country code"
+              @focus="pickerOpen = true"
+              @input="pickerOpen = true"
+              @click="pickerOpen = true"
+              @blur="closePicker"
+              @keydown="handlePickerKey"
+            />
+            <ul
+              v-show="pickerOpen"
+              id="city-results"
+              class="city-results"
+              role="listbox"
+              aria-labelledby="city-label"
+            >
+              <li
+                v-for="(city, index) in availableCities"
+                :id="`city-option-${city.geonameId}`"
+                :key="city.geonameId"
+                role="option"
+                :aria-selected="index === activeIndex"
+                @mousedown.prevent
+                @click="addCity(city.geonameId)"
+              >
+                {{ city.name }} ({{ city.countryCode }})
+              </li>
+            </ul>
+          </div>
+          <p id="city-result-count" class="picker-count" aria-live="polite">
+            {{
+              availableCities.length
+                ? `${availableCities.length} cities available`
+                : 'No matching cities. Try another city or country code.'
+            }}
+          </p>
         </div>
 
         <p v-if="selectedCities.length === 0" class="empty-state">
