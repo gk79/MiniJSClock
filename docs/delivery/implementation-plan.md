@@ -36,6 +36,7 @@ This is a planning topology, not a live status board. Create executable task con
 | TASK-0003 | Implement deterministic time formatting/domain primitives and running local clock | `cloud-standard`, medium reasoning, independent review as selected in the ready task |
 | TASK-0004 | Build deterministic GeoNames/IANA city catalog generation, provenance, and validation | `cloud-standard`, medium reasoning |
 | TASK-0005 | Add/remove world clocks with typed versioned local persistence and recovery | `cloud-standard`, medium reasoning |
+| TASK-0010 | Replace the separate city search + select controls with one searchable combobox and live filtering | `cloud-standard`, medium reasoning; execute before TASK-0006 |
 | TASK-0006 | Add global digital/analog and 12h/24h settings with persistence | `cloud-standard`, medium reasoning |
 | TASK-0007 | Implement city-local one-time/daily alarm domain logic and persistence | `cloud-deep`, high reasoning because time-zone/DST/overdue semantics are correctness-sensitive |
 | TASK-0008 | Add audible alarm runtime orchestration and browser/background evidence | `cloud-standard` or `cloud-deep` depending browser-policy uncertainty at readiness |
@@ -63,6 +64,7 @@ Add evidence progressively rather than deferring system-level verification to th
 - deployment/base-path verification in M2;
 - deterministic time-zone cases in M3;
 - catalog/provenance and persistence recovery in M4;
+- searchable city-combobox usability refinement in M4 before starting M5;
 - settings propagation in M5;
 - DST/overdue alarms in M6;
 - supported-browser and visual acceptance in M7.
