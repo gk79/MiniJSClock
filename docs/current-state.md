@@ -5,17 +5,17 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0005 integrated; TASK-0010 searchable city-combobox review-complete; awaiting human integration decision
+- Current milestone: TASK-0010 integrated into `main`; push-triggered hosted CI passed
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
 - Active task(s): none
-- Latest completed task: [TASK-0010](../tasks/done/TASK-0010.md) — searchable city combobox; fresh top-level independent review PASS at `52669e4352d62a56960f2de5dba55394d140bde6`; awaiting human integration decision, not integrated into `main`. TASK-0005 remains the latest integrated task.
+- Latest completed task: [TASK-0010](../tasks/done/TASK-0010.md) — searchable city combobox; fresh top-level independent review PASS at `52669e4352d62a56960f2de5dba55394d140bde6`; human-approved fast-forward integration into `main` at `e3f5cbacacd3d807572e0477c2ee14b1fcd76e77`; push-triggered [CI run #25](https://github.com/gk79/MiniJSClock/actions/runs/36232430067) PASS for that exact commit.
 - Main known risks/blockers: the Pages workflow has not run or deployed and requires a later human production release verdict; browser audio/autoplay remains a later runtime verification concern; local exact-second Playwright clock smoke intermittently fails in plain `make ci` (tracked separately under `LEARN-20260925-155537`)
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
-- Decisions currently pending: human integration decision for TASK-0010; none at architecture level
-- Next recommended action: human integration decision for review-complete TASK-0010 on `codex/task-0010-implementation`. TASK-0006 has not been created or started. GitHub Pages has not been deployed and no production release verdict has been made.
+- Decisions currently pending: none at architecture level
+- Next recommended action: await human direction for subsequent planning; do not create or start TASK-0006 yet. No active task. GitHub Pages has not been deployed and no production release verdict has been made.
 
 ## Recent verification
 
@@ -63,3 +63,5 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 | 2026-09-26 | TASK-0010 primary implementation | Exact planning head `fa02e93ebc7d4eb07bbe6890e9e29b86cc04d83b`; baseline harness/component test; targeted Chromium world-clock tests; `make test-integration`, `make test-e2e`, `make security`, `make verify`, plain `make ci`, and `git diff --check` | PASS: one searchable accessible combobox, pointer/keyboard selection, Escape/empty results, and preserved world-clock/storage behavior. Fresh independent review pending; [TASK-0010](../tasks/done/TASK-0010.md) holds detailed evidence. TASK-0006 not created or started; existing timing assertion unchanged. |
 
 | 2026-09-26 | TASK-0010 formal independent review closeout | User-reported fresh top-level `independent-cloud-standard` verdict PASS for remote head `52669e4352d62a56960f2de5dba55394d140bde6`; matching local/remote head and clean-worktree check; closeout `make harness-check` and `git diff --check` | PASS: no blocking findings; [TASK-0010](../tasks/done/TASK-0010.md) moved to done, awaiting human integration decision. Documentation/lifecycle changes only; both learning candidates preserved separately. TASK-0006 not created or started; Pages undeployed and production release undecided. |
+
+| 2026-09-26 | TASK-0010 integration and hosted CI | Human-approved fast-forward from `8cef81df4302c179fa90ef0b98bb7e44f791a393` to complete reviewed/closed branch head `e3f5cbacacd3d807572e0477c2ee14b1fcd76e77`; push-triggered [CI run #25](https://github.com/gk79/MiniJSClock/actions/runs/36232430067) (run ID `36232430067`) | PASS: completed successfully for that exact integration commit. TASK-0010 integrated into `main`; no active task. Both `LEARN-20260925-155537` and `LEARN-20260926-110426` remain separate and unchanged. TASK-0006 not created or started; GitHub Pages undeployed and no production release verdict made. Documentation-state update checked with `make harness-check` and `git diff --check`; no new harness learning from integration. |
