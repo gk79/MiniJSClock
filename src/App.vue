@@ -6,6 +6,8 @@ import { loadConfig, saveConfig, defaultConfig, type ConfigV3 } from './config'
 import ClockPresenter from './ClockPresenter.vue'
 import AlarmEditor from './AlarmEditor.vue'
 import type { Alarm } from './alarms'
+import { createAlarmRuntime, type RuntimeEvent } from './alarm-runtime'
+import { createAlarmAudio, type SoundReadiness } from './alarm-audio'
 
 const catalogById = new Map(catalog.map((city) => [city.geonameId, city]))
 const catalogIds = new Set(catalogById.keys())
@@ -18,6 +20,31 @@ const cityInput = ref<HTMLInputElement>()
 const storageStatus = ref<'ok' | 'invalid' | 'unsupported' | 'unavailable' | 'write-failed'>('ok')
 let storage: Storage | undefined
 let ticker: ReturnType<typeof setInterval> | undefined
+let runtime: ReturnType<typeof createAlarmRuntime> | undefined
+let audio: ReturnType<typeof createAlarmAudio> | undefined
+const dueEvents = ref<readonly RuntimeEvent[]>([])
+const soundReadiness = ref<SoundReadiness>('not-enabled')
+const soundLabel = computed(
+  () =>
+    ({
+      'not-enabled': 'Alarm sound needs interaction.',
+      testing: 'Testing alarm sound…',
+      ready: 'Alarm sound ready (last request succeeded).',
+      failed: 'Alarm sound unavailable or blocked. Enable / test to retry.',
+    })[soundReadiness.value],
+)
+
+function evaluateNow() {
+  const actualNow = new Date()
+  currentInstant.value = actualNow
+  runtime?.evaluateAt(actualNow)
+}
+function onVisibilityChange() {
+  if (document.visibilityState === 'visible') evaluateNow()
+}
+function enableSound() {
+  void audio?.enableTest()
+}
 
 const selectedCities = computed(() =>
   config.value.selectedCityIds.flatMap((id) => {
@@ -141,13 +168,36 @@ onMounted(() => {
   } catch {
     storageStatus.value = 'unavailable'
   }
-  ticker = setInterval(() => {
-    currentInstant.value = new Date()
-  }, 1000)
+  const sessionStart = new Date()
+  currentInstant.value = sessionStart
+  audio = createAlarmAudio({
+    onReadiness: (state) => {
+      soundReadiness.value = state
+    },
+  })
+  runtime = createAlarmRuntime({
+    sessionStart,
+    read: () => ({
+      alarms: config.value.alarms,
+      cities: new Map(selectedCities.value.map((city) => [city.geonameId, city])),
+    }),
+    apply: (alarms, shouldPersist) => {
+      config.value = { ...config.value, alarms }
+      if (shouldPersist) persist()
+    },
+    publish: (events) => {
+      dueEvents.value = events
+    },
+    audio,
+  })
+  ticker = setInterval(evaluateNow, 1000)
+  document.addEventListener('visibilitychange', onVisibilityChange)
 })
 
 onUnmounted(() => {
   if (ticker !== undefined) clearInterval(ticker)
+  document.removeEventListener('visibilitychange', onVisibilityChange)
+  runtime?.dispose()
 })
 </script>
 
@@ -178,11 +228,50 @@ onUnmounted(() => {
             <option value="12h">12-hour</option>
           </select>
         </fieldset>
+        <div class="alarm-sound">
+          <button type="button" :disabled="soundReadiness === 'testing'" @click="enableSound">
+            Enable / test alarm sound
+          </button>
+          <p class="sound-status" aria-live="polite">{{ soundLabel }}</p>
+        </div>
       </section>
 
       <section class="world-section" aria-labelledby="world-title">
         <h2 id="world-title">World clocks</h2>
         <p v-if="warning" class="storage-warning" role="status">{{ warning }}</p>
+        <section
+          class="alarm-notifications"
+          aria-label="Due alarms"
+          aria-live="polite"
+          aria-relevant="additions text"
+        >
+          <ul v-if="dueEvents.length">
+            <li v-for="event in dueEvents" :key="event.id" class="due-notification">
+              <p>
+                <strong>{{ event.cityName }} — Alarm due</strong>
+              </p>
+              <p>
+                <time :datetime="event.instant">{{ event.instant }} (UTC)</time>
+              </p>
+              <p>
+                {{
+                  event.sound === 'pending'
+                    ? 'Sound request pending…'
+                    : event.sound === 'requested'
+                      ? 'Sound request succeeded.'
+                      : 'Sound unavailable or blocked. Enable / test to retry.'
+                }}
+              </p>
+              <button
+                type="button"
+                :aria-label="`Dismiss ${event.cityName} alarm due ${event.instant}`"
+                @click="runtime?.dismiss(event.id)"
+              >
+                Dismiss
+              </button>
+            </li>
+          </ul>
+        </section>
         <div class="picker">
           <label id="city-label" for="city-search">Add a city</label>
           <div class="city-combobox">

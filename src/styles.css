@@ -188,7 +188,9 @@ h1 {
   font-weight: 600;
 }
 
-.world-card button {
+.world-card button,
+.alarm-sound button,
+.due-notification button {
   padding: 0.4rem 0.75rem;
   border: 1px solid #8295ae;
   border-radius: 0.375rem;
@@ -198,7 +200,11 @@ h1 {
 }
 
 .world-card button:hover,
-.world-card button:focus-visible {
+.world-card button:focus-visible,
+.alarm-sound button:hover,
+.alarm-sound button:focus-visible,
+.due-notification button:hover,
+.due-notification button:focus-visible {
   background: #344357;
 }
 
@@ -365,4 +371,38 @@ h1 {
 .world-card button:focus-visible {
   outline: 2px solid #9fb0c5;
   outline-offset: 2px;
+}
+
+.alarm-sound {
+  margin-top: 1.5rem;
+}
+.sound-status {
+  color: #c5d1e6;
+  font-size: 0.875rem;
+}
+.alarm-notifications ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.due-notification {
+  background: #1c3047;
+  border: 1px solid #7ecbce;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.due-notification p {
+  margin: 0 0 0.5rem;
+}
+
+.alarm-sound button:focus-visible,
+.due-notification button:focus-visible {
+  outline: 2px solid #9fb0c5;
+  outline-offset: 2px;
+}
+.alarm-sound button:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
