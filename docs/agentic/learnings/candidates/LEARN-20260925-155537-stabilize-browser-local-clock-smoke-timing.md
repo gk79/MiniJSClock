@@ -28,7 +28,7 @@ TASK-0011 local evidence: focused smoke PASS; ordinary repeat-each=20/workers=1 
 
 First full E2E run: stabilized app smoke passed, but unchanged world-clock test failed exact-second Asia/Tokyo equality at e2e/world-clocks.spec.ts:50 (15 passed, 1 failed). Full-suite rerun passed 16/16; plain make ci also passed 16/16 E2E and all canonical gates. At the initial implementation head this predicate was outside scope and unchanged. The user subsequently authorized a bounded TASK-0011 amendment after advisory read-only review: stabilize only the first world-clock scenario time correctness/advancement checks. The repeated structural before/text/after wall-clock sampling pattern confirms the reusable issue spans both local and IANA smoke predicates; it is not specific to one test. No application defect is established.
 
-Bounded amendment verification: local smoke 20/20, world-clock first scenario 20/20, combined ordinary 40/40, combined CI=1 with retries explicitly disabled 40/40 PASS. Two full make test-e2e runs each passed 16/16; make harness-check, make security, make verify and plain make ci PASS. All non-timing selection/order/persistence/removal assertions and later world-clock scenarios stayed unchanged. No further scheduler-racy predicate failure observed during this verification. Formal independent review has not started; no hosted integration PASS claimed.
+Bounded amendment verification: local smoke 20/20, world-clock first scenario 20/20, combined ordinary 40/40, combined CI=1 with retries explicitly disabled 40/40 PASS. Two full make test-e2e runs each passed 16/16; make harness-check, make security, make verify and plain make ci PASS. All non-timing selection/order/persistence/removal assertions and later world-clock scenarios stayed unchanged. No further scheduler-racy predicate failure observed during this verification. At implementation handoff formal independent review had not started; no hosted integration PASS claimed.
 
 ## Root cause
 
@@ -51,7 +51,7 @@ Stopped or wrong-time rendering fails exact equality or advancement; one/multipl
 
 ## Review outcome
 
-Pending fresh independent-cloud-standard review of TASK-0011.
+Fresh top-level independent-cloud-standard review PASS against `4acae3bbd3c0b08859bc916ee39c1771a0f1259e` on 2026-09-27; see [formal review](../../../quality/reviews/task-0011-review.md). Independent repetitions, stopped-ticker probe, alternate timezone, two full E2E runs and canonical gates support the control. Status remains candidate pending integration and hosted green CI.
 
 ## Promotion
 
