@@ -40,7 +40,7 @@ This is a planning topology, not a live status board. Create executable task con
 | TASK-0006 | Add global digital/analog and 12h/24h settings with persistence | `cloud-standard`, medium reasoning |
 | TASK-0007 | Implement city-local one-time/daily alarm domain logic and persistence | `cloud-deep`, high reasoning because time-zone/DST/overdue semantics are correctness-sensitive |
 | TASK-0011 | Stabilize deterministic browser-local clock smoke; unblock TASK-0007 hosted integration verification before TASK-0008 | `cloud-standard`, medium reasoning, `independent-cloud-standard` review; Security impact: none |
-| TASK-0008 | Add audible alarm runtime orchestration and browser/background evidence | `cloud-standard` or `cloud-deep` depending browser-policy uncertainty at readiness |
+| TASK-0008 | Add audible alarm runtime orchestration and browser/background evidence | `cloud-deep`, high reasoning, `independent-cloud-deep` review; Security impact: none |
 | TASK-0009 | Cross-browser, visual, responsive, and release-acceptance hardening | mixed: implementation under `cloud-standard`; final visual/release verdicts remain human-controlled |
 
 ## Task-boundary rules
@@ -69,3 +69,19 @@ Add evidence progressively rather than deferring system-level verification to th
 - settings propagation in M5;
 - DST/overdue alarms in M6;
 - supported-browser and visual acceptance in M7.
+
+## First GitHub Pages deployment gate
+
+Pages remains undeployed. TASK-0008 planning and implementation must not trigger Pages. The first actual deployment follows this ordered human-controlled gate:
+
+1. TASK-0008 fresh formal `independent-cloud-deep` review PASS.
+2. Human-controlled integration into `main`.
+3. Push-triggered hosted CI PASS for the exact integrated `main` commit.
+4. Manually trigger the first actual GitHub Pages deployment from that exact verified `main`.
+5. Smoke the real hosted site before final TASK-0009 release acceptance.
+
+Hosted smoke covers app/assets/base path; city picker and persistence; Digital/Analog; 12h/24h; alarm create/edit/remove; alarm sound enable/test; active-tab due delivery; background/resume overdue delivery; reload/session behavior; current stable Chrome, Edge and Firefox where available; and console/network sanity. Record actual browser/version evidence and leave unavailable-browser or real-audio checks open rather than inferring PASS.
+
+TASK-0008 deterministic automation and available Chromium evidence support implementation/formal review. Real-browser audio and background acceptance remain a human post-integration gate. No maximum background latency or closed-app delivery is promised.
+
+TASK-0009 owns final cross-browser hardening, layout/visual acceptance, release acceptance, and the human production-release verdict. The first hosted smoke is deployment verification, not a production-release verdict. This plan does not create TASK-0009 or authorize deployment during TASK-0008.

@@ -35,3 +35,25 @@ Loading exact V1/V2 migrates in memory, preserving order and available display p
 Each world-city card owns one small alarm editor. Set/Edit opens city-local date/time controls; Save validates against an actual instant read at submission. Daily input stays exact HH:mm regardless of the global clock display preference. One-time summaries format the persisted instant into the city's civil date/minute and also show UTC time to distinguish overlap occurrences. Editing replaces the city's alarm; Cancel does not write. Saving, removing, and city removal share the existing protected persistence path. City removal updates selected IDs and alarm collection together in a single write; re-add has no alarm.
 
 Native date/time controls may visually use the browser's input locale (including AM/PM); their values and domain semantics remain canonical HH:mm. Error text is visible and linked to the inputs. Opening moves focus to recurrence; Save/Cancel/Remove alarm return focus to the Set/Edit control. No alarm editor appears on the browser-local top clock.
+
+## Planned TASK-0008 runtime boundary
+
+This section is a plan; runtime/audio integration is not implemented by the planning change.
+
+`Config V3 -> openAlarmSession -> retained createAlarmEvaluator -> runtime orchestrator -> browser audio adapter/UI`
+
+After loading configuration, capture an actual session-start instant and call `openAlarmSession`. Apply its `nextAlarms`, persist only if `stale` is nonempty through the existing protected persistence path, and initialize the evaluation baseline to session start. Loading V1/V2 alone must not trigger an eager migration write. Daily and future once alarms survive; stale once alarms do not fire retroactively.
+
+Create exactly one `createAlarmEvaluator()` per mounted/open runtime session. A central `evaluateAt(actualNow)` reads the latest configuration and evaluates `(previousActualInstant, actualNow]`. The existing single display ticker can supply execution opportunities; a visible `visibilitychange` supplies immediate supplemental evaluation through the same function. Do not create a second scheduler or use stateless `evaluateAlarms()` repeatedly. After a successful domain transition, apply/persist consumed once alarms and advance the actual baseline before awaiting audio. Preserve all due entries; daily alarms remain configured, long intervals produce at most one event per alarm, and edits/removals affect later calls without rebuilding the evaluator.
+
+If actual wall time moves backwards, reset the baseline to the new current instant, emit nothing for the reversed interval, and resume normal evaluation. This bounded reset does not invent occurrences. Retain the existing 128-entry ephemeral FIFO cache; it is neither persistence nor duplicate-delivery state. Cold daily resolution remains synchronous/significant as documented above.
+
+A small browser adapter owns native Web Audio creation/resume and a finite synthesized cue. No audio library, network asset, or indefinite ringing loop. A visible user-operated enable/test control creates/resumes the context and attempts a real/representative cue. Treat observed context/cue behavior and caught failures as truth; do not require experimental `navigator.getAutoplayPolicy()`. Recheck at due time, keep recovery possible, and do not let rejected or pending audio operations stall domain transitions. Clean up ticker/listeners/audio resources at unmount and guard late asynchronous completions against disposed state.
+
+Audio readiness and accessible due notifications are session-only UI state. Each due event records its city, due status and sound outcome. All simultaneous events remain observable until dismissed; dismissal does not remove daily configuration. A failed sound attempt cannot undo one-time consumption or trigger repeated domain firing. A running context/cue attempt cannot prove physical speaker audibility.
+
+Deterministic runtime/fake-audio tests and Playwright Clock control establish orchestration evidence; available Chromium E2E establishes the browser path. Real Chrome/Edge/Firefox audio and background behavior remains a human post-integration gate. Browser-controlled throttling has no maximum delivery latency, and closed-app delivery remains excluded.
+
+Config stays V3; no new schema, backend, service worker, Notification API, production dependency, or deployment boundary. No new ADR is needed within these constraints; escalate before changing them.
+
+Browser guidance checked during readiness (2026-09-27): [Chrome autoplay policy](https://developer.chrome.com/blog/autoplay/) explains suspended Web Audio contexts and user-gesture resume; [MDN AudioContext.resume](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/resume) documents promise completion/failure; [Playwright Clock](https://playwright.dev/docs/clock) distinguishes ordinary timer progression from delayed fast-forward opportunities. These guide adapter/test design without promising browser permission or physical audibility.
