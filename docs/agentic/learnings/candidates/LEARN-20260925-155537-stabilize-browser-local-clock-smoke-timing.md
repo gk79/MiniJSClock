@@ -26,7 +26,9 @@ Hosted [CI #29](https://github.com/gk79/MiniJSClock/actions/runs/36264019043), r
 
 TASK-0011 local evidence: focused smoke PASS; ordinary repeat-each=20/workers=1 PASS (20/20); CI=1 repeat-each=20 PASS (20/20, no retries); explicit America/New_York context PASS. A temporary test-only interval-handle capture/cancellation after initial equality caused the first advancement assertion to fail as expected; the experiment was restored. An earlier numeric-ID cancellation did not stop Playwright's fake timers and was discarded as invalid evidence.
 
-First full E2E run: stabilized app smoke passed, but unchanged world-clock test failed exact-second Asia/Tokyo equality at e2e/world-clocks.spec.ts:50 (15 passed, 1 failed). Full-suite rerun passed 16/16; plain make ci also passed 16/16 E2E and all canonical gates. This related predicate remains outside TASK-0011 scope and should be considered during independent candidate review; no world-clock test change was made.
+First full E2E run: stabilized app smoke passed, but unchanged world-clock test failed exact-second Asia/Tokyo equality at e2e/world-clocks.spec.ts:50 (15 passed, 1 failed). Full-suite rerun passed 16/16; plain make ci also passed 16/16 E2E and all canonical gates. At the initial implementation head this predicate was outside scope and unchanged. The user subsequently authorized a bounded TASK-0011 amendment after advisory read-only review: stabilize only the first world-clock scenario time correctness/advancement checks. The repeated structural before/text/after wall-clock sampling pattern confirms the reusable issue spans both local and IANA smoke predicates; it is not specific to one test. No application defect is established.
+
+Bounded amendment verification: local smoke 20/20, world-clock first scenario 20/20, combined ordinary 40/40, combined CI=1 with retries explicitly disabled 40/40 PASS. Two full make test-e2e runs each passed 16/16; make harness-check, make security, make verify and plain make ci PASS. All non-timing selection/order/persistence/removal assertions and later world-clock scenarios stayed unchanged. No further scheduler-racy predicate failure observed during this verification. Formal independent review has not started; no hosted integration PASS claimed.
 
 ## Root cause
 
@@ -41,7 +43,7 @@ Control the browser timeline to verify exact local-time rendering and real inter
 
 ## Proposed control
 
-TASK-0011 installs Playwright Clock before navigation, pauses at browser-local 23:59:58, derives expected HH:mm:ss via browser Date getters, then runs actual scheduled callbacks for 1, 2, and 60 seconds. Exact equality and advancement assertions remain. No timezone assumption, tolerance, retry increase, or product change. See https://playwright.dev/docs/clock.
+TASK-0011 installs Playwright Clock before navigation, pauses at browser-local 23:59:58, derives expected HH:mm:ss via browser Date getters, then runs actual scheduled callbacks for 1, 2, and 60 seconds. The bounded amendment also installs Clock before world-clock navigation, pauses at 2026-01-15T14:59:58Z, derives Tokyo/London HH:mm:ss with browser Intl.DateTimeFormat and explicit Asia/Tokyo/Europe/London zones, and runs real interval callbacks for 1 then 2 seconds. Tokyo midnight and London minute crossings are checked. Existing selection/order/persistence/removal assertions remain. Exact equality and advancement assertions remain. No timezone assumption, tolerance, retry increase, or product change. See https://playwright.dev/docs/clock.
 
 ## False-positive / over-constraint risk
 

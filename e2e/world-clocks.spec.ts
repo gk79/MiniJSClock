@@ -10,6 +10,8 @@ async function addCity(page: import('@playwright/test').Page, query: string, lab
 test('adds, restores, removes and advances catalog-zone clocks under the production base path', async ({
   page,
 }) => {
+  const assertionInstant = new Date('2026-01-15T14:59:58Z').getTime()
+  await page.clock.install({ time: assertionInstant - 60_000 })
   await page.goto('./')
   await expect(page.getByTestId('local-time')).toBeVisible()
   await expect(page.locator('[data-city-id]')).toHaveCount(0)
@@ -29,30 +31,39 @@ test('adds, restores, removes and advances catalog-zone clocks under the product
     '{"version":3,"selectedCityIds":[1850147,2643743],"presentationMode":"digital","timeFormat":"24h","alarms":[]}',
   )
 
-  const matchesZoneTime = async (id: number, zone: string) =>
+  await page.clock.pauseAt(assertionInstant)
+  const zoneTime = (zone: string) =>
     page.evaluate(
-      ({ id, zone }) => {
-        const before = new Date()
-        const shown = document.querySelector(`[data-testid="city-time-${id}"]`)?.textContent?.trim()
-        const after = new Date()
-        const format = (instant: Date) =>
-          new Intl.DateTimeFormat('en-GB', {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hourCycle: 'h23',
-            timeZone: zone,
-          }).format(instant)
-        return shown === format(before) || shown === format(after)
-      },
-      { id, zone },
+      (zone) =>
+        new Intl.DateTimeFormat('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hourCycle: 'h23',
+          timeZone: zone,
+        }).format(new Date()),
+      zone,
     )
-  await expect.poll(() => matchesZoneTime(1850147, 'Asia/Tokyo')).toBe(true)
-  await expect.poll(() => matchesZoneTime(2643743, 'Europe/London')).toBe(true)
-  const firstReading = await page.getByTestId('city-time-1850147').textContent()
-  await expect(page.getByTestId('city-time-1850147')).not.toHaveText(firstReading ?? '', {
-    timeout: 4000,
-  })
+  const tokyo = page.getByTestId('city-time-1850147')
+  const london = page.getByTestId('city-time-2643743')
+  let expectedTokyo = await zoneTime('Asia/Tokyo')
+  let expectedLondon = await zoneTime('Europe/London')
+  await expect(tokyo).toHaveText(expectedTokyo)
+  await expect(london).toHaveText(expectedLondon)
+  // Execute the real ticker through Tokyo midnight and London's minute boundary.
+  for (const elapsed of [1000, 2000]) {
+    const previousTokyo = expectedTokyo
+    const previousLondon = expectedLondon
+    await page.clock.runFor(elapsed)
+    expectedTokyo = await zoneTime('Asia/Tokyo')
+    expectedLondon = await zoneTime('Europe/London')
+    expect(expectedTokyo).not.toBe(previousTokyo)
+    expect(expectedLondon).not.toBe(previousLondon)
+    await expect(tokyo).not.toHaveText(previousTokyo)
+    await expect(london).not.toHaveText(previousLondon)
+    await expect(tokyo).toHaveText(expectedTokyo)
+    await expect(london).toHaveText(expectedLondon)
+  }
 
   await page.reload()
   await expect(page.locator('[data-city-id]')).toHaveCount(2)
