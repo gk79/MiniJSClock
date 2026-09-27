@@ -5,17 +5,17 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Lifecycle phase: implementation
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0010 integrated into `main`; hosted CI and product-owner manual searchable-combobox acceptance PASS; TASK-0006 integrated into `main`; hosted CI and product-owner manual acceptance PASS
+- Current milestone: TASK-0007 integrated, hosted verification blocked by TASK-0011; TASK-0010 integrated into `main`; hosted CI and product-owner manual searchable-combobox acceptance PASS; TASK-0006 integrated into `main`; hosted CI and product-owner manual acceptance PASS
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none; TASK-0007 formal finding-focused re-review PASS, awaiting human integration.
-- Latest completed task: [TASK-0007](../tasks/done/TASK-0007.md) — city-local alarm configuration/domain/persistence; fresh top-level human-authorized independent-cloud-deep re-review PASS against `d71f77385f885c3062433cdcaeb261a5dacdf8cf`; R1/R2 resolved, no new blocking findings; awaiting human integration.
+- Active task(s): [TASK-0011](../tasks/active/TASK-0011.md) — browser-local clock harness stabilization in review; TASK-0007 integration verification blocked pending stabilization review, integration, and hosted green CI.
+- Latest completed task: [TASK-0007](../tasks/done/TASK-0007.md) — city-local alarm configuration/domain/persistence; fresh top-level human-authorized independent-cloud-deep re-review PASS against `d71f77385f885c3062433cdcaeb261a5dacdf8cf`; R1/R2 resolved, no new blocking findings; fast-forwarded to `main` at `752d73dd6cd7e95559b5e87f81ce7384e1cdf37b`; hosted CI #29 failed on the known exact-second browser-local smoke.
 - Main known risks/blockers: cold daily resolution remains significant; retain one evaluator per runtime/session to eliminate repeated established-key scans. Pages remains undeployed and requires a later human production release verdict; audio/background behavior awaits runtime verification. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
 - Decisions currently pending: none at architecture level
-- Next recommended action: human integration decision for reviewed/closed TASK-0007 on `codex/task-0007-rereview`; see [formal re-review](quality/reviews/task-0007-rereview.md). TASK-0008 remains uncreated/unstarted. Historical review/remediation evidence and all learning candidates preserved without promotion. Pages remains undeployed; no production release verdict.
+- Next recommended action: fresh independent-cloud-standard review of TASK-0011; local verification and plain CI PASS (see task evidence, including separate world-clock first-run failure). TASK-0007 hosted integration verification remains blocked by [CI #29](https://github.com/gk79/MiniJSClock/actions/runs/36264019043). TASK-0008 remains uncreated/unstarted; Pages remains undeployed; no production release verdict.
 
 ## Recent verification
 

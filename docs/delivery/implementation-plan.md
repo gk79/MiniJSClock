@@ -39,6 +39,7 @@ This is a planning topology, not a live status board. Create executable task con
 | TASK-0010 | Replace the separate city search + select controls with one searchable combobox and live filtering | `cloud-standard`, medium reasoning; execute before TASK-0006 |
 | TASK-0006 | Add global digital/analog and 12h/24h settings with persistence | `cloud-standard`, medium reasoning |
 | TASK-0007 | Implement city-local one-time/daily alarm domain logic and persistence | `cloud-deep`, high reasoning because time-zone/DST/overdue semantics are correctness-sensitive |
+| TASK-0011 | Stabilize deterministic browser-local clock smoke; unblock TASK-0007 hosted integration verification before TASK-0008 | `cloud-standard`, medium reasoning, `independent-cloud-standard` review; Security impact: none |
 | TASK-0008 | Add audible alarm runtime orchestration and browser/background evidence | `cloud-standard` or `cloud-deep` depending browser-policy uncertainty at readiness |
 | TASK-0009 | Cross-browser, visual, responsive, and release-acceptance hardening | mixed: implementation under `cloud-standard`; final visual/release verdicts remain human-controlled |
 
