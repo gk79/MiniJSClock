@@ -136,3 +136,58 @@ for (const version of ['2', null]) {
     await expect(page.getByRole('status')).toHaveCount(0)
   })
 }
+
+test('keeps global settings readable and operable at 320px', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 320, height: 900 })
+  await page.clock.install({ time: new Date('2026-01-15T12:00:00Z') })
+  await page.goto('./')
+  await page.evaluate((storageKey) => {
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify({
+        version: 3,
+        selectedCityIds: [1850147, 2643743, 2147714, 2988507],
+        presentationMode: 'analog',
+        timeFormat: '12h',
+        alarms: [],
+      }),
+    )
+  }, key)
+  await page.reload()
+  await expect(page.locator('[data-city-id]')).toHaveCount(4)
+
+  const fieldset = page.locator('.clock-settings')
+  const fieldsetBox = await fieldset.boundingBox()
+  expect(fieldsetBox).not.toBeNull()
+  expect(fieldsetBox!.x).toBeGreaterThanOrEqual(0)
+  expect(fieldsetBox!.x + fieldsetBox!.width).toBeLessThanOrEqual(320)
+
+  const presentation = page.getByLabel('Presentation', { exact: true })
+  const format = page.getByLabel('Digital time format', { exact: true })
+  for (const [control, selectedText] of [
+    [presentation, 'Analog'],
+    [format, '12-hour'],
+  ] as const) {
+    const box = await control.boundingBox()
+    expect(box).not.toBeNull()
+    expect(box!.x).toBeGreaterThanOrEqual(0)
+    expect(box!.x + box!.width).toBeLessThanOrEqual(320)
+    expect(box!.width).toBeGreaterThanOrEqual(140)
+    await expect(control.locator('option:checked')).toHaveText(selectedText)
+  }
+  await expect(page.getByText('Presentation', { exact: true })).toBeVisible()
+  await expect(page.getByText('Digital time format', { exact: true })).toBeVisible()
+  await page.screenshot({
+    path: testInfo.outputPath('06-narrow-several-analog-12h.png'),
+    fullPage: true,
+  })
+
+  await presentation.selectOption('digital')
+  await expect(page.locator('.clock-face')).toHaveCount(0)
+  await format.selectOption('24h')
+  await expect(presentation.locator('option:checked')).toHaveText('Digital')
+  await expect(format.locator('option:checked')).toHaveText('24-hour')
+  await format.selectOption('12h')
+  await presentation.selectOption('analog')
+  await expect(page.locator('.clock-face')).toHaveCount(5)
+})
