@@ -2,20 +2,20 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: implementation
+- Lifecycle phase: release acceptance
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: TASK-0008 formally reviewed, integrated into `main` at `3af9820d81fc6811fbecf84e02ebfd614443bac9`, and hosted verification PASS; earlier task milestones remain integrated.
+- Current milestone: TASK-0008 formally reviewed and integrated; hosted CI #32 and #33 passed. Exact verified source `main` is `a9a2a5fc7abae7c69c8cbef66952e9af5ba6f66b`. TASK-0009 release acceptance is active.
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none. [TASK-0008](../tasks/done/TASK-0008.md) is formally reviewed, integrated, and hosted-CI verified; [CI run #32](https://github.com/gk79/MiniJSClock/actions/runs/36403998210) (ID `36403998210`) passed for the exact integration SHA, including all 20 Chromium E2E tests. Config remains V3; no production dependency was introduced.
+- Active task(s): [TASK-0009](../tasks/active/TASK-0009.md), first Pages deployment and release acceptance. [TASK-0008](../tasks/done/TASK-0008.md) is formally reviewed, integrated, and hosted-CI verified; [CI #32](https://github.com/gk79/MiniJSClock/actions/runs/36403998210) and [CI #33](https://github.com/gk79/MiniJSClock/actions/runs/36404331690) passed, with #33 covering the exact verified source `main` and all 20 Chromium E2E tests. Config remains V3; no production dependency was introduced.
 - Latest completed task: [TASK-0008](../tasks/done/TASK-0008.md) — open-session alarm runtime and native audio; see the [formal review](quality/reviews/task-0008-review.md).
 - Main known risks/blockers: cold daily resolution remains significant; retain one evaluator per runtime/session to eliminate repeated established-key scans. Human post-integration acceptance remains for physical alarm audio, actual autoplay, active-tab delivery, real background/resume behavior, reload/stale handling, simultaneous due events, and stable Chrome/Edge/Firefox checks; later final visual/release acceptance is also open. Pages remains undeployed; no production release verdict. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
 - Decisions currently pending: none at architecture level
-- Next recommended action: first GitHub Pages deployment gate is eligible only after this documentation state is itself on a green exact `main`; a later explicit human-controlled step may trigger it. TASK-0009 remains uncreated for this integration session; Pages has not been triggered or deployed, and no production release verdict exists.
+- Next recommended action: after the TASK-0009 task/state branch is pushed, dispatch the existing Pages workflow from the exact verified `main`, then collect hosted and manual acceptance evidence. The first Pages deployment remains the next human-controlled gate. No production release verdict exists.
 
 ## Recent verification
 
