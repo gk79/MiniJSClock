@@ -1,5 +1,10 @@
 # Implementation plan
 
+**Status: COMPLETE.** Milestones M1 through M7 are complete, and all planned
+implementation and release-acceptance work has been integrated. The explicit
+human production release verdict is satisfied. Future work is outside this
+implementation plan and requires a new milestone and task contract.
+
 ## Strategy
 
 Proceed as a single-human, naturally linear implementation stream. Do not create a dependency DAG unless the implementation model changes to concurrent human contribution.

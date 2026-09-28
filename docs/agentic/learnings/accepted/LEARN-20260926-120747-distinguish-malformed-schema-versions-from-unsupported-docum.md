@@ -1,7 +1,7 @@
 # Learning candidate: Distinguish malformed schema versions from unsupported documents
 
 - ID: LEARN-20260926-120747
-- Status: candidate
+- Status: accepted
 - Date: 2026-09-26
 - Related task/PR: TASK-0006 formal review R1
 - Ownership: project-local
@@ -29,4 +29,4 @@ Do not infer how every historical or numeric unknown schema should be migrated. 
 
 ## Review outcome and promotion
 
-Pending project reviewer/human review. Candidate captured only; no tests, policy, CI, or global skills changed by this review.
+Accepted during final project closure. TASK-0006 remediation added the contract-derived malformed-discriminator recovery/non-overwrite coverage, and its fresh top-level finding-focused review PASS verified both the remediation and plausible persistence regressions; see [TASK-0006](../../../../tasks/done/TASK-0006.md). The executable promotion mechanism is the parser/component coverage in `src/__tests__/config.spec.ts` and `src/__tests__/App.spec.ts` plus Chromium recovery/non-overwrite coverage in `e2e/clock-settings.spec.ts`. No policy, CI, or global skill change was made.

@@ -1,7 +1,7 @@
 # Learning candidate: Validate alarm evaluation cost before runtime handoff
 
 - ID: LEARN-20260926-193427
-- Status: candidate
+- Status: accepted
 - Date: 2026-09-26
 - Related task/PR: TASK-0007 formal independent review, R1
 - Ownership: project-local
@@ -33,8 +33,8 @@ Absolute timing varies across browsers/hardware, and cold preparation may legiti
 
 ## Review outcome
 
-Pending human/project review. Captured only; no harness subagent verdict or policy promotion.
+Accepted during final project closure. TASK-0007 remediation added the retained evaluator/cache, deterministic work-count characterization, and retained benchmark evidence. Its fresh top-level finding-focused re-review PASS independently verified cache behavior, work-count characterization, bounded retention, and plausible regressions; see [formal re-review](../../../quality/reviews/task-0007-rereview.md). Hosted CI passed after integration on the TASK-0011 successor main.
 
 ## Promotion
 
-None. Existing candidates, AGENTS, CI and security policy remain unchanged.
+Accepted. The executable promotion mechanism is the alarm-evaluation cache characterization in `src/__tests__/alarm-evaluation.spec.ts`, with independent probes and retained benchmark artifacts under `docs/quality/reviews/`. No duplicate test, AGENTS change, CI change, or security-policy change was made.

@@ -41,4 +41,4 @@ Needs review by a `harness_reviewer` or project maintainer; evidence is reproduc
 
 ## Promotion
 
-Not promoted in this task.
+Status remains candidate and explicitly non-blocking for project closure. The proposed bootstrap launch preflight is not being added after release; any future adoption requires a new task and fresh review.

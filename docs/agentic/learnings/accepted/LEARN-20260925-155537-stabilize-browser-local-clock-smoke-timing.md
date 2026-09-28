@@ -1,7 +1,7 @@
 # Learning candidate: Stabilize browser local-clock smoke timing
 
 - ID: LEARN-20260925-155537
-- Status: candidate
+- Status: accepted
 - Date: 2026-09-25
 - Related task/PR: TASK-0004, TASK-0011
 - Ownership: project-local
@@ -51,8 +51,8 @@ Stopped or wrong-time rendering fails exact equality or advancement; one/multipl
 
 ## Review outcome
 
-Fresh top-level independent-cloud-standard review PASS against `4acae3bbd3c0b08859bc916ee39c1771a0f1259e` on 2026-09-27; see [formal review](../../../quality/reviews/task-0011-review.md). Independent repetitions, stopped-ticker probe, alternate timezone, two full E2E runs and canonical gates support the control. Integrated into main at `fd3889ac9911e0000d10a3e6c4495e5eb4c4debc`; push-triggered [hosted CI #30](https://github.com/gk79/MiniJSClock/actions/runs/36345173394), run ID `36345173394`, PASS on 2026-09-27. Canonical `make ci`, all 16 Chromium E2E tests and both deterministic clock smokes passed. The hosted evidence prerequisite is satisfied; status remains candidate pending a separate promotion review/governance decision.
+Fresh top-level independent-cloud-standard review PASS against `4acae3bbd3c0b08859bc916ee39c1771a0f1259e` on 2026-09-27; see [formal review](../../../quality/reviews/task-0011-review.md). Independent repetitions, stopped-ticker probe, alternate timezone, two full E2E runs and canonical gates support the control. Integrated into main at `fd3889ac9911e0000d10a3e6c4495e5eb4c4debc`; push-triggered [hosted CI #30](https://github.com/gk79/MiniJSClock/actions/runs/36345173394), run ID `36345173394`, PASS on 2026-09-27. Canonical `make ci`, all 16 Chromium E2E tests and both deterministic clock smokes passed. Promotion approved during final project closure because the project-local executable control is implemented, formally reviewed, and hosted-CI verified.
 
 ## Promotion
 
-Keep status candidate. Independent control review and successful hosted CI after integration are recorded above; promotion remains a separate review/governance decision. No AGENTS/global Method policy change.
+Accepted. The deterministic Playwright Clock smoke in `e2e/app.spec.ts` and `e2e/world-clocks.spec.ts` is the promotion mechanism. No duplicate test or policy rule was added, and no AGENTS/global Method policy changed.
