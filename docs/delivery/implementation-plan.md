@@ -72,7 +72,7 @@ Add evidence progressively rather than deferring system-level verification to th
 
 ## First GitHub Pages deployment gate
 
-Pages remains undeployed. TASK-0008 planning and implementation must not trigger Pages. The first actual deployment follows this ordered human-controlled gate:
+The first Pages deployment completed during TASK-0009; see the [deployment and acceptance evidence](../../tasks/active/TASK-0009.md). TASK-0008 planning and implementation did not trigger Pages. The first actual deployment followed this ordered human-controlled gate:
 
 1. TASK-0008 fresh formal `independent-cloud-deep` review PASS.
 2. Human-controlled integration into `main`.
