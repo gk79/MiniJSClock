@@ -3,7 +3,7 @@
 - Date: 2026-09-28
 - Task: [TASK-0009](../../../../tasks/done/TASK-0009.md), done
 - Product acceptance: **PASS**, reported by the product owner for the Pages run #2 hosted artifact
-- Production release verdict: **PENDING HUMAN DECISION**
+- Production release verdict: **RELEASE APPROVED**
 
 ## Deployed artifact
 
@@ -45,4 +45,4 @@ Config remains V3. The product is client-only, with no backend, service worker, 
 
 ## Release decision
 
-**Production release verdict: PENDING HUMAN DECISION.** TASK-0009 completion and product-owner acceptance do not constitute release approval. No production release verdict has been issued in this closeout.
+**Production release verdict: RELEASE APPROVED.** The product owner explicitly issued `RELEASE APPROVED` for the Pages run #2 artifact from product SHA `6a34009893cc4f54909a62a66358852fe5ea378a`. No additional deployment was required for this verdict. Repository documentation commits after that deployed product SHA did not change product code. The known boundaries remain: no closed-app alarm guarantee, no maximum background latency guarantee, and exact Firefox version plus acceptance-time browser/OS metadata were not recovered. These documented limitations are not release blockers after the explicit human approval.

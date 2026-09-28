@@ -24,7 +24,7 @@ Risk ordering:
 | M4 — City catalog, world clocks, persistence | Versioned ~400-city catalog can be regenerated; user can add/remove city clocks and retain configuration across reloads | FR-002, FR-003, FR-004, FR-011, FR-012; provenance and deterministic generation evidence; persistence/E2E tests |
 | M5 — Global presentation settings | Digital/analog and 12h/24h settings apply consistently across all clocks and persist | FR-005, FR-006; component/E2E evidence |
 | M6 — City-local alarms | One-time and daily alarms use each clock's local civil time, persist, and detect overdue execution | FR-007 through FR-010; deterministic domain tests plus browser/audio evidence |
-| M7 — Release acceptance | Supported browsers, representative layouts, visual quality, narrow-width behavior, and release artifact are accepted | NFR-001, NFR-004, NFR-005, NFR-007; human visual approval; Chrome/Edge/Firefox smoke; explicit human release verdict |
+| M7 — Release acceptance | Supported browsers, representative layouts, visual quality, narrow-width behavior, and release artifact are accepted | NFR-001, NFR-004, NFR-005, NFR-007; human visual approval; Chrome/Edge/Firefox smoke; explicit human release verdict satisfied |
 
 ## Planned task sequence
 
@@ -72,7 +72,7 @@ Add evidence progressively rather than deferring system-level verification to th
 
 ## First GitHub Pages deployment gate
 
-The first Pages deployment completed during TASK-0009; see the [deployment and acceptance evidence](../../tasks/active/TASK-0009.md). TASK-0008 planning and implementation did not trigger Pages. The first actual deployment followed this ordered human-controlled gate:
+The first Pages deployment completed during TASK-0009; see the [deployment and acceptance evidence](../../tasks/done/TASK-0009.md). TASK-0008 planning and implementation did not trigger Pages. The first actual deployment followed this ordered human-controlled gate:
 
 1. TASK-0008 fresh formal `independent-cloud-deep` review PASS.
 2. Human-controlled integration into `main`.
@@ -84,4 +84,4 @@ Hosted smoke covers app/assets/base path; city picker and persistence; Digital/A
 
 TASK-0008 deterministic automation and available Chromium evidence support implementation/formal review. Real-browser audio and background acceptance remain a human post-integration gate. No maximum background latency or closed-app delivery is promised.
 
-TASK-0009 owns final cross-browser hardening, layout/visual acceptance, release acceptance, and the human production-release verdict. The first hosted smoke is deployment verification, not a production-release verdict. This plan does not create TASK-0009 or authorize deployment during TASK-0008.
+TASK-0009 owned final cross-browser hardening, layout/visual acceptance, and release acceptance. The human production-release verdict is now satisfied. The first hosted smoke was deployment verification, not a production-release verdict. This plan did not create TASK-0009 or authorize deployment during TASK-0008.

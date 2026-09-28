@@ -2,20 +2,20 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: release-ready; awaiting explicit human production release verdict
+- Lifecycle phase: released / first release approved
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: [TASK-0009](../tasks/done/TASK-0009.md) completed after formal review, hosted CI #34, Pages run #2, and product-owner acceptance PASS. Deployed product SHA: `6a34009893cc4f54909a62a66358852e9af5ea378a`; URL: `https://gk79.github.io/MiniJSClock/`. Production release verdict remains pending.
+- Current milestone: [TASK-0009](../tasks/done/TASK-0009.md) completed after formal review, hosted CI #34, Pages run #2, and product-owner acceptance PASS. Production release verdict: `RELEASE APPROVED`. Deployed product SHA: `6a34009893cc4f54909a62a66358852fe5ea378a`; URL: `https://gk79.github.io/MiniJSClock/`.
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none. TASK-0009 is [done](../tasks/done/TASK-0009.md). Config remains V3; no production dependency was introduced.
+- Active task(s): none. TASK-0009 is [done](../tasks/done/TASK-0009.md). Formal review and product acceptance PASS; no known unresolved release-blocking defect. Config remains V3; no production dependency was introduced. Future work is post-release/next-milestone work, not part of this release gate.
 - Latest completed task: [TASK-0009](../tasks/done/TASK-0009.md) — first Pages deployment and release acceptance; see the [release-readiness packet](quality/acceptance/task-0009/release-packet.md).
 - Main known risks/blockers: no unresolved release-blocking product defect. [TASK-0009 formal review](quality/reviews/task-0009-review.md), [hosted CI #34](https://github.com/gk79/MiniJSClock/actions/runs/36408376619), and [Pages run #2](https://github.com/gk79/MiniJSClock/actions/runs/36408609604) PASS. Product owner reports stable Chrome/Edge/Firefox, physical audio, active-tab and real background/resume, reload/stale, simultaneous-due, console/network, and final visual PASS. Exact Firefox version and acceptance-time browser/OS metadata were not independently recovered. No maximum background latency or closed-tab delivery guarantee is claimed. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
-- Decisions currently pending: explicit human production release verdict; none at architecture level
-- Next recommended action: human review of the [release-readiness packet](quality/acceptance/task-0009/release-packet.md) and explicit production release verdict. No verdict has been issued.
+- Decisions currently pending: none at architecture level
+- Next recommended action: post-release/next-milestone planning when authorized; see the [release packet](quality/acceptance/task-0009/release-packet.md).
 
 ## Recent verification
 
