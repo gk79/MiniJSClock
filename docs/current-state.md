@@ -2,20 +2,20 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: released / operations; approved post-release product change awaiting implementation planning
+- Lifecycle phase: post-release M8 / implementation ready; M1–M7 remain complete
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
-- Current milestone: none. Released baseline remains [TASK-0009](../tasks/done/TASK-0009.md) with formal review, hosted CI #34, Pages run #2, product-owner acceptance PASS, and production verdict `RELEASE APPROVED`. Deployed product SHA: `6a34009893cc4f54909a62a66358852fe5ea378a`; URL: `https://gk79.github.io/MiniJSClock/`. Post-release requirement [FR-013](product/requirements.md) for persistent manual world-clock reordering is approved; no implementation milestone or task has been created yet.
+- Current milestone: M8 — persistent world-clock ordering ([implementation plan](delivery/implementation-plan.md)). Released production baseline remains `6a34009893cc4f54909a62a66358852fe5ea378a`; deployed URL: `https://gk79.github.io/MiniJSClock/`. M1–M7, [TASK-0009](../tasks/done/TASK-0009.md), and the prior production release verdict remain complete.
 - Selected stack profile / concrete stack: ADR-001 accepted: Vue 3.5.43 + TypeScript 6.0.3 + Vite 8.3.0 on Node 24.21.0 LTS/npm 11.19.0; `vue-tsc` 3.3.11; lint baseline ESLint 10.10.0 + `@vue/eslint-config-typescript` 14.9.0 + `eslint-plugin-vue` 10.11.0; no router/store/UI framework initially; plain CSS; Vitest 5.0.1 + Vue Test Utils 2.5.1 + Playwright 1.63.0
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none. TASK-0009 is [done](../tasks/done/TASK-0009.md). Formal review and product acceptance PASS; no known unresolved release-blocking defect. The approved FR-013 reorder change is still pre-planning. Existing `Config V3` already preserves ordered `selectedCityIds`; the approved change does not require a configuration-version migration or new production dependency.
+- Active task(s): [TASK-0012](../tasks/active/TASK-0012.md) ready: medium risk; `cloud-standard` / medium reasoning; fresh top-level `independent-cloud-standard` review; Security impact: none; next handoff: independent-review after implementation. Existing `Config V3` ordered `selectedCityIds` remains canonical.
 - Latest completed task: [TASK-0009](../tasks/done/TASK-0009.md) — first Pages deployment and release acceptance; see the [release-readiness packet](quality/acceptance/task-0009/release-packet.md).
 - Main known risks/blockers: no unresolved release-blocking product defect. [TASK-0009 formal review](quality/reviews/task-0009-review.md), [hosted CI #34](https://github.com/gk79/MiniJSClock/actions/runs/36408376619), and [Pages run #2](https://github.com/gk79/MiniJSClock/actions/runs/36408609604) PASS. Product owner reports stable Chrome/Edge/Firefox, physical audio, active-tab and real background/resume, reload/stale, simultaneous-due, console/network, and final visual PASS. Exact Firefox version and acceptance-time browser/OS metadata were not independently recovered. No maximum background latency or closed-tab delivery guarantee is claimed. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
-- Decisions currently pending: none at architecture level. FR-013 behavior and the visible `Move earlier` / `Move later` UI contract are approved. Change-impact assessment found no need to revise the current architecture, threat model, ADRs, deployment topology, stack/toolchain, or Project Capability Review before planning.
-- Next recommended action: perform implementation planning for approved FR-013, including execution-profile/review routing and the smallest suitable post-release increment/task structure; do not start implementation before that plan is materialized.
+- Decisions currently pending: none at architecture level. FR-013 and visible `Move earlier` / `Move later` controls are approved. Config V3, architecture, ADRs, threat model, deployment topology, stack/toolchain, and Project Capability Review remain unchanged for M8.
+- Next recommended action: start a fresh primary TASK-0012 implementation session under its ready task contract; formal independent review and the M8 integration/release gate follow implementation.
 
 ## Recent verification
 

@@ -1,13 +1,12 @@
 # Implementation plan
 
-**Status: COMPLETE.** Milestones M1 through M7 are complete, and all planned
-implementation and release-acceptance work has been integrated. The explicit
-human production release verdict is satisfied. Future work is outside this
-implementation plan and requires a new milestone and task contract.
+**Status: ACTIVE — post-release M8.** Milestones M1 through M7 remain complete;
+their implementation, release acceptance, and human production release verdict
+are satisfied. M8 is the approved post-release FR-013 increment.
 
 ## Strategy
 
-Proceed as a single-human, naturally linear implementation stream. Do not create a dependency DAG unless the implementation model changes to concurrent human contribution.
+Proceed as a single-human, naturally linear implementation stream, including M8. No dependency DAG is needed unless the implementation model changes to concurrent human contribution.
 
 Build vertical slices that leave the repository in a verifiable state after each integration. Keep product/domain logic framework-independent where practical and add browser/E2E coverage as behavior becomes user-visible.
 
@@ -30,6 +29,7 @@ Risk ordering:
 | M5 — Global presentation settings | Digital/analog and 12h/24h settings apply consistently across all clocks and persist | FR-005, FR-006; component/E2E evidence |
 | M6 — City-local alarms | One-time and daily alarms use each clock's local civil time, persist, and detect overdue execution | FR-007 through FR-010; deterministic domain tests plus browser/audio evidence |
 | M7 — Release acceptance | Supported browsers, representative layouts, visual quality, narrow-width behavior, and release artifact are accepted | NFR-001, NFR-004, NFR-005, NFR-007; human visual approval; Chrome/Edge/Firefox smoke; explicit human release verdict satisfied |
+| M8 — Persistent world-clock ordering | Visible keyboard-operable controls reorder selected city clocks by one position and persist the order | TASK-0012; FR-013 and FR-004; targeted component/E2E and canonical verification; fresh independent review |
 
 ## Planned task sequence
 
@@ -47,6 +47,7 @@ This is a planning topology, not a live status board. Create executable task con
 | TASK-0011 | Stabilize deterministic browser-local clock smoke; unblock TASK-0007 hosted integration verification before TASK-0008 | `cloud-standard`, medium reasoning, `independent-cloud-standard` review; Security impact: none |
 | TASK-0008 | Add audible alarm runtime orchestration and browser/background evidence | `cloud-deep`, high reasoning, `independent-cloud-deep` review; Security impact: none |
 | TASK-0009 | Cross-browser, visual, responsive, and release-acceptance hardening | mixed: implementation under `cloud-standard`; final visual/release verdicts remain human-controlled |
+| TASK-0012 | Add persistent manual world-clock ordering with visible `Move earlier` / `Move later` controls | `cloud-standard`, medium reasoning, `independent-cloud-standard` review; Security impact: none |
 
 ## Task-boundary rules
 
@@ -90,3 +91,7 @@ Hosted smoke covers app/assets/base path; city picker and persistence; Digital/A
 TASK-0008 deterministic automation and available Chromium evidence support implementation/formal review. Real-browser audio and background acceptance remain a human post-integration gate. No maximum background latency or closed-app delivery is promised.
 
 TASK-0009 owned final cross-browser hardening, layout/visual acceptance, and release acceptance. The human production-release verdict is now satisfied. The first hosted smoke was deployment verification, not a production-release verdict. This plan did not create TASK-0009 or authorize deployment during TASK-0008.
+
+## M8 post-review integration and release gate
+
+After TASK-0012 implementation passes its targeted and canonical checks, obtain a fresh top-level `independent-cloud-standard` formal review PASS. Then use human-controlled integration into `main`, require hosted CI PASS for the exact integrated commit, and obtain the human release decision before any production Pages deployment. Verify the deployed reorder and persistence behavior after release. This gate applies only to M8; it does not reopen M1–M7 acceptance.
