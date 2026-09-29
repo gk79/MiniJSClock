@@ -51,3 +51,11 @@ Do not choose the stack merely because the starter has a profile for it; profile
 30. Require an explicit human release verdict for meaningful releases.
 31. Distribute the verified artifact; when production deployment applies, promote it and run post-deploy health checks.
 32. Feed incidents, reviewer findings, and recurring waste back into the harness-learning loop.
+
+## Phase G — subsequent product evolution
+
+33. When new product work arises after release, reconstruct the latest released baseline and current operational state, then clarify the proposed change.
+34. Assess only the change's material impact on (1) product requirements, non-functional requirements, and non-goals; (2) architecture, data, interfaces, security/trust boundaries, and ADRs; (3) delivery, deployment, migrations, recovery, observability, and operations; (4) stack, toolchain, development surface, harness, and project capabilities; and (5) verification and acceptance evidence.
+35. Re-enter at the earliest materially affected Method concern and update only affected requirements, ADRs, architecture, security, deployment, capability, and quality artifacts. Retain unaffected decisions. Do not repeat repository creation or bootstrap unless the change actually revisits those concerns. Revisit relevant parts of the existing Project Capability Review only for a material change to architecture, stack, deployment topology, primary development surface, or a major toolchain generation.
+36. Open a new increment or milestone in the implementation plan and create ordinary task contracts. Use the normal Phase E implementation mechanics and Phase F release process.
+37. Return to operations after release; a later change may start another increment.

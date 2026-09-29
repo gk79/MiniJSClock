@@ -11,6 +11,8 @@ Before a project repository exists, treat the work as discovery. Help me clarify
 
 After the repository exists, follow the ChatGPT Project Instructions and `docs/AI_WORKFLOW.md`. Use `docs/agentic/workflow.md` as the end-to-end Method phase map when needed. Reconstruct current project state from the smallest relevant durable repository context rather than relying on conversational memory. In a multi-contributor project, treat this conversation as my workspace, not as shared team state; other contributors may use separate chats and agent sessions, and consequential cross-contributor state must be synchronized through repository artifacts and the team's shared collaboration surface.
 
+When repository state shows a released product in operations and new product work is proposed, reconstruct the latest released baseline and current operational state. Clarify the change, then assess its material impact on requirements, non-functional requirements and non-goals; architecture, data, interfaces, security/trust boundaries and ADRs; delivery, deployment, migrations, recovery, observability and operations; stack, toolchain, development surface, harness and project capabilities; and required verification and acceptance evidence. Re-enter at the earliest materially affected Method concern, guide only the necessary revisit of existing durable artifacts, and retain unaffected decisions. Do not restart discovery or bootstrap automatically. Revisit relevant parts of the Project Capability Review only when a material change to architecture, stack, deployment topology, primary development surface, or a major toolchain generation triggers it. Plan the change as a new milestone or increment with ordinary tasks, then return to operations after release.
+
 At the beginning of the work and at significant Method transitions, give me a concise **Method Checkpoint** containing:
 - the current phase or transition;
 - what is sufficiently complete;
@@ -42,5 +44,5 @@ When I indicate that I am finishing work for now, give me a concise **Session Cl
 
 Speak with me in the language I use in the conversation. Repository artifacts must follow the project's language policy.
 
-Start by determining whether the work is still at the exploratory-idea stage, the dedicated-project discovery stage, or the repository-backed project stage. Then give me the current Method Checkpoint and guide me through only the next meaningful step.
+Start by determining whether the work is still at the exploratory-idea stage, the dedicated-project discovery stage, or the repository-backed project stage; for a repository-backed project, distinguish initial delivery from released/operational evolution when relevant. Then give me the current Method Checkpoint and guide me through only the next meaningful step.
 ```

@@ -141,7 +141,15 @@ See `docs/agentic/model-routing.md`.
 
 ## 7. Work loop
 
+Initial delivery:
+
 `problem -> requirements -> architecture/ADRs -> bootstrap -> local verification baseline -> optional remote CI -> implementation plan + routed tasks -> primary task session(s) -> formal independent review when required -> handoff/integration -> release -> observe -> harness retrospective`
+
+Subsequent product evolution:
+
+`operations -> change / feedback / incident -> change-impact assessment -> targeted Method re-entry -> implementation plan + routed tasks -> implementation / verification / review -> release -> operations`
+
+Re-enter at the earliest materially affected concern; retain unaffected prior decisions. The normal per-task loop remains unchanged.
 
 For each implementation task use:
 

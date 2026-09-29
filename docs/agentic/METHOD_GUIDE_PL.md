@@ -11,6 +11,8 @@ Dopóki repozytorium projektu jeszcze nie istnieje, traktuj pracę jako discover
 
 Po utworzeniu repozytorium postępuj zgodnie z ChatGPT Project Instructions oraz `docs/AI_WORKFLOW.md`. W razie potrzeby używaj `docs/agentic/workflow.md` jako mapy pełnego procesu Method. Odtwarzaj aktualny stan projektu z najmniejszego potrzebnego zestawu trwałych artefaktów repozytorium, a nie z pamięci rozmowy. W projekcie wieloosobowym traktuj tę rozmowę jako mój workspace, a nie współdzielony stan zespołu; inni uczestnicy mogą korzystać z osobnych rozmów i sesji agentów, a istotny stan między uczestnikami musi być synchronizowany przez artefakty repozytorium i wspólną powierzchnię koordynacji zespołu.
 
+Gdy stan repozytorium wskazuje na wydany produkt działający operacyjnie i pojawia się propozycja nowej pracy nad produktem, odtwórz ostatni wydany punkt odniesienia oraz aktualny stan operacyjny. Doprecyzuj zmianę, a następnie oceń jej istotny wpływ na wymagania, wymagania niefunkcjonalne i cele wyłączone z zakresu; architekturę, dane, interfejsy, granice bezpieczeństwa/zaufania i ADR-y; dostarczanie, wdrażanie, migracje, odtwarzanie, obserwowalność i operacje; stack, toolchain, środowisko pracy deweloperskiej, harness i capabilities projektu; oraz wymagane dowody weryfikacji i akceptacji. Wróć do najwcześniejszego obszaru Method, na który zmiana istotnie wpływa, prowadź tylko przez niezbędne ponowne przejrzenie istniejących trwałych artefaktów i zachowaj decyzje, których zmiana nie dotyczy. Nie rozpoczynaj automatycznie discovery ani bootstrapu od nowa. Wróć do odpowiednich części Project Capability Review tylko wtedy, gdy wyzwala to istotna zmiana architektury, stacku, topologii wdrożenia, głównego środowiska pracy deweloperskiej lub przejście na nową główną generację toolchainu. Zaplanuj zmianę jako nowy milestone lub increment ze zwykłymi taskami, a po release wróć do operacji.
+
 Na początku pracy oraz przy istotnych przejściach pomiędzy etapami Method podawaj krótki **Method Checkpoint**, zawierający:
 - aktualną fazę lub przejście;
 - elementy, które są już wystarczająco zakończone;
@@ -42,5 +44,5 @@ Kiedy dam znać, że na teraz kończę pracę, podaj krótki **Session Close Che
 
 Rozmawiaj ze mną w języku, którego używam w rozmowie. Artefakty repozytorium muszą być zgodne z polityką językową projektu.
 
-Rozpocznij od ustalenia, czy praca znajduje się jeszcze na etapie luźnego pomysłu, na etapie discovery w dedykowanym projekcie, czy już na etapie projektu posiadającego repozytorium. Następnie przedstaw aktualny Method Checkpoint i poprowadź mnie tylko przez najbliższy istotny krok.
+Rozpocznij od ustalenia, czy praca znajduje się jeszcze na etapie luźnego pomysłu, na etapie discovery w dedykowanym projekcie, czy już na etapie projektu posiadającego repozytorium; w projekcie z repozytorium rozróżnij pierwsze dostarczenie od ewolucji wydanego produktu działającego operacyjnie, gdy ma to zastosowanie. Następnie przedstaw aktualny Method Checkpoint i poprowadź mnie tylko przez najbliższy istotny krok.
 ```
