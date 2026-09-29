@@ -92,6 +92,16 @@ TASK-0008 deterministic automation and available Chromium evidence support imple
 
 TASK-0009 owned final cross-browser hardening, layout/visual acceptance, and release acceptance. The human production-release verdict is now satisfied. The first hosted smoke was deployment verification, not a production-release verdict. This plan did not create TASK-0009 or authorize deployment during TASK-0008.
 
-## M8 post-review integration and release gate
+## M8 post-review pilot integration gate
 
-After TASK-0012 implementation passes its targeted and canonical checks, obtain a fresh top-level `independent-cloud-standard` formal review PASS. Then use human-controlled integration into `main`, require hosted CI PASS for the exact integrated commit, and obtain the human release decision before any production Pages deployment. Verify the deployed reorder and persistence behavior after release. This gate applies only to M8; it does not reopen M1–M7 acceptance.
+After TASK-0012 implementation passes its targeted and canonical checks and a fresh top-level `independent-cloud-standard` formal review returns PASS:
+
+1. Close TASK-0012 under the normal task lifecycle.
+2. Require an explicit human decision before integration.
+3. If approved, integrate the reviewed TASK-0012 lineage only into `experiment/m-020-post-release-pilot`.
+4. Verify the exact integrated pilot head with the canonical repository verification contract, including `make ci`.
+5. Record the pilot acceptance and evidence needed to evaluate the post-release Method experiment.
+
+This M8 pilot does not authorize integration into production `main`, a production GitHub Pages deployment, or a new production release verdict. The production release baseline remains `6a34009893cc4f54909a62a66358852fe5ea378a`.
+
+Any future decision to promote the FR-013 product change and/or M-020 Method changes from the experimental lineage into production is a separate human-controlled decision and must establish an appropriate non-experimental integration/release path before execution.
