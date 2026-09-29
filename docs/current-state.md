@@ -2,7 +2,7 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: post-release M8 pilot / review complete / pilot integration decision pending; M1–M7 remain complete
+- Lifecycle phase: post-release M8 pilot / integrated / integrated-head verification PASS / pilot evaluation pending; M1–M7 remain complete
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
 - Current milestone: M8 — persistent world-clock ordering ([implementation plan](delivery/implementation-plan.md)). Released production baseline remains `6a34009893cc4f54909a62a66358852fe5ea378a`; deployed URL: `https://gk79.github.io/MiniJSClock/`. M1–M7, [TASK-0009](../tasks/done/TASK-0009.md), and the prior production release verdict remain complete.
@@ -10,17 +10,18 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): none. [TASK-0012](../tasks/done/TASK-0012.md) is done after fresh top-level `independent-cloud-standard` review PASS on exact implementation commit `c9083031d74ba980faa346f36334f7b4c84f02cb`; no blocking implementation finding remains. Immediate next handoff: `human-only`. Existing `Config V3` ordered `selectedCityIds` remains canonical.
-- Latest completed task: [TASK-0012](../tasks/done/TASK-0012.md) — persistent world-clock ordering, reviewed and closed on the isolated task branch; pilot integration decision pending.
+- Active task(s): none. [TASK-0012](../tasks/done/TASK-0012.md) remains done after fresh top-level `independent-cloud-standard` review PASS on exact implementation commit `c9083031d74ba980faa346f36334f7b4c84f02cb`. Existing `Config V3` ordered `selectedCityIds` remains canonical.
+- Latest completed task: [TASK-0012](../tasks/done/TASK-0012.md) — complete reviewed/closed lineage fast-forward integrated into `experiment/m-020-post-release-pilot` from `a37556897e26d91a699ca1647a3dd35a70e2e32b` to verified integrated head `23a1c7fd06c9069dd69857b7b3d2cd4878ea2acb`.
 - Main known risks/blockers: no unresolved release-blocking product defect. [TASK-0009 formal review](quality/reviews/task-0009-review.md), [hosted CI #34](https://github.com/gk79/MiniJSClock/actions/runs/36408376619), and [Pages run #2](https://github.com/gk79/MiniJSClock/actions/runs/36408609604) PASS. Product owner reports stable Chrome/Edge/Firefox, physical audio, active-tab and real background/resume, reload/stale, simultaneous-due, console/network, and final visual PASS. Exact Firefox version and acceptance-time browser/OS metadata were not independently recovered. No maximum background latency or closed-tab delivery guarantee is claimed. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
-- Decisions currently pending: human decision whether to integrate closed TASK-0012 into `experiment/m-020-post-release-pilot`. Production `main` is not an authorized integration target for this pilot. M-020 remains experimental/proposed and is not promoted to production Method policy. Config V3, architecture, ADRs, threat model, dependencies, deployment topology, stack/toolchain, and Project Capability Review remain unchanged. Production Pages remains unchanged; no new production release verdict has been made.
-- Next recommended action: human decision whether to integrate the reviewed/closed TASK-0012 branch into `experiment/m-020-post-release-pilot`; if approved, verify the exact integrated pilot head locally under the [M8 pilot gate](delivery/implementation-plan.md).
+- Decisions currently pending: pilot acceptance/evaluation under the [M8 pilot gate](delivery/implementation-plan.md). M-020 remains proposed/experimental and has not been promoted to released Method policy. Production `main` was not modified; released production baseline remains `6a34009893cc4f54909a62a66358852fe5ea378a`. Production GitHub Pages remains unchanged; no new production release verdict was made. No hosted CI result is claimed for the experimental pilot branch.
+- Next recommended action: pilot acceptance/evaluation under the M8 pilot gate, not production release.
 
 ## Recent verification
 
 | Date | Context | Command/evidence | Result |
 |---|---|---|---|
+| 2026-09-29 | TASK-0012 M8 pilot integration | Approved fast-forward `a37556897e26d91a699ca1647a3dd35a70e2e32b` → exact integrated head `23a1c7fd06c9069dd69857b7b3d2cd4878ea2acb`; on that exact HEAD: `make harness-check`, `make ci`, `git diff --check` | PASS: 142 unit/component tests, 5 integration checks, 23 Chromium E2E; local canonical verification only, pilot evaluation pending |
 | 2026-09-22 | ChatGPT repository startup | Read `docs/AI_WORKFLOW.md`, `docs/current-state.md`, and product templates from `main`; no active task exists | Repository operating contract loaded; discovery artifacts were still Starter templates before this update |
 | 2026-09-22 | Product discovery | Human approval of desktop/browser support target | Current stable Chrome, Edge, and Firefox are required first-release targets; Safari and mobile/tablet are non-blocking |
 | 2026-09-22 | Product discovery | Human approval of static city catalog approach | City data will be versioned in the repository and mapped to IANA time-zone identifiers; no runtime external city/time-zone API is required |
