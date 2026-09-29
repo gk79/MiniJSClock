@@ -141,6 +141,17 @@ function removeCity(id: number) {
   persist()
 }
 
+function moveCity(id: number, offset: -1 | 1) {
+  const ids = [...config.value.selectedCityIds]
+  const index = ids.indexOf(id)
+  const destination = index + offset
+  if (index < 0 || destination < 0 || destination >= ids.length) return
+  ids.splice(index, 1)
+  ids.splice(destination, 0, id)
+  config.value = { ...config.value, selectedCityIds: ids }
+  persist()
+}
+
 function saveAlarm(alarm: Alarm) {
   if (!config.value.selectedCityIds.includes(alarm.cityId)) return
   const index = config.value.alarms.findIndex((existing) => existing.cityId === alarm.cityId)
@@ -330,7 +341,7 @@ onUnmounted(() => {
         </p>
         <ul v-else class="clock-list">
           <li
-            v-for="city in selectedCities"
+            v-for="(city, index) in selectedCities"
             :key="city.geonameId"
             class="world-card"
             :data-city-id="city.geonameId"
@@ -357,13 +368,31 @@ onUnmounted(() => {
               @save="saveAlarm"
               @remove="removeAlarm(city.geonameId)"
             />
-            <button
-              type="button"
-              :aria-label="`Remove ${city.name}`"
-              @click="removeCity(city.geonameId)"
-            >
-              Remove
-            </button>
+            <div class="world-card-actions">
+              <button
+                type="button"
+                :aria-label="`Move ${city.name} earlier`"
+                :disabled="index === 0"
+                @click="moveCity(city.geonameId, -1)"
+              >
+                Move earlier
+              </button>
+              <button
+                type="button"
+                :aria-label="`Move ${city.name} later`"
+                :disabled="index === selectedCities.length - 1"
+                @click="moveCity(city.geonameId, 1)"
+              >
+                Move later
+              </button>
+              <button
+                type="button"
+                :aria-label="`Remove ${city.name}`"
+                @click="removeCity(city.geonameId)"
+              >
+                Remove
+              </button>
+            </div>
           </li>
         </ul>
       </section>

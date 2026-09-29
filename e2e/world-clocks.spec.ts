@@ -200,3 +200,92 @@ test('filters prefixes and supports keyboard selection, Escape and empty results
   await picker.press('Tab')
   await expect(picker).toHaveAttribute('aria-expanded', 'false')
 })
+
+test('reorders with pointer and keyboard, persists across reopen, and keeps alarms by city', async ({
+  page,
+  context,
+}) => {
+  await page.goto('./')
+  await addCity(page, 'Tokyo', 'Tokyo (JP)')
+  await addCity(page, 'London', 'London (GB)')
+  await addCity(page, 'Paris', 'Paris (FR)')
+  await expect(page.getByRole('button', { name: 'Move Tokyo earlier' })).toBeDisabled()
+  await expect(page.getByRole('button', { name: 'Move Paris later' })).toBeDisabled()
+  await page.getByRole('button', { name: 'Move Tokyo later' }).click()
+  expect(
+    await page
+      .locator('[data-city-id]')
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute('data-city-id'))),
+  ).toEqual(['2643743', '1850147', '2988507'])
+  await page.getByRole('button', { name: 'Move Paris earlier' }).focus()
+  await page.keyboard.press('Enter')
+  expect(
+    await page
+      .locator('[data-city-id]')
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute('data-city-id'))),
+  ).toEqual(['2643743', '2988507', '1850147'])
+  const alarm = { cityId: 1850147, recurrence: 'daily', time: '08:00' }
+  const persisted = await page.evaluate((storageKey) => {
+    const config = JSON.parse(localStorage.getItem(storageKey)!)
+    config.alarms = [{ cityId: 1850147, recurrence: 'daily', time: '08:00' }]
+    localStorage.setItem(storageKey, JSON.stringify(config))
+    return config
+  }, key)
+  expect(persisted.selectedCityIds).toEqual([2643743, 2988507, 1850147])
+  await page.reload()
+  expect(
+    await page
+      .locator('[data-city-id]')
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute('data-city-id'))),
+  ).toEqual(['2643743', '2988507', '1850147'])
+  await addCity(page, 'New York City', 'New York City (US)')
+  expect(
+    await page.evaluate((storageKey) => JSON.parse(localStorage.getItem(storageKey)!), key),
+  ).toMatchObject({
+    selectedCityIds: [2643743, 2988507, 1850147, 5128581],
+    alarms: [alarm],
+  })
+  await page.close()
+  const reopened = await context.newPage()
+  await reopened.goto('./')
+  expect(
+    await reopened
+      .locator('[data-city-id]')
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute('data-city-id'))),
+  ).toEqual(['2643743', '2988507', '1850147', '5128581'])
+  expect(
+    await reopened.evaluate(
+      (storageKey) => JSON.parse(localStorage.getItem(storageKey)!).alarms,
+      key,
+    ),
+  ).toEqual([alarm])
+})
+
+test('protects future bytes while reordering and keeps controls usable at narrow width', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 700 })
+  await page.goto('./')
+  const raw = '{"version":4,"selectedCityIds":[1850147],"future":true}'
+  await page.evaluate(([storageKey, value]) => localStorage.setItem(storageKey, value), [key, raw])
+  await page.reload()
+  await addCity(page, 'Tokyo', 'Tokyo (JP)')
+  await addCity(page, 'London', 'London (GB)')
+  await page.getByRole('button', { name: 'Move Tokyo later' }).click()
+  expect(
+    await page
+      .locator('[data-city-id]')
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute('data-city-id'))),
+  ).toEqual(['2643743', '1850147'])
+  expect(await page.evaluate((storageKey) => localStorage.getItem(storageKey), key)).toBe(raw)
+  await expect(page.getByRole('status')).toContainText('unsupported version')
+  for (const name of ['Move London later', 'Move Tokyo earlier']) {
+    const button = page.getByRole('button', { name })
+    await expect(button).toBeVisible()
+    const box = await button.boundingBox()
+    expect(box).not.toBeNull()
+    expect(box!.x).toBeGreaterThanOrEqual(0)
+    expect(box!.x + box!.width).toBeLessThanOrEqual(320)
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320)
+})

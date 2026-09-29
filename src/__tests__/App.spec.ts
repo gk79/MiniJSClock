@@ -122,3 +122,88 @@ describe('global clock settings', () => {
     wrapper.unmount()
   })
 })
+
+describe('world-clock ordering', () => {
+  const ids = [1850147, 2643743, 5128581]
+  const order = (wrapper: ReturnType<typeof mount>) =>
+    wrapper.findAll('[data-city-id]').map((card) => Number(card.attributes('data-city-id')))
+  const stored = () => JSON.parse(localStorage.getItem(CONFIG_KEY)!)
+  const seed = (alarms: unknown[] = []) =>
+    localStorage.setItem(
+      CONFIG_KEY,
+      JSON.stringify({
+        version: 3,
+        selectedCityIds: ids,
+        presentationMode: 'digital',
+        timeFormat: '24h',
+        alarms,
+      }),
+    )
+
+  it('moves one position, disables boundaries, persists and keeps alarms with their city', async () => {
+    const alarm = { cityId: ids[0], recurrence: 'daily', time: '08:00' }
+    seed([alarm])
+    const wrapper = mount(App)
+    await nextTick()
+    expect(order(wrapper)).toEqual(ids)
+    expect(wrapper.get('[aria-label="Move Tokyo earlier"]').attributes('disabled')).toBeDefined()
+    expect(
+      wrapper.get('[aria-label="Move New York City later"]').attributes('disabled'),
+    ).toBeDefined()
+    await wrapper.get('[aria-label="Move Tokyo later"]').trigger('click')
+    expect(order(wrapper)).toEqual([ids[1], ids[0], ids[2]])
+    expect(stored().selectedCityIds).toEqual(order(wrapper))
+    expect(stored().alarms).toEqual([alarm])
+    await wrapper.get('[aria-label="Move Tokyo earlier"]').trigger('click')
+    expect(order(wrapper)).toEqual(ids)
+    wrapper.unmount()
+    const restored = mount(App)
+    await nextTick()
+    expect(order(restored)).toEqual(ids)
+    restored.unmount()
+  })
+
+  it('appends new cities after a reordered list and disables both moves for one city', async () => {
+    seed()
+    const wrapper = mount(App)
+    await nextTick()
+    await wrapper.get('[aria-label="Move Tokyo later"]').trigger('click')
+    await wrapper.get('[aria-label="Remove New York City"]').trigger('click')
+    await wrapper.get('#city-search').setValue('Paris')
+    await wrapper.get('[role="option"]').trigger('click')
+    expect(order(wrapper).slice(0, 2)).toEqual([ids[1], ids[0]])
+    expect(stored().selectedCityIds).toEqual(order(wrapper))
+    await wrapper.get('[aria-label="Remove London"]').trigger('click')
+    await wrapper.get('[aria-label="Remove Paris"]').trigger('click')
+    expect(order(wrapper)).toEqual([ids[0]])
+    expect(wrapper.get('[aria-label="Move Tokyo earlier"]').attributes('disabled')).toBeDefined()
+    expect(wrapper.get('[aria-label="Move Tokyo later"]').attributes('disabled')).toBeDefined()
+    wrapper.unmount()
+  })
+
+  it('preserves future bytes and uses existing write-failure feedback', async () => {
+    const raw = JSON.stringify({ version: 4, selectedCityIds: ids, future: true })
+    localStorage.setItem(CONFIG_KEY, raw)
+    const future = mount(App)
+    await future.get('#city-search').setValue('Tokyo')
+    await future.get('#city-option-1850147').trigger('click')
+    await future.get('#city-search').setValue('London')
+    await future.get('#city-option-2643743').trigger('click')
+    await future.get('[aria-label="Move Tokyo later"]').trigger('click')
+    expect(order(future)).toEqual([ids[1], ids[0]])
+    expect(localStorage.getItem(CONFIG_KEY)).toBe(raw)
+    expect(future.get('[role="status"]').text()).toContain('unsupported version')
+    future.unmount()
+
+    seed()
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('blocked')
+    })
+    const failed = mount(App)
+    await nextTick()
+    await failed.get('[aria-label="Move Tokyo later"]').trigger('click')
+    expect(order(failed)).toEqual([ids[1], ids[0], ids[2]])
+    expect(failed.get('[role="status"]').text()).toContain('saving failed')
+    failed.unmount()
+  })
+})

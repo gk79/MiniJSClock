@@ -2,7 +2,7 @@
 
 Keep this short. It is a durable project-level handoff index, not a duplicate project history or session transcript. Link to canonical detail instead of copying it.
 
-- Lifecycle phase: post-release M8 / implementation ready; M1–M7 remain complete
+- Lifecycle phase: post-release M8 / implementation review; M1–M7 remain complete
 - Project identifier: MiniJSClock
 - Product/display name: MiniJSClock
 - Current milestone: M8 — persistent world-clock ordering ([implementation plan](delivery/implementation-plan.md)). Released production baseline remains `6a34009893cc4f54909a62a66358852fe5ea378a`; deployed URL: `https://gk79.github.io/MiniJSClock/`. M1–M7, [TASK-0009](../tasks/done/TASK-0009.md), and the prior production release verdict remain complete.
@@ -10,12 +10,12 @@ Keep this short. It is a durable project-level handoff index, not a duplicate pr
 - Selected data profile / concrete data platform: `localStorage` typed/versioned configuration adapter plus static repository-versioned city catalog; GeoNames candidate source, IANA identifiers, approximately 400 cities
 - Selected deployment profile / concrete target: ADR-002 accepted: GitHub Pages via manually triggered, verification-gated GitHub Actions deployment from `main`; actions pinned to full commit SHAs
 - Repository baseline: Vue/Vite/TypeScript bootstrap integrated into `main`; local verification harness, Chromium smoke, and CI command composition pass
-- Active task(s): [TASK-0012](../tasks/active/TASK-0012.md) ready: medium risk; `cloud-standard` / medium reasoning; fresh top-level `independent-cloud-standard` review; Security impact: none; immediate next handoff: `cloud-standard`. Existing `Config V3` ordered `selectedCityIds` remains canonical.
+- Active task(s): [TASK-0012](../tasks/active/TASK-0012.md) review: medium risk; `cloud-standard` / medium reasoning; fresh top-level `independent-cloud-standard` review; Security impact: none; immediate next handoff: `independent-review`. Existing `Config V3` ordered `selectedCityIds` remains canonical.
 - Latest completed task: [TASK-0009](../tasks/done/TASK-0009.md) — first Pages deployment and release acceptance; see the [release-readiness packet](quality/acceptance/task-0009/release-packet.md).
 - Main known risks/blockers: no unresolved release-blocking product defect. [TASK-0009 formal review](quality/reviews/task-0009-review.md), [hosted CI #34](https://github.com/gk79/MiniJSClock/actions/runs/36408376619), and [Pages run #2](https://github.com/gk79/MiniJSClock/actions/runs/36408609604) PASS. Product owner reports stable Chrome/Edge/Firefox, physical audio, active-tab and real background/resume, reload/stale, simultaneous-due, console/network, and final visual PASS. Exact Firefox version and acceptance-time browser/OS metadata were not independently recovered. No maximum background latency or closed-tab delivery guarantee is claimed. Existing exact-second Playwright timing candidate remains separate (`LEARN-20260925-155537`).
 - Separate tooling/environment learning candidate: `LEARN-20260926-110426` remains pending and unchanged; no policy promotion.
 - Decisions currently pending: none at architecture level. FR-013 and visible `Move earlier` / `Move later` controls are approved. Config V3, architecture, ADRs, threat model, deployment topology, stack/toolchain, and Project Capability Review remain unchanged for M8.
-- Next recommended action: start a fresh primary `cloud-standard` TASK-0012 implementation session under its ready task contract; formal independent review and the M8 integration/release gate follow implementation.
+- Next recommended action: conduct the required fresh top-level `independent-cloud-standard` formal review of TASK-0012 on the task branch; the M8 integration/release gate follows a review PASS.
 
 ## Recent verification
 
