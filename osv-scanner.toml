@@ -1,0 +1,4 @@
+[[IgnoredVulns]]
+id = "GHSA-vfj7-8cjw-p6xm"
+ignoreUntil = 2026-10-17
+reason = "Temporary explicit owner risk acceptance on 2026-10-03; see docs/quality/braces-security-triage.md. Vulnerability is in a transitive development-only dependency; no production/runtime input path was identified and current brace patterns are controlled project configuration. No compatible patched release is currently available. Re-evaluate immediately if an upstream fix becomes available or input/exposure changes."
